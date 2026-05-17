@@ -2754,7 +2754,7 @@ __declspec(naked) void _EnableFeatureLevelUpgrade() { _asm { jmp[d3d11.EnableFea
 __declspec(naked) void _OpenAdapter10() { _asm { jmp[d3d11.OpenAdapter10] } }
 __declspec(naked) void _OpenAdapter10_2() { _asm { jmp[d3d11.OpenAdapter10_2] } }
 
-__declspec(naked) void _Ordinal_1() { _asm { jmp[NGRWin64ShippingBase.Ordinal_1] } }
+__declspec(naked) void Ordinal_1() { _asm { jmp[NGRWin64ShippingBase.Ordinal_1] } }
 
 __declspec(naked) void _D3D12CoreCreateLayeredDevice() { _asm { jmp[d3d12.D3D12CoreCreateLayeredDevice] } }
 __declspec(naked) void _D3D12CoreGetLayeredDeviceSize() { _asm { jmp[d3d12.D3D12CoreGetLayeredDeviceSize] } }
@@ -4134,7 +4134,7 @@ void _EnableFeatureLevelUpgrade() { d3d11.EnableFeatureLevelUpgrade(); }
 void _OpenAdapter10() { d3d11.OpenAdapter10(); }
 void _OpenAdapter10_2() { d3d11.OpenAdapter10_2(); }
 
-void _Ordinal_1() { NGRWin64ShippingBase.Ordinal_1(); }
+void Ordinal_1() { NGRWin64ShippingBase.Ordinal_1(); }
 
 void _D3D12CoreCreateLayeredDevice() { d3d12.D3D12CoreCreateLayeredDevice(); }
 void _D3D12CoreGetLayeredDeviceSize() { d3d12.D3D12CoreGetLayeredDeviceSize(); }
