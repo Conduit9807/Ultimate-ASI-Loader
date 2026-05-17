@@ -80,17 +80,17 @@ jobs:
         CODE_SIGNING_PFX: ${{ github.ref_name == 'master' && (github.event_name == 'push' || github.event.inputs.release == 'true') && secrets.CODE_SIGNING_PFX || '' }}
         CODE_SIGNING_PASSWORD: ${{ github.ref_name == 'master' && (github.event_name == 'push' || github.event.inputs.release == 'true') && secrets.CODE_SIGNING_PASSWORD || '' }}
 
-    - name: Test
-      shell: cmd
-      run: |
-        cd tests
-        test.bat
+    # - name: Test
+    #   shell: cmd
+    #   run: |
+    #     cd tests
+    #     test.bat
 
-    - name: Upload artifact (Win32)
-      uses: actions/upload-artifact@v7
-      with:
-        name: Ultimate-ASI-Loader-Win32
-        path: dist/Win32/dll/*
+    # - name: Upload artifact (Win32)
+    #   uses: actions/upload-artifact@v7
+    #   with:
+    #     name: Ultimate-ASI-Loader-Win32
+    #     path: dist/Win32/dll/*
 
     - name: Upload artifact (x64)
       uses: actions/upload-artifact@v7

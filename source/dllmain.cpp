@@ -639,6 +639,14 @@ void LoadOriginalLibrary()
         else
             xinput.LoadOriginalLibrary(LoadLib(szSystemPath));
     }
+    else if (iequals(szSelfName, L"NGR-Win64-ShippingBase.dll"))
+    {
+        szLocalPath += L"NGR-Win64-ShippingBaseHooked.dll";
+        if (std::filesystem::exists(szLocalPath))
+            NGRWin64ShippingBase.LoadOriginalLibrary(LoadLib(szLocalPath));
+        else
+            NGRWin64ShippingBase.LoadOriginalLibrary(LoadLib(szSystemPath));
+    }
     else if (iequals(szSelfName, L"XInputUap.dll"))
     {
         szLocalPath += L"XInputUapHooked.dll";
@@ -798,7 +806,8 @@ void LoadOriginalLibrary()
         else
             #endif
         {
-            MessageBox(0, TEXT("This library isn't supported."), TEXT("ASI Loader"), MB_ICONERROR);
+            std::wstring msg = szSelfName + L" is not supported.\n\nThis library isn't supported.";
+            MessageBoxW(nullptr, msg.c_str(), L"ASI Loader", MB_ICONERROR);
             ExitProcess(0);
         }
 

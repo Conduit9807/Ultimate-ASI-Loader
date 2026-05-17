@@ -1041,6 +1041,18 @@ struct d3d11_dll
     }
 } d3d11;
 
+struct NGRWin64ShippingBase_dll 
+{
+    HMODULE dll;
+    FARPROC Ordinal_1;
+    void LoadOriginalLibrary(HMODULE module)
+    {
+        dll = module;
+        shared.LoadOriginalLibrary(dll);
+        Ordinal_1 = GetProcAddress(dll, "Ordinal_1");
+    }
+} NGRWin64ShippingBase;
+
 struct d3d12_dll
 {
     HMODULE dll;
@@ -2742,6 +2754,8 @@ __declspec(naked) void _EnableFeatureLevelUpgrade() { _asm { jmp[d3d11.EnableFea
 __declspec(naked) void _OpenAdapter10() { _asm { jmp[d3d11.OpenAdapter10] } }
 __declspec(naked) void _OpenAdapter10_2() { _asm { jmp[d3d11.OpenAdapter10_2] } }
 
+__declspec(naked) void _Ordinal_1() { _asm { jmp[NGRWin64ShippingBase.Ordinal_1] } }
+
 __declspec(naked) void _D3D12CoreCreateLayeredDevice() { _asm { jmp[d3d12.D3D12CoreCreateLayeredDevice] } }
 __declspec(naked) void _D3D12CoreGetLayeredDeviceSize() { _asm { jmp[d3d12.D3D12CoreGetLayeredDeviceSize] } }
 __declspec(naked) void _D3D12CoreRegisterLayers() { _asm { jmp[d3d12.D3D12CoreRegisterLayers] } }
@@ -4119,6 +4133,8 @@ void _D3DPerformance_SetMarker() { d3d11.D3DPerformance_SetMarker(); }
 void _EnableFeatureLevelUpgrade() { d3d11.EnableFeatureLevelUpgrade(); }
 void _OpenAdapter10() { d3d11.OpenAdapter10(); }
 void _OpenAdapter10_2() { d3d11.OpenAdapter10_2(); }
+
+void _Ordinal_1() { NGRWin64ShippingBase.Ordinal_1(); }
 
 void _D3D12CoreCreateLayeredDevice() { d3d12.D3D12CoreCreateLayeredDevice(); }
 void _D3D12CoreGetLayeredDeviceSize() { d3d12.D3D12CoreGetLayeredDeviceSize(); }
