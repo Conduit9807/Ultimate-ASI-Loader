@@ -1041,17 +1041,275 @@ struct d3d11_dll
     }
 } d3d11;
 
-struct NGRWin64ShippingBase_dll 
+struct BqCCS_dll 
 {
     HMODULE dll;
-    FARPROC Ordinal_1;
+    FARPROC JNI_OnLoad;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1connect;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1drop;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1bq_1id;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1has_1settings_1key;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1init;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1mark_1res_1load;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1on_1pause;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1print_1portait;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1save_1settings;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1uninit;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer;
+    FARPROC Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1create_1log;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1force_1flush;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1version;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decode;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1device_1console;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback;
+    FARPROC Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string;
+    FARPROC Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest;
+    FARPROC g6bq__api_create_log;
+    FARPROC g6bq__api_enable_auto_crash_handler;
+    FARPROC g6bq__api_fetch_and_remove_console_buffer;
+    FARPROC g6bq__api_force_flush;
+    FARPROC g6bq__api_get_ccs_version;
+    FARPROC g6bq__api_get_file_base_dir;
+    FARPROC g6bq__api_get_log_categories_count;
+    FARPROC g6bq__api_get_log_category_masks_array_by_log_id;
+    FARPROC g6bq__api_get_log_category_name_by_index;
+    FARPROC g6bq__api_get_log_id_by_index;
+    FARPROC g6bq__api_get_log_merged_log_level_bitmap_by_log_id;
+    FARPROC g6bq__api_get_log_name_by_id;
+    FARPROC g6bq__api_get_log_print_stack_level_bitmap_by_log_id;
+    FARPROC g6bq__api_get_log_version;
+    FARPROC g6bq__api_get_logs_count;
+    FARPROC g6bq__api_get_stack_trace;
+    FARPROC g6bq__api_get_stack_trace_utf16;
+    FARPROC g6bq__api_init;
+    FARPROC g6bq__api_log_buffer_alloc;
+    FARPROC g6bq__api_log_buffer_commit;
+    FARPROC g6bq__api_log_decode;
+    FARPROC g6bq__api_log_decoder_create;
+    FARPROC g6bq__api_log_decoder_decode;
+    FARPROC g6bq__api_log_decoder_destroy;
+    FARPROC g6bq__api_log_device_console;
+    FARPROC g6bq__api_log_reset_config;
+    FARPROC g6bq__api_register_console_callbacks;
+    FARPROC g6bq__api_release_snapshot_string;
+    FARPROC g6bq__api_reset_base_dir;
+    FARPROC g6bq__api_set_appender_enable;
+    FARPROC g6bq__api_set_console_buffer_enable;
+    FARPROC g6bq__api_take_snapshot_string;
+    FARPROC g6bq__api_uninit;
+    FARPROC g6bq__api_unregister_console_callbacks;
+    FARPROC g6bq__connect;
+    FARPROC g6bq__crash_test;
+    FARPROC g6bq__drop;
+    FARPROC g6bq__file_to_report_server;
+    FARPROC g6bq__flush_all_opened_files;
+    FARPROC g6bq__flush_portrait;
+    FARPROC g6bq__get_bq_id;
+    FARPROC g6bq__get_current_gate_info;
+    FARPROC g6bq__get_portrait_string;
+    FARPROC g6bq__get_settings_value_bool;
+    FARPROC g6bq__get_settings_value_decimal;
+    FARPROC g6bq__get_settings_value_integer;
+    FARPROC g6bq__get_settings_value_string_utf8;
+    FARPROC g6bq__get_settings_value_type;
+    FARPROC g6bq__has_settings_key;
+    FARPROC g6bq__init;
+    FARPROC g6bq__legacy_init;
+    FARPROC g6bq__mark_res_load;
+    FARPROC g6bq__on_pause;
+    FARPROC g6bq__print_portait;
+    FARPROC g6bq__register_error_callback;
+    FARPROC g6bq__register_http_callbacks;
+    FARPROC g6bq__register_setting_update_callback;
+    FARPROC g6bq__register_tail_switch_callbacks;
+    FARPROC g6bq__register_wrapper_callbacks;
+    FARPROC g6bq__release_portrait_string;
+    FARPROC g6bq__release_string_def;
+    FARPROC g6bq__send_to_http_server;
+    FARPROC g6bq__send_to_report_server;
+    FARPROC g6bq__send_to_session_server;
+    FARPROC g6bq__set_gameid;
+    FARPROC g6bq__set_http_server_url;
+    FARPROC g6bq__set_res_inversal;
+    FARPROC g6bq__set_res_max_upload_once;
+    FARPROC g6bq__set_time_out;
+    FARPROC g6bq__share_file;
+    FARPROC g6bq__tail_data_to_server;
+    FARPROC g6bq__toggle_res_collect;
+    FARPROC g6bq__toggle_res_upload;
+    FARPROC g6bq__uninit;
+    FARPROC g6bq__update_portrait_decimal;
+    FARPROC g6bq__update_portrait_integer;
+    FARPROC g6bq__update_portrait_string;
     void LoadOriginalLibrary(HMODULE module)
     {
         dll = module;
         shared.LoadOriginalLibrary(dll);
-        Ordinal_1 = GetProcAddress(dll, "Ordinal_1");
+        JNI_OnLoad  = GetProcAddress(dll, "JNI_OnLoad");
+        Java_bq_impl_ccs_1invoker__1_1connect  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1connect");
+        Java_bq_impl_ccs_1invoker__1_1drop  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1drop");
+        Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server");
+        Java_bq_impl_ccs_1invoker__1_1get_1bq_1id  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1bq_1id");
+        Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string");
+        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool");
+        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal");
+        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer");
+        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string");
+        Java_bq_impl_ccs_1invoker__1_1has_1settings_1key  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1has_1settings_1key");
+        Java_bq_impl_ccs_1invoker__1_1init  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1init");
+        Java_bq_impl_ccs_1invoker__1_1mark_1res_1load  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1mark_1res_1load");
+        Java_bq_impl_ccs_1invoker__1_1on_1pause  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1on_1pause");
+        Java_bq_impl_ccs_1invoker__1_1print_1portait  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1print_1portait");
+        Java_bq_impl_ccs_1invoker__1_1save_1settings  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1save_1settings");
+        Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server");
+        Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server");
+        Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server");
+        Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url");
+        Java_bq_impl_ccs_1invoker__1_1uninit  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1uninit");
+        Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal");
+        Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer");
+        Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string");
+        Java_bq_impl_log_1invoker__1_1api_1create_1log  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1create_1log");
+        Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler");
+        Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer");
+        Java_bq_impl_log_1invoker__1_1api_1force_1flush  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1force_1flush");
+        Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id");
+        Java_bq_impl_log_1invoker__1_1api_1get_1log_1version  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1version");
+        Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count");
+        Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string");
+        Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc");
+        Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit");
+        Java_bq_impl_log_1invoker__1_1api_1log_1decode  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decode");
+        Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create");
+        Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode");
+        Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy");
+        Java_bq_impl_log_1invoker__1_1api_1log_1device_1console  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1device_1console");
+        Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config");
+        Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir");
+        Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable");
+        Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable");
+        Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback");
+        Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string");
+        Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest  = GetProcAddress(dll, "Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest");
+        g6bq__api_create_log  = GetProcAddress(dll, "g6bq__api_create_log");
+        g6bq__api_enable_auto_crash_handler  = GetProcAddress(dll, "g6bq__api_enable_auto_crash_handler");
+        g6bq__api_fetch_and_remove_console_buffer  = GetProcAddress(dll, "g6bq__api_fetch_and_remove_console_buffer");
+        g6bq__api_force_flush  = GetProcAddress(dll, "g6bq__api_force_flush");
+        g6bq__api_get_ccs_version  = GetProcAddress(dll, "g6bq__api_get_ccs_version");
+        g6bq__api_get_file_base_dir  = GetProcAddress(dll, "g6bq__api_get_file_base_dir");
+        g6bq__api_get_log_categories_count  = GetProcAddress(dll, "g6bq__api_get_log_categories_count");
+        g6bq__api_get_log_category_masks_array_by_log_id  = GetProcAddress(dll, "g6bq__api_get_log_category_masks_array_by_log_id");
+        g6bq__api_get_log_category_name_by_index  = GetProcAddress(dll, "g6bq__api_get_log_category_name_by_index");
+        g6bq__api_get_log_id_by_index  = GetProcAddress(dll, "g6bq__api_get_log_id_by_index");
+        g6bq__api_get_log_merged_log_level_bitmap_by_log_id  = GetProcAddress(dll, "g6bq__api_get_log_merged_log_level_bitmap_by_log_id");
+        g6bq__api_get_log_name_by_id  = GetProcAddress(dll, "g6bq__api_get_log_name_by_id");
+        g6bq__api_get_log_print_stack_level_bitmap_by_log_id  = GetProcAddress(dll, "g6bq__api_get_log_print_stack_level_bitmap_by_log_id");
+        g6bq__api_get_log_version  = GetProcAddress(dll, "g6bq__api_get_log_version");
+        g6bq__api_get_logs_count  = GetProcAddress(dll, "g6bq__api_get_logs_count");
+        g6bq__api_get_stack_trace  = GetProcAddress(dll, "g6bq__api_get_stack_trace");
+        g6bq__api_get_stack_trace_utf16  = GetProcAddress(dll, "g6bq__api_get_stack_trace_utf16");
+        g6bq__api_init  = GetProcAddress(dll, "g6bq__api_init");
+        g6bq__api_log_buffer_alloc  = GetProcAddress(dll, "g6bq__api_log_buffer_alloc");
+        g6bq__api_log_buffer_commit  = GetProcAddress(dll, "g6bq__api_log_buffer_commit");
+        g6bq__api_log_decode  = GetProcAddress(dll, "g6bq__api_log_decode");
+        g6bq__api_log_decoder_create  = GetProcAddress(dll, "g6bq__api_log_decoder_create");
+        g6bq__api_log_decoder_decode  = GetProcAddress(dll, "g6bq__api_log_decoder_decode");
+        g6bq__api_log_decoder_destroy  = GetProcAddress(dll, "g6bq__api_log_decoder_destroy");
+        g6bq__api_log_device_console  = GetProcAddress(dll, "g6bq__api_log_device_console");
+        g6bq__api_log_reset_config  = GetProcAddress(dll, "g6bq__api_log_reset_config");
+        g6bq__api_register_console_callbacks  = GetProcAddress(dll, "g6bq__api_register_console_callbacks");
+        g6bq__api_release_snapshot_string  = GetProcAddress(dll, "g6bq__api_release_snapshot_string");
+        g6bq__api_reset_base_dir  = GetProcAddress(dll, "g6bq__api_reset_base_dir");
+        g6bq__api_set_appender_enable  = GetProcAddress(dll, "g6bq__api_set_appender_enable");
+        g6bq__api_set_console_buffer_enable  = GetProcAddress(dll, "g6bq__api_set_console_buffer_enable");
+        g6bq__api_take_snapshot_string  = GetProcAddress(dll, "g6bq__api_take_snapshot_string");
+        g6bq__api_uninit  = GetProcAddress(dll, "g6bq__api_uninit");
+        g6bq__api_unregister_console_callbacks  = GetProcAddress(dll, "g6bq__api_unregister_console_callbacks");
+        g6bq__connect  = GetProcAddress(dll, "g6bq__connect");
+        g6bq__crash_test  = GetProcAddress(dll, "g6bq__crash_test");
+        g6bq__drop  = GetProcAddress(dll, "g6bq__drop");
+        g6bq__file_to_report_server  = GetProcAddress(dll, "g6bq__file_to_report_server");
+        g6bq__flush_all_opened_files  = GetProcAddress(dll, "g6bq__flush_all_opened_files");
+        g6bq__flush_portrait  = GetProcAddress(dll, "g6bq__flush_portrait");
+        g6bq__get_bq_id  = GetProcAddress(dll, "g6bq__get_bq_id");
+        g6bq__get_current_gate_info  = GetProcAddress(dll, "g6bq__get_current_gate_info");
+        g6bq__get_portrait_string  = GetProcAddress(dll, "g6bq__get_portrait_string");
+        g6bq__get_settings_value_bool  = GetProcAddress(dll, "g6bq__get_settings_value_bool");
+        g6bq__get_settings_value_decimal  = GetProcAddress(dll, "g6bq__get_settings_value_decimal");
+        g6bq__get_settings_value_integer  = GetProcAddress(dll, "g6bq__get_settings_value_integer");
+        g6bq__get_settings_value_string_utf8  = GetProcAddress(dll, "g6bq__get_settings_value_string_utf8");
+        g6bq__get_settings_value_type  = GetProcAddress(dll, "g6bq__get_settings_value_type");
+        g6bq__has_settings_key  = GetProcAddress(dll, "g6bq__has_settings_key");
+        g6bq__init  = GetProcAddress(dll, "g6bq__init");
+        g6bq__legacy_init  = GetProcAddress(dll, "g6bq__legacy_init");
+        g6bq__mark_res_load  = GetProcAddress(dll, "g6bq__mark_res_load");
+        g6bq__on_pause  = GetProcAddress(dll, "g6bq__on_pause");
+        g6bq__print_portait  = GetProcAddress(dll, "g6bq__print_portait");
+        g6bq__register_error_callback  = GetProcAddress(dll, "g6bq__register_error_callback");
+        g6bq__register_http_callbacks  = GetProcAddress(dll, "g6bq__register_http_callbacks");
+        g6bq__register_setting_update_callback  = GetProcAddress(dll, "g6bq__register_setting_update_callback");
+        g6bq__register_tail_switch_callbacks  = GetProcAddress(dll, "g6bq__register_tail_switch_callbacks");
+        g6bq__register_wrapper_callbacks  = GetProcAddress(dll, "g6bq__register_wrapper_callbacks");
+        g6bq__release_portrait_string  = GetProcAddress(dll, "g6bq__release_portrait_string");
+        g6bq__release_string_def  = GetProcAddress(dll, "g6bq__release_string_def");
+        g6bq__send_to_http_server  = GetProcAddress(dll, "g6bq__send_to_http_server");
+        g6bq__send_to_report_server  = GetProcAddress(dll, "g6bq__send_to_report_server");
+        g6bq__send_to_session_server  = GetProcAddress(dll, "g6bq__send_to_session_server");
+        g6bq__set_gameid  = GetProcAddress(dll, "g6bq__set_gameid");
+        g6bq__set_http_server_url  = GetProcAddress(dll, "g6bq__set_http_server_url");
+        g6bq__set_res_inversal  = GetProcAddress(dll, "g6bq__set_res_inversal");
+        g6bq__set_res_max_upload_once  = GetProcAddress(dll, "g6bq__set_res_max_upload_once");
+        g6bq__set_time_out  = GetProcAddress(dll, "g6bq__set_time_out");
+        g6bq__share_file  = GetProcAddress(dll, "g6bq__share_file");
+        g6bq__tail_data_to_server  = GetProcAddress(dll, "g6bq__tail_data_to_server");
+        g6bq__toggle_res_collect  = GetProcAddress(dll, "g6bq__toggle_res_collect");
+        g6bq__toggle_res_upload  = GetProcAddress(dll, "g6bq__toggle_res_upload");
+        g6bq__uninit  = GetProcAddress(dll, "g6bq__uninit");
+        g6bq__update_portrait_decimal  = GetProcAddress(dll, "g6bq__update_portrait_decimal");
+        g6bq__update_portrait_integer  = GetProcAddress(dll, "g6bq__update_portrait_integer");
+        g6bq__update_portrait_string  = GetProcAddress(dll, "g6bq__update_portrait_string");
     }
-} NGRWin64ShippingBase;
+} bqCCS;
 
 struct d3d12_dll
 {
@@ -2754,7 +3012,136 @@ __declspec(naked) void _EnableFeatureLevelUpgrade() { _asm { jmp[d3d11.EnableFea
 __declspec(naked) void _OpenAdapter10() { _asm { jmp[d3d11.OpenAdapter10] } }
 __declspec(naked) void _OpenAdapter10_2() { _asm { jmp[d3d11.OpenAdapter10_2] } }
 
-__declspec(naked) void Ordinal_1() { _asm { jmp[NGRWin64ShippingBase.Ordinal_1] } }
+__declspec(naked) void _JNI_OnLoad() { _asm { jmp[bqCCS.JNI_OnLoad] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1connect() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1connect] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1drop() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1drop] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1bq_1id() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1bq_1id] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1has_1settings_1key() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1has_1settings_1key] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1init() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1init] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1mark_1res_1load() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1mark_1res_1load] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1on_1pause() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1on_1pause] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1print_1portait() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1print_1portait] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1save_1settings() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1save_1settings] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1uninit() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1uninit] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer] } }
+__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1create_1log() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1create_1log] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1force_1flush() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1force_1flush] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1version() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1version] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decode() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decode] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1device_1console() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1device_1console] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback] } }
+__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string] } }
+__declspec(naked) void _Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest() { _asm { jmp[bqCCS.Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest] } }
+__declspec(naked) void _g6bq__api_create_log() { _asm { jmp[bqCCS.g6bq__api_create_log] } }
+__declspec(naked) void _g6bq__api_enable_auto_crash_handler() { _asm { jmp[bqCCS.g6bq__api_enable_auto_crash_handler] } }
+__declspec(naked) void _g6bq__api_fetch_and_remove_console_buffer() { _asm { jmp[bqCCS.g6bq__api_fetch_and_remove_console_buffer] } }
+__declspec(naked) void _g6bq__api_force_flush() { _asm { jmp[bqCCS.g6bq__api_force_flush] } }
+__declspec(naked) void _g6bq__api_get_ccs_version() { _asm { jmp[bqCCS.g6bq__api_get_ccs_version] } }
+__declspec(naked) void _g6bq__api_get_file_base_dir() { _asm { jmp[bqCCS.g6bq__api_get_file_base_dir] } }
+__declspec(naked) void _g6bq__api_get_log_categories_count() { _asm { jmp[bqCCS.g6bq__api_get_log_categories_count] } }
+__declspec(naked) void _g6bq__api_get_log_category_masks_array_by_log_id() { _asm { jmp[bqCCS.g6bq__api_get_log_category_masks_array_by_log_id] } }
+__declspec(naked) void _g6bq__api_get_log_category_name_by_index() { _asm { jmp[bqCCS.g6bq__api_get_log_category_name_by_index] } }
+__declspec(naked) void _g6bq__api_get_log_id_by_index() { _asm { jmp[bqCCS.g6bq__api_get_log_id_by_index] } }
+__declspec(naked) void _g6bq__api_get_log_merged_log_level_bitmap_by_log_id() { _asm { jmp[bqCCS.g6bq__api_get_log_merged_log_level_bitmap_by_log_id] } }
+__declspec(naked) void _g6bq__api_get_log_name_by_id() { _asm { jmp[bqCCS.g6bq__api_get_log_name_by_id] } }
+__declspec(naked) void _g6bq__api_get_log_print_stack_level_bitmap_by_log_id() { _asm { jmp[bqCCS.g6bq__api_get_log_print_stack_level_bitmap_by_log_id] } }
+__declspec(naked) void _g6bq__api_get_log_version() { _asm { jmp[bqCCS.g6bq__api_get_log_version] } }
+__declspec(naked) void _g6bq__api_get_logs_count() { _asm { jmp[bqCCS.g6bq__api_get_logs_count] } }
+__declspec(naked) void _g6bq__api_get_stack_trace() { _asm { jmp[bqCCS.g6bq__api_get_stack_trace] } }
+__declspec(naked) void _g6bq__api_get_stack_trace_utf16() { _asm { jmp[bqCCS.g6bq__api_get_stack_trace_utf16] } }
+__declspec(naked) void _g6bq__api_init() { _asm { jmp[bqCCS.g6bq__api_init] } }
+__declspec(naked) void _g6bq__api_log_buffer_alloc() { _asm { jmp[bqCCS.g6bq__api_log_buffer_alloc] } }
+__declspec(naked) void _g6bq__api_log_buffer_commit() { _asm { jmp[bqCCS.g6bq__api_log_buffer_commit] } }
+__declspec(naked) void _g6bq__api_log_decode() { _asm { jmp[bqCCS.g6bq__api_log_decode] } }
+__declspec(naked) void _g6bq__api_log_decoder_create() { _asm { jmp[bqCCS.g6bq__api_log_decoder_create] } }
+__declspec(naked) void _g6bq__api_log_decoder_decode() { _asm { jmp[bqCCS.g6bq__api_log_decoder_decode] } }
+__declspec(naked) void _g6bq__api_log_decoder_destroy() { _asm { jmp[bqCCS.g6bq__api_log_decoder_destroy] } }
+__declspec(naked) void _g6bq__api_log_device_console() { _asm { jmp[bqCCS.g6bq__api_log_device_console] } }
+__declspec(naked) void _g6bq__api_log_reset_config() { _asm { jmp[bqCCS.g6bq__api_log_reset_config] } }
+__declspec(naked) void _g6bq__api_register_console_callbacks() { _asm { jmp[bqCCS.g6bq__api_register_console_callbacks] } }
+__declspec(naked) void _g6bq__api_release_snapshot_string() { _asm { jmp[bqCCS.g6bq__api_release_snapshot_string] } }
+__declspec(naked) void _g6bq__api_reset_base_dir() { _asm { jmp[bqCCS.g6bq__api_reset_base_dir] } }
+__declspec(naked) void _g6bq__api_set_appender_enable() { _asm { jmp[bqCCS.g6bq__api_set_appender_enable] } }
+__declspec(naked) void _g6bq__api_set_console_buffer_enable() { _asm { jmp[bqCCS.g6bq__api_set_console_buffer_enable] } }
+__declspec(naked) void _g6bq__api_take_snapshot_string() { _asm { jmp[bqCCS.g6bq__api_take_snapshot_string] } }
+__declspec(naked) void _g6bq__api_uninit() { _asm { jmp[bqCCS.g6bq__api_uninit] } }
+__declspec(naked) void _g6bq__api_unregister_console_callbacks() { _asm { jmp[bqCCS.g6bq__api_unregister_console_callbacks] } }
+__declspec(naked) void _g6bq__connect() { _asm { jmp[bqCCS.g6bq__connect] } }
+__declspec(naked) void _g6bq__crash_test() { _asm { jmp[bqCCS.g6bq__crash_test] } }
+__declspec(naked) void _g6bq__drop() { _asm { jmp[bqCCS.g6bq__drop] } }
+__declspec(naked) void _g6bq__file_to_report_server() { _asm { jmp[bqCCS.g6bq__file_to_report_server] } }
+__declspec(naked) void _g6bq__flush_all_opened_files() { _asm { jmp[bqCCS.g6bq__flush_all_opened_files] } }
+__declspec(naked) void _g6bq__flush_portrait() { _asm { jmp[bqCCS.g6bq__flush_portrait] } }
+__declspec(naked) void _g6bq__get_bq_id() { _asm { jmp[bqCCS.g6bq__get_bq_id] } }
+__declspec(naked) void _g6bq__get_current_gate_info() { _asm { jmp[bqCCS.g6bq__get_current_gate_info] } }
+__declspec(naked) void _g6bq__get_portrait_string() { _asm { jmp[bqCCS.g6bq__get_portrait_string] } }
+__declspec(naked) void _g6bq__get_settings_value_bool() { _asm { jmp[bqCCS.g6bq__get_settings_value_bool] } }
+__declspec(naked) void _g6bq__get_settings_value_decimal() { _asm { jmp[bqCCS.g6bq__get_settings_value_decimal] } }
+__declspec(naked) void _g6bq__get_settings_value_integer() { _asm { jmp[bqCCS.g6bq__get_settings_value_integer] } }
+__declspec(naked) void _g6bq__get_settings_value_string_utf8() { _asm { jmp[bqCCS.g6bq__get_settings_value_string_utf8] } }
+__declspec(naked) void _g6bq__get_settings_value_type() { _asm { jmp[bqCCS.g6bq__get_settings_value_type] } }
+__declspec(naked) void _g6bq__has_settings_key() { _asm { jmp[bqCCS.g6bq__has_settings_key] } }
+__declspec(naked) void _g6bq__init() { _asm { jmp[bqCCS.g6bq__init] } }
+__declspec(naked) void _g6bq__legacy_init() { _asm { jmp[bqCCS.g6bq__legacy_init] } }
+__declspec(naked) void _g6bq__mark_res_load() { _asm { jmp[bqCCS.g6bq__mark_res_load] } }
+__declspec(naked) void _g6bq__on_pause() { _asm { jmp[bqCCS.g6bq__on_pause] } }
+__declspec(naked) void _g6bq__print_portait() { _asm { jmp[bqCCS.g6bq__print_portait] } }
+__declspec(naked) void _g6bq__register_error_callback() { _asm { jmp[bqCCS.g6bq__register_error_callback] } }
+__declspec(naked) void _g6bq__register_http_callbacks() { _asm { jmp[bqCCS.g6bq__register_http_callbacks] } }
+__declspec(naked) void _g6bq__register_setting_update_callback() { _asm { jmp[bqCCS.g6bq__register_setting_update_callback] } }
+__declspec(naked) void _g6bq__register_tail_switch_callbacks() { _asm { jmp[bqCCS.g6bq__register_tail_switch_callbacks] } }
+__declspec(naked) void _g6bq__register_wrapper_callbacks() { _asm { jmp[bqCCS.g6bq__register_wrapper_callbacks] } }
+__declspec(naked) void _g6bq__release_portrait_string() { _asm { jmp[bqCCS.g6bq__release_portrait_string] } }
+__declspec(naked) void _g6bq__release_string_def() { _asm { jmp[bqCCS.g6bq__release_string_def] } }
+__declspec(naked) void _g6bq__send_to_http_server() { _asm { jmp[bqCCS.g6bq__send_to_http_server] } }
+__declspec(naked) void _g6bq__send_to_report_server() { _asm { jmp[bqCCS.g6bq__send_to_report_server] } }
+__declspec(naked) void _g6bq__send_to_session_server() { _asm { jmp[bqCCS.g6bq__send_to_session_server] } }
+__declspec(naked) void _g6bq__set_gameid() { _asm { jmp[bqCCS.g6bq__set_gameid] } }
+__declspec(naked) void _g6bq__set_http_server_url() { _asm { jmp[bqCCS.g6bq__set_http_server_url] } }
+__declspec(naked) void _g6bq__set_res_inversal() { _asm { jmp[bqCCS.g6bq__set_res_inversal] } }
+__declspec(naked) void _g6bq__set_res_max_upload_once() { _asm { jmp[bqCCS.g6bq__set_res_max_upload_once] } }
+__declspec(naked) void _g6bq__set_time_out() { _asm { jmp[bqCCS.g6bq__set_time_out] } }
+__declspec(naked) void _g6bq__share_file() { _asm { jmp[bqCCS.g6bq__share_file] } }
+__declspec(naked) void _g6bq__tail_data_to_server() { _asm { jmp[bqCCS.g6bq__tail_data_to_server] } }
+__declspec(naked) void _g6bq__toggle_res_collect() { _asm { jmp[bqCCS.g6bq__toggle_res_collect] } }
+__declspec(naked) void _g6bq__toggle_res_upload() { _asm { jmp[bqCCS.g6bq__toggle_res_upload] } }
+__declspec(naked) void _g6bq__uninit() { _asm { jmp[bqCCS.g6bq__uninit] } }
+__declspec(naked) void _g6bq__update_portrait_decimal() { _asm { jmp[bqCCS.g6bq__update_portrait_decimal] } }
+__declspec(naked) void _g6bq__update_portrait_integer() { _asm { jmp[bqCCS.g6bq__update_portrait_integer] } }
+__declspec(naked) void _g6bq__update_portrait_string() { _asm { jmp[bqCCS.g6bq__update_portrait_string] } }
 
 __declspec(naked) void _D3D12CoreCreateLayeredDevice() { _asm { jmp[d3d12.D3D12CoreCreateLayeredDevice] } }
 __declspec(naked) void _D3D12CoreGetLayeredDeviceSize() { _asm { jmp[d3d12.D3D12CoreGetLayeredDeviceSize] } }
@@ -4134,7 +4521,136 @@ void _EnableFeatureLevelUpgrade() { d3d11.EnableFeatureLevelUpgrade(); }
 void _OpenAdapter10() { d3d11.OpenAdapter10(); }
 void _OpenAdapter10_2() { d3d11.OpenAdapter10_2(); }
 
-void Ordinal_1() { NGRWin64ShippingBase.Ordinal_1(); }
+void _JNI_OnLoad() { bqCCS.JNI_OnLoad(); }
+void _Java_bq_impl_ccs_1invoker__1_1connect() { bqCCS.Java_bq_impl_ccs_1invoker__1_1connect(); }
+void _Java_bq_impl_ccs_1invoker__1_1drop() { bqCCS.Java_bq_impl_ccs_1invoker__1_1drop(); }
+void _Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server(); }
+void _Java_bq_impl_ccs_1invoker__1_1get_1bq_1id() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1bq_1id(); }
+void _Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string(); }
+void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool(); }
+void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal(); }
+void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer(); }
+void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string(); }
+void _Java_bq_impl_ccs_1invoker__1_1has_1settings_1key() { bqCCS.Java_bq_impl_ccs_1invoker__1_1has_1settings_1key(); }
+void _Java_bq_impl_ccs_1invoker__1_1init() { bqCCS.Java_bq_impl_ccs_1invoker__1_1init(); }
+void _Java_bq_impl_ccs_1invoker__1_1mark_1res_1load() { bqCCS.Java_bq_impl_ccs_1invoker__1_1mark_1res_1load(); }
+void _Java_bq_impl_ccs_1invoker__1_1on_1pause() { bqCCS.Java_bq_impl_ccs_1invoker__1_1on_1pause(); }
+void _Java_bq_impl_ccs_1invoker__1_1print_1portait() { bqCCS.Java_bq_impl_ccs_1invoker__1_1print_1portait(); }
+void _Java_bq_impl_ccs_1invoker__1_1save_1settings() { bqCCS.Java_bq_impl_ccs_1invoker__1_1save_1settings(); }
+void _Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server(); }
+void _Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server(); }
+void _Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server(); }
+void _Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url() { bqCCS.Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url(); }
+void _Java_bq_impl_ccs_1invoker__1_1uninit() { bqCCS.Java_bq_impl_ccs_1invoker__1_1uninit(); }
+void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal() { bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal(); }
+void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer() { bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer(); }
+void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string() { bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string(); }
+void _Java_bq_impl_log_1invoker__1_1api_1create_1log() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1create_1log(); }
+void _Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler(); }
+void _Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer(); }
+void _Java_bq_impl_log_1invoker__1_1api_1force_1flush() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1force_1flush(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1version() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1version(); }
+void _Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1decode() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decode(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1device_1console() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1device_1console(); }
+void _Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config(); }
+void _Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir(); }
+void _Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable(); }
+void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable(); }
+void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback(); }
+void _Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string(); }
+void _Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest() { bqCCS.Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest(); }
+void _g6bq__api_create_log() { bqCCS.g6bq__api_create_log(); }
+void _g6bq__api_enable_auto_crash_handler() { bqCCS.g6bq__api_enable_auto_crash_handler(); }
+void _g6bq__api_fetch_and_remove_console_buffer() { bqCCS.g6bq__api_fetch_and_remove_console_buffer(); }
+void _g6bq__api_force_flush() { bqCCS.g6bq__api_force_flush(); }
+void _g6bq__api_get_ccs_version() { bqCCS.g6bq__api_get_ccs_version(); }
+void _g6bq__api_get_file_base_dir() { bqCCS.g6bq__api_get_file_base_dir(); }
+void _g6bq__api_get_log_categories_count() { bqCCS.g6bq__api_get_log_categories_count(); }
+void _g6bq__api_get_log_category_masks_array_by_log_id() { bqCCS.g6bq__api_get_log_category_masks_array_by_log_id(); }
+void _g6bq__api_get_log_category_name_by_index() { bqCCS.g6bq__api_get_log_category_name_by_index(); }
+void _g6bq__api_get_log_id_by_index() { bqCCS.g6bq__api_get_log_id_by_index(); }
+void _g6bq__api_get_log_merged_log_level_bitmap_by_log_id() { bqCCS.g6bq__api_get_log_merged_log_level_bitmap_by_log_id(); }
+void _g6bq__api_get_log_name_by_id() { bqCCS.g6bq__api_get_log_name_by_id(); }
+void _g6bq__api_get_log_print_stack_level_bitmap_by_log_id() { bqCCS.g6bq__api_get_log_print_stack_level_bitmap_by_log_id(); }
+void _g6bq__api_get_log_version() { bqCCS.g6bq__api_get_log_version(); }
+void _g6bq__api_get_logs_count() { bqCCS.g6bq__api_get_logs_count(); }
+void _g6bq__api_get_stack_trace() { bqCCS.g6bq__api_get_stack_trace(); }
+void _g6bq__api_get_stack_trace_utf16() { bqCCS.g6bq__api_get_stack_trace_utf16(); }
+void _g6bq__api_init() { bqCCS.g6bq__api_init(); }
+void _g6bq__api_log_buffer_alloc() { bqCCS.g6bq__api_log_buffer_alloc(); }
+void _g6bq__api_log_buffer_commit() { bqCCS.g6bq__api_log_buffer_commit(); }
+void _g6bq__api_log_decode() { bqCCS.g6bq__api_log_decode(); }
+void _g6bq__api_log_decoder_create() { bqCCS.g6bq__api_log_decoder_create(); }
+void _g6bq__api_log_decoder_decode() { bqCCS.g6bq__api_log_decoder_decode(); }
+void _g6bq__api_log_decoder_destroy() { bqCCS.g6bq__api_log_decoder_destroy(); }
+void _g6bq__api_log_device_console() { bqCCS.g6bq__api_log_device_console(); }
+void _g6bq__api_log_reset_config() { bqCCS.g6bq__api_log_reset_config(); }
+void _g6bq__api_register_console_callbacks() { bqCCS.g6bq__api_register_console_callbacks(); }
+void _g6bq__api_release_snapshot_string() { bqCCS.g6bq__api_release_snapshot_string(); }
+void _g6bq__api_reset_base_dir() { bqCCS.g6bq__api_reset_base_dir(); }
+void _g6bq__api_set_appender_enable() { bqCCS.g6bq__api_set_appender_enable(); }
+void _g6bq__api_set_console_buffer_enable() { bqCCS.g6bq__api_set_console_buffer_enable(); }
+void _g6bq__api_take_snapshot_string() { bqCCS.g6bq__api_take_snapshot_string(); }
+void _g6bq__api_uninit() { bqCCS.g6bq__api_uninit(); }
+void _g6bq__api_unregister_console_callbacks() { bqCCS.g6bq__api_unregister_console_callbacks(); }
+void _g6bq__connect() { bqCCS.g6bq__connect(); }
+void _g6bq__crash_test() { bqCCS.g6bq__crash_test(); }
+void _g6bq__drop() { bqCCS.g6bq__drop(); }
+void _g6bq__file_to_report_server() { bqCCS.g6bq__file_to_report_server(); }
+void _g6bq__flush_all_opened_files() { bqCCS.g6bq__flush_all_opened_files(); }
+void _g6bq__flush_portrait() { bqCCS.g6bq__flush_portrait(); }
+void _g6bq__get_bq_id() { bqCCS.g6bq__get_bq_id(); }
+void _g6bq__get_current_gate_info() { bqCCS.g6bq__get_current_gate_info(); }
+void _g6bq__get_portrait_string() { bqCCS.g6bq__get_portrait_string(); }
+void _g6bq__get_settings_value_bool() { bqCCS.g6bq__get_settings_value_bool(); }
+void _g6bq__get_settings_value_decimal() { bqCCS.g6bq__get_settings_value_decimal(); }
+void _g6bq__get_settings_value_integer() { bqCCS.g6bq__get_settings_value_integer(); }
+void _g6bq__get_settings_value_string_utf8() { bqCCS.g6bq__get_settings_value_string_utf8(); }
+void _g6bq__get_settings_value_type() { bqCCS.g6bq__get_settings_value_type(); }
+void _g6bq__has_settings_key() { bqCCS.g6bq__has_settings_key(); }
+void _g6bq__init() { bqCCS.g6bq__init(); }
+void _g6bq__legacy_init() { bqCCS.g6bq__legacy_init(); }
+void _g6bq__mark_res_load() { bqCCS.g6bq__mark_res_load(); }
+void _g6bq__on_pause() { bqCCS.g6bq__on_pause(); }
+void _g6bq__print_portait() { bqCCS.g6bq__print_portait(); }
+void _g6bq__register_error_callback() { bqCCS.g6bq__register_error_callback(); }
+void _g6bq__register_http_callbacks() { bqCCS.g6bq__register_http_callbacks(); }
+void _g6bq__register_setting_update_callback() { bqCCS.g6bq__register_setting_update_callback(); }
+void _g6bq__register_tail_switch_callbacks() { bqCCS.g6bq__register_tail_switch_callbacks(); }
+void _g6bq__register_wrapper_callbacks() { bqCCS.g6bq__register_wrapper_callbacks(); }
+void _g6bq__release_portrait_string() { bqCCS.g6bq__release_portrait_string(); }
+void _g6bq__release_string_def() { bqCCS.g6bq__release_string_def(); }
+void _g6bq__send_to_http_server() { bqCCS.g6bq__send_to_http_server(); }
+void _g6bq__send_to_report_server() { bqCCS.g6bq__send_to_report_server(); }
+void _g6bq__send_to_session_server() { bqCCS.g6bq__send_to_session_server(); }
+void _g6bq__set_gameid() { bqCCS.g6bq__set_gameid(); }
+void _g6bq__set_http_server_url() { bqCCS.g6bq__set_http_server_url(); }
+void _g6bq__set_res_inversal() { bqCCS.g6bq__set_res_inversal(); }
+void _g6bq__set_res_max_upload_once() { bqCCS.g6bq__set_res_max_upload_once(); }
+void _g6bq__set_time_out() { bqCCS.g6bq__set_time_out(); }
+void _g6bq__share_file() { bqCCS.g6bq__share_file(); }
+void _g6bq__tail_data_to_server() { bqCCS.g6bq__tail_data_to_server(); }
+void _g6bq__toggle_res_collect() { bqCCS.g6bq__toggle_res_collect(); }
+void _g6bq__toggle_res_upload() { bqCCS.g6bq__toggle_res_upload(); }
+void _g6bq__uninit() { bqCCS.g6bq__uninit(); }
+void _g6bq__update_portrait_decimal() { bqCCS.g6bq__update_portrait_decimal(); }
+void _g6bq__update_portrait_integer() { bqCCS.g6bq__update_portrait_integer(); }
+void _g6bq__update_portrait_string() { bqCCS.g6bq__update_portrait_string(); }
 
 void _D3D12CoreCreateLayeredDevice() { d3d12.D3D12CoreCreateLayeredDevice(); }
 void _D3D12CoreGetLayeredDeviceSize() { d3d12.D3D12CoreGetLayeredDeviceSize(); }

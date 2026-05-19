@@ -639,13 +639,13 @@ void LoadOriginalLibrary()
         else
             xinput.LoadOriginalLibrary(LoadLib(szSystemPath));
     }
-    else if (iequals(szSelfName, L"NGR-Win64-ShippingBase.dll"))
+    else if (iequals(szSelfName, L"BqCCS.dll"))
     {
-        szLocalPath += L"NGR-Win64-ShippingBaseHooked.dll";
+        szLocalPath += L"BqCCSHooked.dll";
         if (std::filesystem::exists(szLocalPath))
-            NGRWin64ShippingBase.LoadOriginalLibrary(LoadLib(szLocalPath));
+            bqCCS.LoadOriginalLibrary(LoadLib(szLocalPath));
         else
-            NGRWin64ShippingBase.LoadOriginalLibrary(LoadLib(szSystemPath));
+            bqCCS.LoadOriginalLibrary(LoadLib(szSystemPath));
     }
     else if (iequals(szSelfName, L"XInputUap.dll"))
     {
