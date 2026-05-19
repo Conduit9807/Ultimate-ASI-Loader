@@ -639,13 +639,13 @@ void LoadOriginalLibrary()
         else
             xinput.LoadOriginalLibrary(LoadLib(szSystemPath));
     }
-    else if (iequals(szSelfName, L"BqCCS.dll"))
+    else if (iequals(szSelfName, L"libcurl.dll"))
     {
-        szLocalPath += L"BqCCSHooked.dll";
+        szLocalPath += L"libcurlHooked.dll";
         if (std::filesystem::exists(szLocalPath))
-            bqCCS.LoadOriginalLibrary(LoadLib(szLocalPath));
+            libcurl.LoadOriginalLibrary(LoadLib(szLocalPath));
         else
-            bqCCS.LoadOriginalLibrary(LoadLib(szSystemPath));
+            libcurl.LoadOriginalLibrary(LoadLib(szSystemPath));
     }
     else if (iequals(szSelfName, L"XInputUap.dll"))
     {

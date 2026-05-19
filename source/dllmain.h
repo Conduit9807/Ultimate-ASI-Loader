@@ -1041,275 +1041,187 @@ struct d3d11_dll
     }
 } d3d11;
 
-struct BqCCS_dll 
+struct libcurl_dll 
 {
     HMODULE dll;
-    FARPROC JNI_OnLoad;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1connect;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1drop;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1bq_1id;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1has_1settings_1key;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1init;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1mark_1res_1load;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1on_1pause;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1print_1portait;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1save_1settings;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1uninit;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer;
-    FARPROC Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1create_1log;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1force_1flush;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1log_1version;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decode;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1device_1console;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback;
-    FARPROC Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string;
-    FARPROC Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest;
-    FARPROC g6bq__api_create_log;
-    FARPROC g6bq__api_enable_auto_crash_handler;
-    FARPROC g6bq__api_fetch_and_remove_console_buffer;
-    FARPROC g6bq__api_force_flush;
-    FARPROC g6bq__api_get_ccs_version;
-    FARPROC g6bq__api_get_file_base_dir;
-    FARPROC g6bq__api_get_log_categories_count;
-    FARPROC g6bq__api_get_log_category_masks_array_by_log_id;
-    FARPROC g6bq__api_get_log_category_name_by_index;
-    FARPROC g6bq__api_get_log_id_by_index;
-    FARPROC g6bq__api_get_log_merged_log_level_bitmap_by_log_id;
-    FARPROC g6bq__api_get_log_name_by_id;
-    FARPROC g6bq__api_get_log_print_stack_level_bitmap_by_log_id;
-    FARPROC g6bq__api_get_log_version;
-    FARPROC g6bq__api_get_logs_count;
-    FARPROC g6bq__api_get_stack_trace;
-    FARPROC g6bq__api_get_stack_trace_utf16;
-    FARPROC g6bq__api_init;
-    FARPROC g6bq__api_log_buffer_alloc;
-    FARPROC g6bq__api_log_buffer_commit;
-    FARPROC g6bq__api_log_decode;
-    FARPROC g6bq__api_log_decoder_create;
-    FARPROC g6bq__api_log_decoder_decode;
-    FARPROC g6bq__api_log_decoder_destroy;
-    FARPROC g6bq__api_log_device_console;
-    FARPROC g6bq__api_log_reset_config;
-    FARPROC g6bq__api_register_console_callbacks;
-    FARPROC g6bq__api_release_snapshot_string;
-    FARPROC g6bq__api_reset_base_dir;
-    FARPROC g6bq__api_set_appender_enable;
-    FARPROC g6bq__api_set_console_buffer_enable;
-    FARPROC g6bq__api_take_snapshot_string;
-    FARPROC g6bq__api_uninit;
-    FARPROC g6bq__api_unregister_console_callbacks;
-    FARPROC g6bq__connect;
-    FARPROC g6bq__crash_test;
-    FARPROC g6bq__drop;
-    FARPROC g6bq__file_to_report_server;
-    FARPROC g6bq__flush_all_opened_files;
-    FARPROC g6bq__flush_portrait;
-    FARPROC g6bq__get_bq_id;
-    FARPROC g6bq__get_current_gate_info;
-    FARPROC g6bq__get_portrait_string;
-    FARPROC g6bq__get_settings_value_bool;
-    FARPROC g6bq__get_settings_value_decimal;
-    FARPROC g6bq__get_settings_value_integer;
-    FARPROC g6bq__get_settings_value_string_utf8;
-    FARPROC g6bq__get_settings_value_type;
-    FARPROC g6bq__has_settings_key;
-    FARPROC g6bq__init;
-    FARPROC g6bq__legacy_init;
-    FARPROC g6bq__mark_res_load;
-    FARPROC g6bq__on_pause;
-    FARPROC g6bq__print_portait;
-    FARPROC g6bq__register_error_callback;
-    FARPROC g6bq__register_http_callbacks;
-    FARPROC g6bq__register_setting_update_callback;
-    FARPROC g6bq__register_tail_switch_callbacks;
-    FARPROC g6bq__register_wrapper_callbacks;
-    FARPROC g6bq__release_portrait_string;
-    FARPROC g6bq__release_string_def;
-    FARPROC g6bq__send_to_http_server;
-    FARPROC g6bq__send_to_report_server;
-    FARPROC g6bq__send_to_session_server;
-    FARPROC g6bq__set_gameid;
-    FARPROC g6bq__set_http_server_url;
-    FARPROC g6bq__set_res_inversal;
-    FARPROC g6bq__set_res_max_upload_once;
-    FARPROC g6bq__set_time_out;
-    FARPROC g6bq__share_file;
-    FARPROC g6bq__tail_data_to_server;
-    FARPROC g6bq__toggle_res_collect;
-    FARPROC g6bq__toggle_res_upload;
-    FARPROC g6bq__uninit;
-    FARPROC g6bq__update_portrait_decimal;
-    FARPROC g6bq__update_portrait_integer;
-    FARPROC g6bq__update_portrait_string;
+    FARPROC curl_easy_cleanup;
+    FARPROC curl_easy_duphandle;
+    FARPROC curl_easy_escape;
+    FARPROC curl_easy_getinfo;
+    FARPROC curl_easy_init;
+    FARPROC curl_easy_option_by_id;
+    FARPROC curl_easy_option_by_name;
+    FARPROC curl_easy_option_next;
+    FARPROC curl_easy_pause;
+    FARPROC curl_easy_perform;
+    FARPROC curl_easy_recv;
+    FARPROC curl_easy_reset;
+    FARPROC curl_easy_send;
+    FARPROC curl_easy_setopt;
+    FARPROC curl_easy_strerror;
+    FARPROC curl_easy_unescape;
+    FARPROC curl_easy_upkeep;
+    FARPROC curl_escape;
+    FARPROC curl_formadd;
+    FARPROC curl_formfree;
+    FARPROC curl_formget;
+    FARPROC curl_free;
+    FARPROC curl_getdate;
+    FARPROC curl_getenv;
+    FARPROC curl_global_cleanup;
+    FARPROC curl_global_init;
+    FARPROC curl_global_init_mem;
+    FARPROC curl_global_sslset;
+    FARPROC curl_maprintf;
+    FARPROC curl_mfprintf;
+    FARPROC curl_mime_addpart;
+    FARPROC curl_mime_data;
+    FARPROC curl_mime_data_cb;
+    FARPROC curl_mime_encoder;
+    FARPROC curl_mime_filedata;
+    FARPROC curl_mime_filename;
+    FARPROC curl_mime_free;
+    FARPROC curl_mime_headers;
+    FARPROC curl_mime_init;
+    FARPROC curl_mime_name;
+    FARPROC curl_mime_subparts;
+    FARPROC curl_mime_type;
+    FARPROC curl_mprintf;
+    FARPROC curl_msnprintf;
+    FARPROC curl_msprintf;
+    FARPROC curl_multi_add_handle;
+    FARPROC curl_multi_assign;
+    FARPROC curl_multi_cleanup;
+    FARPROC curl_multi_fdset;
+    FARPROC curl_multi_info_read;
+    FARPROC curl_multi_init;
+    FARPROC curl_multi_perform;
+    FARPROC curl_multi_poll;
+    FARPROC curl_multi_remove_handle;
+    FARPROC curl_multi_setopt;
+    FARPROC curl_multi_socket;
+    FARPROC curl_multi_socket_action;
+    FARPROC curl_multi_socket_all;
+    FARPROC curl_multi_strerror;
+    FARPROC curl_multi_timeout;
+    FARPROC curl_multi_wait;
+    FARPROC curl_multi_wakeup;
+    FARPROC curl_mvaprintf;
+    FARPROC curl_mvfprintf;
+    FARPROC curl_mvprintf;
+    FARPROC curl_mvsnprintf;
+    FARPROC curl_mvsprintf;
+    FARPROC curl_pushheader_byname;
+    FARPROC curl_pushheader_bynum;
+    FARPROC curl_share_cleanup;
+    FARPROC curl_share_init;
+    FARPROC curl_share_setopt;
+    FARPROC curl_share_strerror;
+    FARPROC curl_slist_append;
+    FARPROC curl_slist_free_all;
+    FARPROC curl_strequal;
+    FARPROC curl_strnequal;
+    FARPROC curl_unescape;
+    FARPROC curl_url;
+    FARPROC curl_url_cleanup;
+    FARPROC curl_url_dup;
+    FARPROC curl_url_get;
+    FARPROC curl_url_set;
+    FARPROC curl_url_strerror;
+    FARPROC curl_version;
+    FARPROC curl_version_info;
     void LoadOriginalLibrary(HMODULE module)
     {
         dll = module;
         shared.LoadOriginalLibrary(dll);
-        JNI_OnLoad  = GetProcAddress(dll, "JNI_OnLoad");
-        Java_bq_impl_ccs_1invoker__1_1connect  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1connect");
-        Java_bq_impl_ccs_1invoker__1_1drop  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1drop");
-        Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server");
-        Java_bq_impl_ccs_1invoker__1_1get_1bq_1id  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1bq_1id");
-        Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string");
-        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool");
-        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal");
-        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer");
-        Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string");
-        Java_bq_impl_ccs_1invoker__1_1has_1settings_1key  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1has_1settings_1key");
-        Java_bq_impl_ccs_1invoker__1_1init  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1init");
-        Java_bq_impl_ccs_1invoker__1_1mark_1res_1load  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1mark_1res_1load");
-        Java_bq_impl_ccs_1invoker__1_1on_1pause  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1on_1pause");
-        Java_bq_impl_ccs_1invoker__1_1print_1portait  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1print_1portait");
-        Java_bq_impl_ccs_1invoker__1_1save_1settings  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1save_1settings");
-        Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server");
-        Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server");
-        Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server");
-        Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url");
-        Java_bq_impl_ccs_1invoker__1_1uninit  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1uninit");
-        Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal");
-        Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer");
-        Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string  = GetProcAddress(dll, "Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string");
-        Java_bq_impl_log_1invoker__1_1api_1create_1log  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1create_1log");
-        Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler");
-        Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer");
-        Java_bq_impl_log_1invoker__1_1api_1force_1flush  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1force_1flush");
-        Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id");
-        Java_bq_impl_log_1invoker__1_1api_1get_1log_1version  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1log_1version");
-        Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count");
-        Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string");
-        Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc");
-        Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit");
-        Java_bq_impl_log_1invoker__1_1api_1log_1decode  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decode");
-        Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create");
-        Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode");
-        Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy");
-        Java_bq_impl_log_1invoker__1_1api_1log_1device_1console  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1device_1console");
-        Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config");
-        Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir");
-        Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable");
-        Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable");
-        Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback");
-        Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string  = GetProcAddress(dll, "Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string");
-        Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest  = GetProcAddress(dll, "Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest");
-        g6bq__api_create_log  = GetProcAddress(dll, "g6bq__api_create_log");
-        g6bq__api_enable_auto_crash_handler  = GetProcAddress(dll, "g6bq__api_enable_auto_crash_handler");
-        g6bq__api_fetch_and_remove_console_buffer  = GetProcAddress(dll, "g6bq__api_fetch_and_remove_console_buffer");
-        g6bq__api_force_flush  = GetProcAddress(dll, "g6bq__api_force_flush");
-        g6bq__api_get_ccs_version  = GetProcAddress(dll, "g6bq__api_get_ccs_version");
-        g6bq__api_get_file_base_dir  = GetProcAddress(dll, "g6bq__api_get_file_base_dir");
-        g6bq__api_get_log_categories_count  = GetProcAddress(dll, "g6bq__api_get_log_categories_count");
-        g6bq__api_get_log_category_masks_array_by_log_id  = GetProcAddress(dll, "g6bq__api_get_log_category_masks_array_by_log_id");
-        g6bq__api_get_log_category_name_by_index  = GetProcAddress(dll, "g6bq__api_get_log_category_name_by_index");
-        g6bq__api_get_log_id_by_index  = GetProcAddress(dll, "g6bq__api_get_log_id_by_index");
-        g6bq__api_get_log_merged_log_level_bitmap_by_log_id  = GetProcAddress(dll, "g6bq__api_get_log_merged_log_level_bitmap_by_log_id");
-        g6bq__api_get_log_name_by_id  = GetProcAddress(dll, "g6bq__api_get_log_name_by_id");
-        g6bq__api_get_log_print_stack_level_bitmap_by_log_id  = GetProcAddress(dll, "g6bq__api_get_log_print_stack_level_bitmap_by_log_id");
-        g6bq__api_get_log_version  = GetProcAddress(dll, "g6bq__api_get_log_version");
-        g6bq__api_get_logs_count  = GetProcAddress(dll, "g6bq__api_get_logs_count");
-        g6bq__api_get_stack_trace  = GetProcAddress(dll, "g6bq__api_get_stack_trace");
-        g6bq__api_get_stack_trace_utf16  = GetProcAddress(dll, "g6bq__api_get_stack_trace_utf16");
-        g6bq__api_init  = GetProcAddress(dll, "g6bq__api_init");
-        g6bq__api_log_buffer_alloc  = GetProcAddress(dll, "g6bq__api_log_buffer_alloc");
-        g6bq__api_log_buffer_commit  = GetProcAddress(dll, "g6bq__api_log_buffer_commit");
-        g6bq__api_log_decode  = GetProcAddress(dll, "g6bq__api_log_decode");
-        g6bq__api_log_decoder_create  = GetProcAddress(dll, "g6bq__api_log_decoder_create");
-        g6bq__api_log_decoder_decode  = GetProcAddress(dll, "g6bq__api_log_decoder_decode");
-        g6bq__api_log_decoder_destroy  = GetProcAddress(dll, "g6bq__api_log_decoder_destroy");
-        g6bq__api_log_device_console  = GetProcAddress(dll, "g6bq__api_log_device_console");
-        g6bq__api_log_reset_config  = GetProcAddress(dll, "g6bq__api_log_reset_config");
-        g6bq__api_register_console_callbacks  = GetProcAddress(dll, "g6bq__api_register_console_callbacks");
-        g6bq__api_release_snapshot_string  = GetProcAddress(dll, "g6bq__api_release_snapshot_string");
-        g6bq__api_reset_base_dir  = GetProcAddress(dll, "g6bq__api_reset_base_dir");
-        g6bq__api_set_appender_enable  = GetProcAddress(dll, "g6bq__api_set_appender_enable");
-        g6bq__api_set_console_buffer_enable  = GetProcAddress(dll, "g6bq__api_set_console_buffer_enable");
-        g6bq__api_take_snapshot_string  = GetProcAddress(dll, "g6bq__api_take_snapshot_string");
-        g6bq__api_uninit  = GetProcAddress(dll, "g6bq__api_uninit");
-        g6bq__api_unregister_console_callbacks  = GetProcAddress(dll, "g6bq__api_unregister_console_callbacks");
-        g6bq__connect  = GetProcAddress(dll, "g6bq__connect");
-        g6bq__crash_test  = GetProcAddress(dll, "g6bq__crash_test");
-        g6bq__drop  = GetProcAddress(dll, "g6bq__drop");
-        g6bq__file_to_report_server  = GetProcAddress(dll, "g6bq__file_to_report_server");
-        g6bq__flush_all_opened_files  = GetProcAddress(dll, "g6bq__flush_all_opened_files");
-        g6bq__flush_portrait  = GetProcAddress(dll, "g6bq__flush_portrait");
-        g6bq__get_bq_id  = GetProcAddress(dll, "g6bq__get_bq_id");
-        g6bq__get_current_gate_info  = GetProcAddress(dll, "g6bq__get_current_gate_info");
-        g6bq__get_portrait_string  = GetProcAddress(dll, "g6bq__get_portrait_string");
-        g6bq__get_settings_value_bool  = GetProcAddress(dll, "g6bq__get_settings_value_bool");
-        g6bq__get_settings_value_decimal  = GetProcAddress(dll, "g6bq__get_settings_value_decimal");
-        g6bq__get_settings_value_integer  = GetProcAddress(dll, "g6bq__get_settings_value_integer");
-        g6bq__get_settings_value_string_utf8  = GetProcAddress(dll, "g6bq__get_settings_value_string_utf8");
-        g6bq__get_settings_value_type  = GetProcAddress(dll, "g6bq__get_settings_value_type");
-        g6bq__has_settings_key  = GetProcAddress(dll, "g6bq__has_settings_key");
-        g6bq__init  = GetProcAddress(dll, "g6bq__init");
-        g6bq__legacy_init  = GetProcAddress(dll, "g6bq__legacy_init");
-        g6bq__mark_res_load  = GetProcAddress(dll, "g6bq__mark_res_load");
-        g6bq__on_pause  = GetProcAddress(dll, "g6bq__on_pause");
-        g6bq__print_portait  = GetProcAddress(dll, "g6bq__print_portait");
-        g6bq__register_error_callback  = GetProcAddress(dll, "g6bq__register_error_callback");
-        g6bq__register_http_callbacks  = GetProcAddress(dll, "g6bq__register_http_callbacks");
-        g6bq__register_setting_update_callback  = GetProcAddress(dll, "g6bq__register_setting_update_callback");
-        g6bq__register_tail_switch_callbacks  = GetProcAddress(dll, "g6bq__register_tail_switch_callbacks");
-        g6bq__register_wrapper_callbacks  = GetProcAddress(dll, "g6bq__register_wrapper_callbacks");
-        g6bq__release_portrait_string  = GetProcAddress(dll, "g6bq__release_portrait_string");
-        g6bq__release_string_def  = GetProcAddress(dll, "g6bq__release_string_def");
-        g6bq__send_to_http_server  = GetProcAddress(dll, "g6bq__send_to_http_server");
-        g6bq__send_to_report_server  = GetProcAddress(dll, "g6bq__send_to_report_server");
-        g6bq__send_to_session_server  = GetProcAddress(dll, "g6bq__send_to_session_server");
-        g6bq__set_gameid  = GetProcAddress(dll, "g6bq__set_gameid");
-        g6bq__set_http_server_url  = GetProcAddress(dll, "g6bq__set_http_server_url");
-        g6bq__set_res_inversal  = GetProcAddress(dll, "g6bq__set_res_inversal");
-        g6bq__set_res_max_upload_once  = GetProcAddress(dll, "g6bq__set_res_max_upload_once");
-        g6bq__set_time_out  = GetProcAddress(dll, "g6bq__set_time_out");
-        g6bq__share_file  = GetProcAddress(dll, "g6bq__share_file");
-        g6bq__tail_data_to_server  = GetProcAddress(dll, "g6bq__tail_data_to_server");
-        g6bq__toggle_res_collect  = GetProcAddress(dll, "g6bq__toggle_res_collect");
-        g6bq__toggle_res_upload  = GetProcAddress(dll, "g6bq__toggle_res_upload");
-        g6bq__uninit  = GetProcAddress(dll, "g6bq__uninit");
-        g6bq__update_portrait_decimal  = GetProcAddress(dll, "g6bq__update_portrait_decimal");
-        g6bq__update_portrait_integer  = GetProcAddress(dll, "g6bq__update_portrait_integer");
-        g6bq__update_portrait_string  = GetProcAddress(dll, "g6bq__update_portrait_string");
+        curl_easy_cleanup  = GetProcAddress(dll, "curl_easy_cleanup");
+        curl_easy_duphandle  = GetProcAddress(dll, "curl_easy_duphandle");
+        curl_easy_escape  = GetProcAddress(dll, "curl_easy_escape");
+        curl_easy_getinfo  = GetProcAddress(dll, "curl_easy_getinfo");
+        curl_easy_init  = GetProcAddress(dll, "curl_easy_init");
+        curl_easy_option_by_id  = GetProcAddress(dll, "curl_easy_option_by_id");
+        curl_easy_option_by_name  = GetProcAddress(dll, "curl_easy_option_by_name");
+        curl_easy_option_next  = GetProcAddress(dll, "curl_easy_option_next");
+        curl_easy_pause  = GetProcAddress(dll, "curl_easy_pause");
+        curl_easy_perform  = GetProcAddress(dll, "curl_easy_perform");
+        curl_easy_recv  = GetProcAddress(dll, "curl_easy_recv");
+        curl_easy_reset  = GetProcAddress(dll, "curl_easy_reset");
+        curl_easy_send  = GetProcAddress(dll, "curl_easy_send");
+        curl_easy_setopt  = GetProcAddress(dll, "curl_easy_setopt");
+        curl_easy_strerror  = GetProcAddress(dll, "curl_easy_strerror");
+        curl_easy_unescape  = GetProcAddress(dll, "curl_easy_unescape");
+        curl_easy_upkeep  = GetProcAddress(dll, "curl_easy_upkeep");
+        curl_escape  = GetProcAddress(dll, "curl_escape");
+        curl_formadd  = GetProcAddress(dll, "curl_formadd");
+        curl_formfree  = GetProcAddress(dll, "curl_formfree");
+        curl_formget  = GetProcAddress(dll, "curl_formget");
+        curl_free  = GetProcAddress(dll, "curl_free");
+        curl_getdate  = GetProcAddress(dll, "curl_getdate");
+        curl_getenv  = GetProcAddress(dll, "curl_getenv");
+        curl_global_cleanup  = GetProcAddress(dll, "curl_global_cleanup");
+        curl_global_init  = GetProcAddress(dll, "curl_global_init");
+        curl_global_init_mem  = GetProcAddress(dll, "curl_global_init_mem");
+        curl_global_sslset  = GetProcAddress(dll, "curl_global_sslset");
+        curl_maprintf  = GetProcAddress(dll, "curl_maprintf");
+        curl_mfprintf  = GetProcAddress(dll, "curl_mfprintf");
+        curl_mime_addpart  = GetProcAddress(dll, "curl_mime_addpart");
+        curl_mime_data  = GetProcAddress(dll, "curl_mime_data");
+        curl_mime_data_cb  = GetProcAddress(dll, "curl_mime_data_cb");
+        curl_mime_encoder  = GetProcAddress(dll, "curl_mime_encoder");
+        curl_mime_filedata  = GetProcAddress(dll, "curl_mime_filedata");
+        curl_mime_filename  = GetProcAddress(dll, "curl_mime_filename");
+        curl_mime_free  = GetProcAddress(dll, "curl_mime_free");
+        curl_mime_headers  = GetProcAddress(dll, "curl_mime_headers");
+        curl_mime_init  = GetProcAddress(dll, "curl_mime_init");
+        curl_mime_name  = GetProcAddress(dll, "curl_mime_name");
+        curl_mime_subparts  = GetProcAddress(dll, "curl_mime_subparts");
+        curl_mime_type  = GetProcAddress(dll, "curl_mime_type");
+        curl_mprintf  = GetProcAddress(dll, "curl_mprintf");
+        curl_msnprintf  = GetProcAddress(dll, "curl_msnprintf");
+        curl_msprintf  = GetProcAddress(dll, "curl_msprintf");
+        curl_multi_add_handle  = GetProcAddress(dll, "curl_multi_add_handle");
+        curl_multi_assign  = GetProcAddress(dll, "curl_multi_assign");
+        curl_multi_cleanup  = GetProcAddress(dll, "curl_multi_cleanup");
+        curl_multi_fdset  = GetProcAddress(dll, "curl_multi_fdset");
+        curl_multi_info_read  = GetProcAddress(dll, "curl_multi_info_read");
+        curl_multi_init  = GetProcAddress(dll, "curl_multi_init");
+        curl_multi_perform  = GetProcAddress(dll, "curl_multi_perform");
+        curl_multi_poll  = GetProcAddress(dll, "curl_multi_poll");
+        curl_multi_remove_handle  = GetProcAddress(dll, "curl_multi_remove_handle");
+        curl_multi_setopt  = GetProcAddress(dll, "curl_multi_setopt");
+        curl_multi_socket  = GetProcAddress(dll, "curl_multi_socket");
+        curl_multi_socket_action  = GetProcAddress(dll, "curl_multi_socket_action");
+        curl_multi_socket_all  = GetProcAddress(dll, "curl_multi_socket_all");
+        curl_multi_strerror  = GetProcAddress(dll, "curl_multi_strerror");
+        curl_multi_timeout  = GetProcAddress(dll, "curl_multi_timeout");
+        curl_multi_wait  = GetProcAddress(dll, "curl_multi_wait");
+        curl_multi_wakeup  = GetProcAddress(dll, "curl_multi_wakeup");
+        curl_mvaprintf  = GetProcAddress(dll, "curl_mvaprintf");
+        curl_mvfprintf  = GetProcAddress(dll, "curl_mvfprintf");
+        curl_mvprintf  = GetProcAddress(dll, "curl_mvprintf");
+        curl_mvsnprintf  = GetProcAddress(dll, "curl_mvsnprintf");
+        curl_mvsprintf  = GetProcAddress(dll, "curl_mvsprintf");
+        curl_pushheader_byname  = GetProcAddress(dll, "curl_pushheader_byname");
+        curl_pushheader_bynum  = GetProcAddress(dll, "curl_pushheader_bynum");
+        curl_share_cleanup  = GetProcAddress(dll, "curl_share_cleanup");
+        curl_share_init  = GetProcAddress(dll, "curl_share_init");
+        curl_share_setopt  = GetProcAddress(dll, "curl_share_setopt");
+        curl_share_strerror  = GetProcAddress(dll, "curl_share_strerror");
+        curl_slist_append  = GetProcAddress(dll, "curl_slist_append");
+        curl_slist_free_all  = GetProcAddress(dll, "curl_slist_free_all");
+        curl_strequal  = GetProcAddress(dll, "curl_strequal");
+        curl_strnequal  = GetProcAddress(dll, "curl_strnequal");
+        curl_unescape  = GetProcAddress(dll, "curl_unescape");
+        curl_url  = GetProcAddress(dll, "curl_url");
+        curl_url_cleanup  = GetProcAddress(dll, "curl_url_cleanup");
+        curl_url_dup  = GetProcAddress(dll, "curl_url_dup");
+        curl_url_get  = GetProcAddress(dll, "curl_url_get");
+        curl_url_set  = GetProcAddress(dll, "curl_url_set");
+        curl_url_strerror  = GetProcAddress(dll, "curl_url_strerror");
+        curl_version  = GetProcAddress(dll, "curl_version");
+        curl_version_info  = GetProcAddress(dll, "curl_version_info");
     }
-} bqCCS;
+} libcurl;
 
 struct d3d12_dll
 {
@@ -3012,136 +2924,92 @@ __declspec(naked) void _EnableFeatureLevelUpgrade() { _asm { jmp[d3d11.EnableFea
 __declspec(naked) void _OpenAdapter10() { _asm { jmp[d3d11.OpenAdapter10] } }
 __declspec(naked) void _OpenAdapter10_2() { _asm { jmp[d3d11.OpenAdapter10_2] } }
 
-__declspec(naked) void _JNI_OnLoad() { _asm { jmp[bqCCS.JNI_OnLoad] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1connect() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1connect] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1drop() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1drop] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1bq_1id() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1bq_1id] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1has_1settings_1key() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1has_1settings_1key] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1init() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1init] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1mark_1res_1load() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1mark_1res_1load] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1on_1pause() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1on_1pause] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1print_1portait() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1print_1portait] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1save_1settings() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1save_1settings] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1uninit() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1uninit] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer] } }
-__declspec(naked) void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string() { _asm { jmp[bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1create_1log() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1create_1log] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1force_1flush() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1force_1flush] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1version() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1version] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decode() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decode] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1device_1console() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1device_1console] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback] } }
-__declspec(naked) void _Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string() { _asm { jmp[bqCCS.Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string] } }
-__declspec(naked) void _Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest() { _asm { jmp[bqCCS.Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest] } }
-__declspec(naked) void _g6bq__api_create_log() { _asm { jmp[bqCCS.g6bq__api_create_log] } }
-__declspec(naked) void _g6bq__api_enable_auto_crash_handler() { _asm { jmp[bqCCS.g6bq__api_enable_auto_crash_handler] } }
-__declspec(naked) void _g6bq__api_fetch_and_remove_console_buffer() { _asm { jmp[bqCCS.g6bq__api_fetch_and_remove_console_buffer] } }
-__declspec(naked) void _g6bq__api_force_flush() { _asm { jmp[bqCCS.g6bq__api_force_flush] } }
-__declspec(naked) void _g6bq__api_get_ccs_version() { _asm { jmp[bqCCS.g6bq__api_get_ccs_version] } }
-__declspec(naked) void _g6bq__api_get_file_base_dir() { _asm { jmp[bqCCS.g6bq__api_get_file_base_dir] } }
-__declspec(naked) void _g6bq__api_get_log_categories_count() { _asm { jmp[bqCCS.g6bq__api_get_log_categories_count] } }
-__declspec(naked) void _g6bq__api_get_log_category_masks_array_by_log_id() { _asm { jmp[bqCCS.g6bq__api_get_log_category_masks_array_by_log_id] } }
-__declspec(naked) void _g6bq__api_get_log_category_name_by_index() { _asm { jmp[bqCCS.g6bq__api_get_log_category_name_by_index] } }
-__declspec(naked) void _g6bq__api_get_log_id_by_index() { _asm { jmp[bqCCS.g6bq__api_get_log_id_by_index] } }
-__declspec(naked) void _g6bq__api_get_log_merged_log_level_bitmap_by_log_id() { _asm { jmp[bqCCS.g6bq__api_get_log_merged_log_level_bitmap_by_log_id] } }
-__declspec(naked) void _g6bq__api_get_log_name_by_id() { _asm { jmp[bqCCS.g6bq__api_get_log_name_by_id] } }
-__declspec(naked) void _g6bq__api_get_log_print_stack_level_bitmap_by_log_id() { _asm { jmp[bqCCS.g6bq__api_get_log_print_stack_level_bitmap_by_log_id] } }
-__declspec(naked) void _g6bq__api_get_log_version() { _asm { jmp[bqCCS.g6bq__api_get_log_version] } }
-__declspec(naked) void _g6bq__api_get_logs_count() { _asm { jmp[bqCCS.g6bq__api_get_logs_count] } }
-__declspec(naked) void _g6bq__api_get_stack_trace() { _asm { jmp[bqCCS.g6bq__api_get_stack_trace] } }
-__declspec(naked) void _g6bq__api_get_stack_trace_utf16() { _asm { jmp[bqCCS.g6bq__api_get_stack_trace_utf16] } }
-__declspec(naked) void _g6bq__api_init() { _asm { jmp[bqCCS.g6bq__api_init] } }
-__declspec(naked) void _g6bq__api_log_buffer_alloc() { _asm { jmp[bqCCS.g6bq__api_log_buffer_alloc] } }
-__declspec(naked) void _g6bq__api_log_buffer_commit() { _asm { jmp[bqCCS.g6bq__api_log_buffer_commit] } }
-__declspec(naked) void _g6bq__api_log_decode() { _asm { jmp[bqCCS.g6bq__api_log_decode] } }
-__declspec(naked) void _g6bq__api_log_decoder_create() { _asm { jmp[bqCCS.g6bq__api_log_decoder_create] } }
-__declspec(naked) void _g6bq__api_log_decoder_decode() { _asm { jmp[bqCCS.g6bq__api_log_decoder_decode] } }
-__declspec(naked) void _g6bq__api_log_decoder_destroy() { _asm { jmp[bqCCS.g6bq__api_log_decoder_destroy] } }
-__declspec(naked) void _g6bq__api_log_device_console() { _asm { jmp[bqCCS.g6bq__api_log_device_console] } }
-__declspec(naked) void _g6bq__api_log_reset_config() { _asm { jmp[bqCCS.g6bq__api_log_reset_config] } }
-__declspec(naked) void _g6bq__api_register_console_callbacks() { _asm { jmp[bqCCS.g6bq__api_register_console_callbacks] } }
-__declspec(naked) void _g6bq__api_release_snapshot_string() { _asm { jmp[bqCCS.g6bq__api_release_snapshot_string] } }
-__declspec(naked) void _g6bq__api_reset_base_dir() { _asm { jmp[bqCCS.g6bq__api_reset_base_dir] } }
-__declspec(naked) void _g6bq__api_set_appender_enable() { _asm { jmp[bqCCS.g6bq__api_set_appender_enable] } }
-__declspec(naked) void _g6bq__api_set_console_buffer_enable() { _asm { jmp[bqCCS.g6bq__api_set_console_buffer_enable] } }
-__declspec(naked) void _g6bq__api_take_snapshot_string() { _asm { jmp[bqCCS.g6bq__api_take_snapshot_string] } }
-__declspec(naked) void _g6bq__api_uninit() { _asm { jmp[bqCCS.g6bq__api_uninit] } }
-__declspec(naked) void _g6bq__api_unregister_console_callbacks() { _asm { jmp[bqCCS.g6bq__api_unregister_console_callbacks] } }
-__declspec(naked) void _g6bq__connect() { _asm { jmp[bqCCS.g6bq__connect] } }
-__declspec(naked) void _g6bq__crash_test() { _asm { jmp[bqCCS.g6bq__crash_test] } }
-__declspec(naked) void _g6bq__drop() { _asm { jmp[bqCCS.g6bq__drop] } }
-__declspec(naked) void _g6bq__file_to_report_server() { _asm { jmp[bqCCS.g6bq__file_to_report_server] } }
-__declspec(naked) void _g6bq__flush_all_opened_files() { _asm { jmp[bqCCS.g6bq__flush_all_opened_files] } }
-__declspec(naked) void _g6bq__flush_portrait() { _asm { jmp[bqCCS.g6bq__flush_portrait] } }
-__declspec(naked) void _g6bq__get_bq_id() { _asm { jmp[bqCCS.g6bq__get_bq_id] } }
-__declspec(naked) void _g6bq__get_current_gate_info() { _asm { jmp[bqCCS.g6bq__get_current_gate_info] } }
-__declspec(naked) void _g6bq__get_portrait_string() { _asm { jmp[bqCCS.g6bq__get_portrait_string] } }
-__declspec(naked) void _g6bq__get_settings_value_bool() { _asm { jmp[bqCCS.g6bq__get_settings_value_bool] } }
-__declspec(naked) void _g6bq__get_settings_value_decimal() { _asm { jmp[bqCCS.g6bq__get_settings_value_decimal] } }
-__declspec(naked) void _g6bq__get_settings_value_integer() { _asm { jmp[bqCCS.g6bq__get_settings_value_integer] } }
-__declspec(naked) void _g6bq__get_settings_value_string_utf8() { _asm { jmp[bqCCS.g6bq__get_settings_value_string_utf8] } }
-__declspec(naked) void _g6bq__get_settings_value_type() { _asm { jmp[bqCCS.g6bq__get_settings_value_type] } }
-__declspec(naked) void _g6bq__has_settings_key() { _asm { jmp[bqCCS.g6bq__has_settings_key] } }
-__declspec(naked) void _g6bq__init() { _asm { jmp[bqCCS.g6bq__init] } }
-__declspec(naked) void _g6bq__legacy_init() { _asm { jmp[bqCCS.g6bq__legacy_init] } }
-__declspec(naked) void _g6bq__mark_res_load() { _asm { jmp[bqCCS.g6bq__mark_res_load] } }
-__declspec(naked) void _g6bq__on_pause() { _asm { jmp[bqCCS.g6bq__on_pause] } }
-__declspec(naked) void _g6bq__print_portait() { _asm { jmp[bqCCS.g6bq__print_portait] } }
-__declspec(naked) void _g6bq__register_error_callback() { _asm { jmp[bqCCS.g6bq__register_error_callback] } }
-__declspec(naked) void _g6bq__register_http_callbacks() { _asm { jmp[bqCCS.g6bq__register_http_callbacks] } }
-__declspec(naked) void _g6bq__register_setting_update_callback() { _asm { jmp[bqCCS.g6bq__register_setting_update_callback] } }
-__declspec(naked) void _g6bq__register_tail_switch_callbacks() { _asm { jmp[bqCCS.g6bq__register_tail_switch_callbacks] } }
-__declspec(naked) void _g6bq__register_wrapper_callbacks() { _asm { jmp[bqCCS.g6bq__register_wrapper_callbacks] } }
-__declspec(naked) void _g6bq__release_portrait_string() { _asm { jmp[bqCCS.g6bq__release_portrait_string] } }
-__declspec(naked) void _g6bq__release_string_def() { _asm { jmp[bqCCS.g6bq__release_string_def] } }
-__declspec(naked) void _g6bq__send_to_http_server() { _asm { jmp[bqCCS.g6bq__send_to_http_server] } }
-__declspec(naked) void _g6bq__send_to_report_server() { _asm { jmp[bqCCS.g6bq__send_to_report_server] } }
-__declspec(naked) void _g6bq__send_to_session_server() { _asm { jmp[bqCCS.g6bq__send_to_session_server] } }
-__declspec(naked) void _g6bq__set_gameid() { _asm { jmp[bqCCS.g6bq__set_gameid] } }
-__declspec(naked) void _g6bq__set_http_server_url() { _asm { jmp[bqCCS.g6bq__set_http_server_url] } }
-__declspec(naked) void _g6bq__set_res_inversal() { _asm { jmp[bqCCS.g6bq__set_res_inversal] } }
-__declspec(naked) void _g6bq__set_res_max_upload_once() { _asm { jmp[bqCCS.g6bq__set_res_max_upload_once] } }
-__declspec(naked) void _g6bq__set_time_out() { _asm { jmp[bqCCS.g6bq__set_time_out] } }
-__declspec(naked) void _g6bq__share_file() { _asm { jmp[bqCCS.g6bq__share_file] } }
-__declspec(naked) void _g6bq__tail_data_to_server() { _asm { jmp[bqCCS.g6bq__tail_data_to_server] } }
-__declspec(naked) void _g6bq__toggle_res_collect() { _asm { jmp[bqCCS.g6bq__toggle_res_collect] } }
-__declspec(naked) void _g6bq__toggle_res_upload() { _asm { jmp[bqCCS.g6bq__toggle_res_upload] } }
-__declspec(naked) void _g6bq__uninit() { _asm { jmp[bqCCS.g6bq__uninit] } }
-__declspec(naked) void _g6bq__update_portrait_decimal() { _asm { jmp[bqCCS.g6bq__update_portrait_decimal] } }
-__declspec(naked) void _g6bq__update_portrait_integer() { _asm { jmp[bqCCS.g6bq__update_portrait_integer] } }
-__declspec(naked) void _g6bq__update_portrait_string() { _asm { jmp[bqCCS.g6bq__update_portrait_string] } }
+__declspec(naked) void _curl_easy_cleanup() { _asm { jmp[libcurl.curl_easy_cleanup] } }
+__declspec(naked) void _curl_easy_duphandle() { _asm { jmp[libcurl.curl_easy_duphandle] } }
+__declspec(naked) void _curl_easy_escape() { _asm { jmp[libcurl.curl_easy_escape] } }
+__declspec(naked) void _curl_easy_getinfo() { _asm { jmp[libcurl.curl_easy_getinfo] } }
+__declspec(naked) void _curl_easy_init() { _asm { jmp[libcurl.curl_easy_init] } }
+__declspec(naked) void _curl_easy_option_by_id() { _asm { jmp[libcurl.curl_easy_option_by_id] } }
+__declspec(naked) void _curl_easy_option_by_name() { _asm { jmp[libcurl.curl_easy_option_by_name] } }
+__declspec(naked) void _curl_easy_option_next() { _asm { jmp[libcurl.curl_easy_option_next] } }
+__declspec(naked) void _curl_easy_pause() { _asm { jmp[libcurl.curl_easy_pause] } }
+__declspec(naked) void _curl_easy_perform() { _asm { jmp[libcurl.curl_easy_perform] } }
+__declspec(naked) void _curl_easy_recv() { _asm { jmp[libcurl.curl_easy_recv] } }
+__declspec(naked) void _curl_easy_reset() { _asm { jmp[libcurl.curl_easy_reset] } }
+__declspec(naked) void _curl_easy_send() { _asm { jmp[libcurl.curl_easy_send] } }
+__declspec(naked) void _curl_easy_setopt() { _asm { jmp[libcurl.curl_easy_setopt] } }
+__declspec(naked) void _curl_easy_strerror() { _asm { jmp[libcurl.curl_easy_strerror] } }
+__declspec(naked) void _curl_easy_unescape() { _asm { jmp[libcurl.curl_easy_unescape] } }
+__declspec(naked) void _curl_easy_upkeep() { _asm { jmp[libcurl.curl_easy_upkeep] } }
+__declspec(naked) void _curl_escape() { _asm { jmp[libcurl.curl_escape] } }
+__declspec(naked) void _curl_formadd() { _asm { jmp[libcurl.curl_formadd] } }
+__declspec(naked) void _curl_formfree() { _asm { jmp[libcurl.curl_formfree] } }
+__declspec(naked) void _curl_formget() { _asm { jmp[libcurl.curl_formget] } }
+__declspec(naked) void _curl_free() { _asm { jmp[libcurl.curl_free] } }
+__declspec(naked) void _curl_getdate() { _asm { jmp[libcurl.curl_getdate] } }
+__declspec(naked) void _curl_getenv() { _asm { jmp[libcurl.curl_getenv] } }
+__declspec(naked) void _curl_global_cleanup() { _asm { jmp[libcurl.curl_global_cleanup] } }
+__declspec(naked) void _curl_global_init() { _asm { jmp[libcurl.curl_global_init] } }
+__declspec(naked) void _curl_global_init_mem() { _asm { jmp[libcurl.curl_global_init_mem] } }
+__declspec(naked) void _curl_global_sslset() { _asm { jmp[libcurl.curl_global_sslset] } }
+__declspec(naked) void _curl_maprintf() { _asm { jmp[libcurl.curl_maprintf] } }
+__declspec(naked) void _curl_mfprintf() { _asm { jmp[libcurl.curl_mfprintf] } }
+__declspec(naked) void _curl_mime_addpart() { _asm { jmp[libcurl.curl_mime_addpart] } }
+__declspec(naked) void _curl_mime_data() { _asm { jmp[libcurl.curl_mime_data] } }
+__declspec(naked) void _curl_mime_data_cb() { _asm { jmp[libcurl.curl_mime_data_cb] } }
+__declspec(naked) void _curl_mime_encoder() { _asm { jmp[libcurl.curl_mime_encoder] } }
+__declspec(naked) void _curl_mime_filedata() { _asm { jmp[libcurl.curl_mime_filedata] } }
+__declspec(naked) void _curl_mime_filename() { _asm { jmp[libcurl.curl_mime_filename] } }
+__declspec(naked) void _curl_mime_free() { _asm { jmp[libcurl.curl_mime_free] } }
+__declspec(naked) void _curl_mime_headers() { _asm { jmp[libcurl.curl_mime_headers] } }
+__declspec(naked) void _curl_mime_init() { _asm { jmp[libcurl.curl_mime_init] } }
+__declspec(naked) void _curl_mime_name() { _asm { jmp[libcurl.curl_mime_name] } }
+__declspec(naked) void _curl_mime_subparts() { _asm { jmp[libcurl.curl_mime_subparts] } }
+__declspec(naked) void _curl_mime_type() { _asm { jmp[libcurl.curl_mime_type] } }
+__declspec(naked) void _curl_mprintf() { _asm { jmp[libcurl.curl_mprintf] } }
+__declspec(naked) void _curl_msnprintf() { _asm { jmp[libcurl.curl_msnprintf] } }
+__declspec(naked) void _curl_msprintf() { _asm { jmp[libcurl.curl_msprintf] } }
+__declspec(naked) void _curl_multi_add_handle() { _asm { jmp[libcurl.curl_multi_add_handle] } }
+__declspec(naked) void _curl_multi_assign() { _asm { jmp[libcurl.curl_multi_assign] } }
+__declspec(naked) void _curl_multi_cleanup() { _asm { jmp[libcurl.curl_multi_cleanup] } }
+__declspec(naked) void _curl_multi_fdset() { _asm { jmp[libcurl.curl_multi_fdset] } }
+__declspec(naked) void _curl_multi_info_read() { _asm { jmp[libcurl.curl_multi_info_read] } }
+__declspec(naked) void _curl_multi_init() { _asm { jmp[libcurl.curl_multi_init] } }
+__declspec(naked) void _curl_multi_perform() { _asm { jmp[libcurl.curl_multi_perform] } }
+__declspec(naked) void _curl_multi_poll() { _asm { jmp[libcurl.curl_multi_poll] } }
+__declspec(naked) void _curl_multi_remove_handle() { _asm { jmp[libcurl.curl_multi_remove_handle] } }
+__declspec(naked) void _curl_multi_setopt() { _asm { jmp[libcurl.curl_multi_setopt] } }
+__declspec(naked) void _curl_multi_socket() { _asm { jmp[libcurl.curl_multi_socket] } }
+__declspec(naked) void _curl_multi_socket_action() { _asm { jmp[libcurl.curl_multi_socket_action] } }
+__declspec(naked) void _curl_multi_socket_all() { _asm { jmp[libcurl.curl_multi_socket_all] } }
+__declspec(naked) void _curl_multi_strerror() { _asm { jmp[libcurl.curl_multi_strerror] } }
+__declspec(naked) void _curl_multi_timeout() { _asm { jmp[libcurl.curl_multi_timeout] } }
+__declspec(naked) void _curl_multi_wait() { _asm { jmp[libcurl.curl_multi_wait] } }
+__declspec(naked) void _curl_multi_wakeup() { _asm { jmp[libcurl.curl_multi_wakeup] } }
+__declspec(naked) void _curl_mvaprintf() { _asm { jmp[libcurl.curl_mvaprintf] } }
+__declspec(naked) void _curl_mvfprintf() { _asm { jmp[libcurl.curl_mvfprintf] } }
+__declspec(naked) void _curl_mvprintf() { _asm { jmp[libcurl.curl_mvprintf] } }
+__declspec(naked) void _curl_mvsnprintf() { _asm { jmp[libcurl.curl_mvsnprintf] } }
+__declspec(naked) void _curl_mvsprintf() { _asm { jmp[libcurl.curl_mvsprintf] } }
+__declspec(naked) void _curl_pushheader_byname() { _asm { jmp[libcurl.curl_pushheader_byname] } }
+__declspec(naked) void _curl_pushheader_bynum() { _asm { jmp[libcurl.curl_pushheader_bynum] } }
+__declspec(naked) void _curl_share_cleanup() { _asm { jmp[libcurl.curl_share_cleanup] } }
+__declspec(naked) void _curl_share_init() { _asm { jmp[libcurl.curl_share_init] } }
+__declspec(naked) void _curl_share_setopt() { _asm { jmp[libcurl.curl_share_setopt] } }
+__declspec(naked) void _curl_share_strerror() { _asm { jmp[libcurl.curl_share_strerror] } }
+__declspec(naked) void _curl_slist_append() { _asm { jmp[libcurl.curl_slist_append] } }
+__declspec(naked) void _curl_slist_free_all() { _asm { jmp[libcurl.curl_slist_free_all] } }
+__declspec(naked) void _curl_strequal() { _asm { jmp[libcurl.curl_strequal] } }
+__declspec(naked) void _curl_strnequal() { _asm { jmp[libcurl.curl_strnequal] } }
+__declspec(naked) void _curl_unescape() { _asm { jmp[libcurl.curl_unescape] } }
+__declspec(naked) void _curl_url() { _asm { jmp[libcurl.curl_url] } }
+__declspec(naked) void _curl_url_cleanup() { _asm { jmp[libcurl.curl_url_cleanup] } }
+__declspec(naked) void _curl_url_dup() { _asm { jmp[libcurl.curl_url_dup] } }
+__declspec(naked) void _curl_url_get() { _asm { jmp[libcurl.curl_url_get] } }
+__declspec(naked) void _curl_url_set() { _asm { jmp[libcurl.curl_url_set] } }
+__declspec(naked) void _curl_url_strerror() { _asm { jmp[libcurl.curl_url_strerror] } }
+__declspec(naked) void _curl_version() { _asm { jmp[libcurl.curl_version] } }
+__declspec(naked) void _curl_version_info() { _asm { jmp[libcurl.curl_version_info] } }
 
 __declspec(naked) void _D3D12CoreCreateLayeredDevice() { _asm { jmp[d3d12.D3D12CoreCreateLayeredDevice] } }
 __declspec(naked) void _D3D12CoreGetLayeredDeviceSize() { _asm { jmp[d3d12.D3D12CoreGetLayeredDeviceSize] } }
@@ -4521,136 +4389,92 @@ void _EnableFeatureLevelUpgrade() { d3d11.EnableFeatureLevelUpgrade(); }
 void _OpenAdapter10() { d3d11.OpenAdapter10(); }
 void _OpenAdapter10_2() { d3d11.OpenAdapter10_2(); }
 
-void _JNI_OnLoad() { bqCCS.JNI_OnLoad(); }
-void _Java_bq_impl_ccs_1invoker__1_1connect() { bqCCS.Java_bq_impl_ccs_1invoker__1_1connect(); }
-void _Java_bq_impl_ccs_1invoker__1_1drop() { bqCCS.Java_bq_impl_ccs_1invoker__1_1drop(); }
-void _Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1file_1to_1report_1server(); }
-void _Java_bq_impl_ccs_1invoker__1_1get_1bq_1id() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1bq_1id(); }
-void _Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1portrait_1string(); }
-void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1bool(); }
-void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1decimal(); }
-void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1integer(); }
-void _Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string() { bqCCS.Java_bq_impl_ccs_1invoker__1_1get_1settings_1value_1string(); }
-void _Java_bq_impl_ccs_1invoker__1_1has_1settings_1key() { bqCCS.Java_bq_impl_ccs_1invoker__1_1has_1settings_1key(); }
-void _Java_bq_impl_ccs_1invoker__1_1init() { bqCCS.Java_bq_impl_ccs_1invoker__1_1init(); }
-void _Java_bq_impl_ccs_1invoker__1_1mark_1res_1load() { bqCCS.Java_bq_impl_ccs_1invoker__1_1mark_1res_1load(); }
-void _Java_bq_impl_ccs_1invoker__1_1on_1pause() { bqCCS.Java_bq_impl_ccs_1invoker__1_1on_1pause(); }
-void _Java_bq_impl_ccs_1invoker__1_1print_1portait() { bqCCS.Java_bq_impl_ccs_1invoker__1_1print_1portait(); }
-void _Java_bq_impl_ccs_1invoker__1_1save_1settings() { bqCCS.Java_bq_impl_ccs_1invoker__1_1save_1settings(); }
-void _Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1http_1server(); }
-void _Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1report_1server(); }
-void _Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server() { bqCCS.Java_bq_impl_ccs_1invoker__1_1send_1to_1session_1server(); }
-void _Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url() { bqCCS.Java_bq_impl_ccs_1invoker__1_1set_1http_1server_1url(); }
-void _Java_bq_impl_ccs_1invoker__1_1uninit() { bqCCS.Java_bq_impl_ccs_1invoker__1_1uninit(); }
-void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal() { bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1decimal(); }
-void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer() { bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1integer(); }
-void _Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string() { bqCCS.Java_bq_impl_ccs_1invoker__1_1update_1portrait_1string(); }
-void _Java_bq_impl_log_1invoker__1_1api_1create_1log() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1create_1log(); }
-void _Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1enable_1auto_1crash_1handler(); }
-void _Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1fetch_1and_1remove_1console_1buffer(); }
-void _Java_bq_impl_log_1invoker__1_1api_1force_1flush() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1force_1flush(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1file_1base_1dir(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1categories_1count(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1masks_1array_1by_1log_1id(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1category_1name_1by_1index(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1id_1by_1index(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1merged_1log_1level_1bitmap_1by_1log_1id(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1name_1by_1id(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1print_1stack_1level_1bitmap_1by_1log_1id(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1log_1version() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1log_1version(); }
-void _Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1get_1logs_1count(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1arg_1push_1utf16_1string(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1alloc(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1buffer_1commit(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1decode() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decode(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1create(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1decode(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1decoder_1destroy(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1device_1console() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1device_1console(); }
-void _Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1log_1reset_1config(); }
-void _Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1reset_1base_1dir(); }
-void _Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1appender_1enable(); }
-void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1buffer_1enable(); }
-void _Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1set_1console_1callback(); }
-void _Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string() { bqCCS.Java_bq_impl_log_1invoker__1_1api_1take_1snapshot_1string(); }
-void _Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest() { bqCCS.Java_com_tencent_bqccs_1module_BqCommonUtils_ShareFileTest(); }
-void _g6bq__api_create_log() { bqCCS.g6bq__api_create_log(); }
-void _g6bq__api_enable_auto_crash_handler() { bqCCS.g6bq__api_enable_auto_crash_handler(); }
-void _g6bq__api_fetch_and_remove_console_buffer() { bqCCS.g6bq__api_fetch_and_remove_console_buffer(); }
-void _g6bq__api_force_flush() { bqCCS.g6bq__api_force_flush(); }
-void _g6bq__api_get_ccs_version() { bqCCS.g6bq__api_get_ccs_version(); }
-void _g6bq__api_get_file_base_dir() { bqCCS.g6bq__api_get_file_base_dir(); }
-void _g6bq__api_get_log_categories_count() { bqCCS.g6bq__api_get_log_categories_count(); }
-void _g6bq__api_get_log_category_masks_array_by_log_id() { bqCCS.g6bq__api_get_log_category_masks_array_by_log_id(); }
-void _g6bq__api_get_log_category_name_by_index() { bqCCS.g6bq__api_get_log_category_name_by_index(); }
-void _g6bq__api_get_log_id_by_index() { bqCCS.g6bq__api_get_log_id_by_index(); }
-void _g6bq__api_get_log_merged_log_level_bitmap_by_log_id() { bqCCS.g6bq__api_get_log_merged_log_level_bitmap_by_log_id(); }
-void _g6bq__api_get_log_name_by_id() { bqCCS.g6bq__api_get_log_name_by_id(); }
-void _g6bq__api_get_log_print_stack_level_bitmap_by_log_id() { bqCCS.g6bq__api_get_log_print_stack_level_bitmap_by_log_id(); }
-void _g6bq__api_get_log_version() { bqCCS.g6bq__api_get_log_version(); }
-void _g6bq__api_get_logs_count() { bqCCS.g6bq__api_get_logs_count(); }
-void _g6bq__api_get_stack_trace() { bqCCS.g6bq__api_get_stack_trace(); }
-void _g6bq__api_get_stack_trace_utf16() { bqCCS.g6bq__api_get_stack_trace_utf16(); }
-void _g6bq__api_init() { bqCCS.g6bq__api_init(); }
-void _g6bq__api_log_buffer_alloc() { bqCCS.g6bq__api_log_buffer_alloc(); }
-void _g6bq__api_log_buffer_commit() { bqCCS.g6bq__api_log_buffer_commit(); }
-void _g6bq__api_log_decode() { bqCCS.g6bq__api_log_decode(); }
-void _g6bq__api_log_decoder_create() { bqCCS.g6bq__api_log_decoder_create(); }
-void _g6bq__api_log_decoder_decode() { bqCCS.g6bq__api_log_decoder_decode(); }
-void _g6bq__api_log_decoder_destroy() { bqCCS.g6bq__api_log_decoder_destroy(); }
-void _g6bq__api_log_device_console() { bqCCS.g6bq__api_log_device_console(); }
-void _g6bq__api_log_reset_config() { bqCCS.g6bq__api_log_reset_config(); }
-void _g6bq__api_register_console_callbacks() { bqCCS.g6bq__api_register_console_callbacks(); }
-void _g6bq__api_release_snapshot_string() { bqCCS.g6bq__api_release_snapshot_string(); }
-void _g6bq__api_reset_base_dir() { bqCCS.g6bq__api_reset_base_dir(); }
-void _g6bq__api_set_appender_enable() { bqCCS.g6bq__api_set_appender_enable(); }
-void _g6bq__api_set_console_buffer_enable() { bqCCS.g6bq__api_set_console_buffer_enable(); }
-void _g6bq__api_take_snapshot_string() { bqCCS.g6bq__api_take_snapshot_string(); }
-void _g6bq__api_uninit() { bqCCS.g6bq__api_uninit(); }
-void _g6bq__api_unregister_console_callbacks() { bqCCS.g6bq__api_unregister_console_callbacks(); }
-void _g6bq__connect() { bqCCS.g6bq__connect(); }
-void _g6bq__crash_test() { bqCCS.g6bq__crash_test(); }
-void _g6bq__drop() { bqCCS.g6bq__drop(); }
-void _g6bq__file_to_report_server() { bqCCS.g6bq__file_to_report_server(); }
-void _g6bq__flush_all_opened_files() { bqCCS.g6bq__flush_all_opened_files(); }
-void _g6bq__flush_portrait() { bqCCS.g6bq__flush_portrait(); }
-void _g6bq__get_bq_id() { bqCCS.g6bq__get_bq_id(); }
-void _g6bq__get_current_gate_info() { bqCCS.g6bq__get_current_gate_info(); }
-void _g6bq__get_portrait_string() { bqCCS.g6bq__get_portrait_string(); }
-void _g6bq__get_settings_value_bool() { bqCCS.g6bq__get_settings_value_bool(); }
-void _g6bq__get_settings_value_decimal() { bqCCS.g6bq__get_settings_value_decimal(); }
-void _g6bq__get_settings_value_integer() { bqCCS.g6bq__get_settings_value_integer(); }
-void _g6bq__get_settings_value_string_utf8() { bqCCS.g6bq__get_settings_value_string_utf8(); }
-void _g6bq__get_settings_value_type() { bqCCS.g6bq__get_settings_value_type(); }
-void _g6bq__has_settings_key() { bqCCS.g6bq__has_settings_key(); }
-void _g6bq__init() { bqCCS.g6bq__init(); }
-void _g6bq__legacy_init() { bqCCS.g6bq__legacy_init(); }
-void _g6bq__mark_res_load() { bqCCS.g6bq__mark_res_load(); }
-void _g6bq__on_pause() { bqCCS.g6bq__on_pause(); }
-void _g6bq__print_portait() { bqCCS.g6bq__print_portait(); }
-void _g6bq__register_error_callback() { bqCCS.g6bq__register_error_callback(); }
-void _g6bq__register_http_callbacks() { bqCCS.g6bq__register_http_callbacks(); }
-void _g6bq__register_setting_update_callback() { bqCCS.g6bq__register_setting_update_callback(); }
-void _g6bq__register_tail_switch_callbacks() { bqCCS.g6bq__register_tail_switch_callbacks(); }
-void _g6bq__register_wrapper_callbacks() { bqCCS.g6bq__register_wrapper_callbacks(); }
-void _g6bq__release_portrait_string() { bqCCS.g6bq__release_portrait_string(); }
-void _g6bq__release_string_def() { bqCCS.g6bq__release_string_def(); }
-void _g6bq__send_to_http_server() { bqCCS.g6bq__send_to_http_server(); }
-void _g6bq__send_to_report_server() { bqCCS.g6bq__send_to_report_server(); }
-void _g6bq__send_to_session_server() { bqCCS.g6bq__send_to_session_server(); }
-void _g6bq__set_gameid() { bqCCS.g6bq__set_gameid(); }
-void _g6bq__set_http_server_url() { bqCCS.g6bq__set_http_server_url(); }
-void _g6bq__set_res_inversal() { bqCCS.g6bq__set_res_inversal(); }
-void _g6bq__set_res_max_upload_once() { bqCCS.g6bq__set_res_max_upload_once(); }
-void _g6bq__set_time_out() { bqCCS.g6bq__set_time_out(); }
-void _g6bq__share_file() { bqCCS.g6bq__share_file(); }
-void _g6bq__tail_data_to_server() { bqCCS.g6bq__tail_data_to_server(); }
-void _g6bq__toggle_res_collect() { bqCCS.g6bq__toggle_res_collect(); }
-void _g6bq__toggle_res_upload() { bqCCS.g6bq__toggle_res_upload(); }
-void _g6bq__uninit() { bqCCS.g6bq__uninit(); }
-void _g6bq__update_portrait_decimal() { bqCCS.g6bq__update_portrait_decimal(); }
-void _g6bq__update_portrait_integer() { bqCCS.g6bq__update_portrait_integer(); }
-void _g6bq__update_portrait_string() { bqCCS.g6bq__update_portrait_string(); }
+void _curl_easy_cleanup() { libcurl.curl_easy_cleanup(); }
+void _curl_easy_duphandle() { libcurl.curl_easy_duphandle(); }
+void _curl_easy_escape() { libcurl.curl_easy_escape(); }
+void _curl_easy_getinfo() { libcurl.curl_easy_getinfo(); }
+void _curl_easy_init() { libcurl.curl_easy_init(); }
+void _curl_easy_option_by_id() { libcurl.curl_easy_option_by_id(); }
+void _curl_easy_option_by_name() { libcurl.curl_easy_option_by_name(); }
+void _curl_easy_option_next() { libcurl.curl_easy_option_next(); }
+void _curl_easy_pause() { libcurl.curl_easy_pause(); }
+void _curl_easy_perform() { libcurl.curl_easy_perform(); }
+void _curl_easy_recv() { libcurl.curl_easy_recv(); }
+void _curl_easy_reset() { libcurl.curl_easy_reset(); }
+void _curl_easy_send() { libcurl.curl_easy_send(); }
+void _curl_easy_setopt() { libcurl.curl_easy_setopt(); }
+void _curl_easy_strerror() { libcurl.curl_easy_strerror(); }
+void _curl_easy_unescape() { libcurl.curl_easy_unescape(); }
+void _curl_easy_upkeep() { libcurl.curl_easy_upkeep(); }
+void _curl_escape() { libcurl.curl_escape(); }
+void _curl_formadd() { libcurl.curl_formadd(); }
+void _curl_formfree() { libcurl.curl_formfree(); }
+void _curl_formget() { libcurl.curl_formget(); }
+void _curl_free() { libcurl.curl_free(); }
+void _curl_getdate() { libcurl.curl_getdate(); }
+void _curl_getenv() { libcurl.curl_getenv(); }
+void _curl_global_cleanup() { libcurl.curl_global_cleanup(); }
+void _curl_global_init() { libcurl.curl_global_init(); }
+void _curl_global_init_mem() { libcurl.curl_global_init_mem(); }
+void _curl_global_sslset() { libcurl.curl_global_sslset(); }
+void _curl_maprintf() { libcurl.curl_maprintf(); }
+void _curl_mfprintf() { libcurl.curl_mfprintf(); }
+void _curl_mime_addpart() { libcurl.curl_mime_addpart(); }
+void _curl_mime_data() { libcurl.curl_mime_data(); }
+void _curl_mime_data_cb() { libcurl.curl_mime_data_cb(); }
+void _curl_mime_encoder() { libcurl.curl_mime_encoder(); }
+void _curl_mime_filedata() { libcurl.curl_mime_filedata(); }
+void _curl_mime_filename() { libcurl.curl_mime_filename(); }
+void _curl_mime_free() { libcurl.curl_mime_free(); }
+void _curl_mime_headers() { libcurl.curl_mime_headers(); }
+void _curl_mime_init() { libcurl.curl_mime_init(); }
+void _curl_mime_name() { libcurl.curl_mime_name(); }
+void _curl_mime_subparts() { libcurl.curl_mime_subparts(); }
+void _curl_mime_type() { libcurl.curl_mime_type(); }
+void _curl_mprintf() { libcurl.curl_mprintf(); }
+void _curl_msnprintf() { libcurl.curl_msnprintf(); }
+void _curl_msprintf() { libcurl.curl_msprintf(); }
+void _curl_multi_add_handle() { libcurl.curl_multi_add_handle(); }
+void _curl_multi_assign() { libcurl.curl_multi_assign(); }
+void _curl_multi_cleanup() { libcurl.curl_multi_cleanup(); }
+void _curl_multi_fdset() { libcurl.curl_multi_fdset(); }
+void _curl_multi_info_read() { libcurl.curl_multi_info_read(); }
+void _curl_multi_init() { libcurl.curl_multi_init(); }
+void _curl_multi_perform() { libcurl.curl_multi_perform(); }
+void _curl_multi_poll() { libcurl.curl_multi_poll(); }
+void _curl_multi_remove_handle() { libcurl.curl_multi_remove_handle(); }
+void _curl_multi_setopt() { libcurl.curl_multi_setopt(); }
+void _curl_multi_socket() { libcurl.curl_multi_socket(); }
+void _curl_multi_socket_action() { libcurl.curl_multi_socket_action(); }
+void _curl_multi_socket_all() { libcurl.curl_multi_socket_all(); }
+void _curl_multi_strerror() { libcurl.curl_multi_strerror(); }
+void _curl_multi_timeout() { libcurl.curl_multi_timeout(); }
+void _curl_multi_wait() { libcurl.curl_multi_wait(); }
+void _curl_multi_wakeup() { libcurl.curl_multi_wakeup(); }
+void _curl_mvaprintf() { libcurl.curl_mvaprintf(); }
+void _curl_mvfprintf() { libcurl.curl_mvfprintf(); }
+void _curl_mvprintf() { libcurl.curl_mvprintf(); }
+void _curl_mvsnprintf() { libcurl.curl_mvsnprintf(); }
+void _curl_mvsprintf() { libcurl.curl_mvsprintf(); }
+void _curl_pushheader_byname() { libcurl.curl_pushheader_byname(); }
+void _curl_pushheader_bynum() { libcurl.curl_pushheader_bynum(); }
+void _curl_share_cleanup() { libcurl.curl_share_cleanup(); }
+void _curl_share_init() { libcurl.curl_share_init(); }
+void _curl_share_setopt() { libcurl.curl_share_setopt(); }
+void _curl_share_strerror() { libcurl.curl_share_strerror(); }
+void _curl_slist_append() { libcurl.curl_slist_append(); }
+void _curl_slist_free_all() { libcurl.curl_slist_free_all(); }
+void _curl_strequal() { libcurl.curl_strequal(); }
+void _curl_strnequal() { libcurl.curl_strnequal(); }
+void _curl_unescape() { libcurl.curl_unescape(); }
+void _curl_url() { libcurl.curl_url(); }
+void _curl_url_cleanup() { libcurl.curl_url_cleanup(); }
+void _curl_url_dup() { libcurl.curl_url_dup(); }
+void _curl_url_get() { libcurl.curl_url_get(); }
+void _curl_url_set() { libcurl.curl_url_set(); }
+void _curl_url_strerror() { libcurl.curl_url_strerror(); }
+void _curl_version() { libcurl.curl_version(); }
+void _curl_version_info() { libcurl.curl_version_info(); }
 
 void _D3D12CoreCreateLayeredDevice() { d3d12.D3D12CoreCreateLayeredDevice(); }
 void _D3D12CoreGetLayeredDeviceSize() { d3d12.D3D12CoreGetLayeredDeviceSize(); }
