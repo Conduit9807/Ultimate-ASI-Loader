@@ -528,6 +528,14 @@ void LoadOriginalLibrary()
         else
             dsound.LoadOriginalLibrary(LoadLib(szSystemPath));
     }
+    else if (iequals(szSelfName, L"gmesdk.dll"))
+    {
+        szLocalPath += L"gmesdkHooked.dll";
+        if (std::filesystem::exists(szLocalPath))
+            gmesdk.LoadOriginalLibrary(LoadLib(szLocalPath));
+        else
+            gmesdk.LoadOriginalLibrary(LoadLib(szSystemPath));
+    }
     else if (iequals(szSelfName, L"dinput8.dll"))
     {
         szLocalPath += L"dinput8Hooked.dll";
@@ -802,6 +810,14 @@ void LoadOriginalLibrary()
             if (std::filesystem::exists(szLocalPath))
             {
                 bink2w64.LoadOriginalLibrary(LoadLib(szLocalPath));
+            }
+        }
+        else if (iequals(szSelfName, L"gmesdk.dll"))
+        {
+            szLocalPath += L"gmesdkHooked.dll";
+            if (std::filesystem::exists(szLocalPath))
+            {
+                gmesdk.LoadOriginalLibrary(LoadLib(szLocalPath));
             }
         }
         else

@@ -1141,6 +1141,465 @@ struct dxgi_dll
     }
 } dxgi;
 
+struct gmesdk_dll
+{
+    HMODULE dll;
+    FARPROC GMEUnity_AddAudioBlackList;
+    FARPROC GMEUnity_ApplyPTTAuthbuffer;
+    FARPROC GMEUnity_CancelRecording;
+    FARPROC GMEUnity_ChangeRoomType;
+    FARPROC GMEUnity_CheckMicPermission;
+    FARPROC GMEUnity_CreateExternalAudioTrack;
+    FARPROC GMEUnity_CreateInstance;
+    FARPROC GMEUnity_DestroyExternalAudioTrack;
+    FARPROC GMEUnity_DestroyInstance;
+    FARPROC GMEUnity_DownloadRecordedFile;
+    FARPROC GMEUnity_EnableAudioCaptureDevice;
+    FARPROC GMEUnity_EnableAudioPlayDevice;
+    FARPROC GMEUnity_EnableAudioRecv;
+    FARPROC GMEUnity_EnableAudioSend;
+    FARPROC GMEUnity_EnableCustomAudioCapture;
+    FARPROC GMEUnity_EnableCustomAudioRendering;
+    FARPROC GMEUnity_EnableLoopBack;
+    FARPROC GMEUnity_EnableMusicPlayout;
+    FARPROC GMEUnity_EnableMusicPublish;
+    FARPROC GMEUnity_EnableSpatializer;
+    FARPROC GMEUnity_EnterRoom;
+    FARPROC GMEUnity_ExitRoom;
+    FARPROC GMEUnity_GetAITranscriberManager;
+    FARPROC GMEUnity_GetAdvanceParams;
+    FARPROC GMEUnity_GetCurrentMic;
+    FARPROC GMEUnity_GetCurrentSpeaker;
+    FARPROC GMEUnity_GetCustomAudioRenderingFrame;
+    FARPROC GMEUnity_GetFileSize;
+    FARPROC GMEUnity_GetLogPath;
+    FARPROC GMEUnity_GetMicLevel;
+    FARPROC GMEUnity_GetMicList;
+    FARPROC GMEUnity_GetMicListCount;
+    FARPROC GMEUnity_GetMicVolume;
+    FARPROC GMEUnity_GetMusicCurrentPosInMS;
+    FARPROC GMEUnity_GetMusicDurationInMS;
+    FARPROC GMEUnity_GetMusicPlayoutVolume;
+    FARPROC GMEUnity_GetMusicPublishVolume;
+    FARPROC GMEUnity_GetRecvStreamLevel;
+    FARPROC GMEUnity_GetRoomID;
+    FARPROC GMEUnity_GetRoomType;
+    FARPROC GMEUnity_GetSDKVersion;
+    FARPROC GMEUnity_GetSendStreamLevel;
+    FARPROC GMEUnity_GetSpeakerLevel;
+    FARPROC GMEUnity_GetSpeakerList;
+    FARPROC GMEUnity_GetSpeakerListCount;
+    FARPROC GMEUnity_GetSpeakerVolume;
+    FARPROC GMEUnity_GetSpeakerVolumeByUserID;
+    FARPROC GMEUnity_GetVoiceFileDuration;
+    FARPROC GMEUnity_Init;
+    FARPROC GMEUnity_IsAudioCaptureDeviceEnabled;
+    FARPROC GMEUnity_IsAudioPlayDeviceEnabled;
+    FARPROC GMEUnity_IsAudioRecvEnabled;
+    FARPROC GMEUnity_IsAudioSendEnabled;
+    FARPROC GMEUnity_IsEnableSpatializer;
+    FARPROC GMEUnity_IsMusicPlayEnd;
+    FARPROC GMEUnity_IsRoomEntered;
+    FARPROC GMEUnity_IsUserIDInAudioBlackList;
+    FARPROC GMEUnity_Pause;
+    FARPROC GMEUnity_PausePlayMusic;
+    FARPROC GMEUnity_Poll;
+    FARPROC GMEUnity_RemoveAudioBlackList;
+    FARPROC GMEUnity_Resume;
+    FARPROC GMEUnity_ResumePlayMusic;
+    FARPROC GMEUnity_SeekMusicToPosInTime;
+    FARPROC GMEUnity_SelectMic;
+    FARPROC GMEUnity_SelectSpeaker;
+    FARPROC GMEUnity_SendAudioDataToExternalTrack;
+    FARPROC GMEUnity_SendCustomAudioData;
+    FARPROC GMEUnity_SendCustomData;
+    FARPROC GMEUnity_SendSEIMsg;
+    FARPROC GMEUnity_SetAdvanceParams;
+    FARPROC GMEUnity_SetAllMusicVolume;
+    FARPROC GMEUnity_SetAppVersion;
+    FARPROC GMEUnity_SetAudioFrameCallback;
+    FARPROC GMEUnity_SetAudioRole;
+    FARPROC GMEUnity_SetAudioRoute;
+    FARPROC GMEUnity_SetDelegate;
+    FARPROC GMEUnity_SetKaraokeType;
+    FARPROC GMEUnity_SetLogLevel;
+    FARPROC GMEUnity_SetLogPath;
+    FARPROC GMEUnity_SetLoopBackVolume;
+    FARPROC GMEUnity_SetMaxMessageLength;
+    FARPROC GMEUnity_SetMicVolume;
+    FARPROC GMEUnity_SetMusicPitch;
+    FARPROC GMEUnity_SetMusicPlayoutVolume;
+    FARPROC GMEUnity_SetMusicPublishVolume;
+    FARPROC GMEUnity_SetPTTSourceLanguage;
+    FARPROC GMEUnity_SetRangeAudioMode;
+    FARPROC GMEUnity_SetRangeAudioTeamID;
+    FARPROC GMEUnity_SetRegion;
+    FARPROC GMEUnity_SetScene;
+    FARPROC GMEUnity_SetSpeakerVolume;
+    FARPROC GMEUnity_SetSpeakerVolumeByUserID;
+    FARPROC GMEUnity_SetSystemAudioLoopbackVolume;
+    FARPROC GMEUnity_SetVoiceType;
+    FARPROC GMEUnity_ShowDebugView;
+    FARPROC GMEUnity_SpeechToText;
+    FARPROC GMEUnity_StartMicDeviceTest;
+    FARPROC GMEUnity_StartPlayFile;
+    FARPROC GMEUnity_StartPlayMusic;
+    FARPROC GMEUnity_StartRecord;
+    FARPROC GMEUnity_StartRecording;
+    FARPROC GMEUnity_StartRecordingWithStreamingRecognition;
+    FARPROC GMEUnity_StartRoomSharing;
+    FARPROC GMEUnity_StartSpeakerDeviceTest;
+    FARPROC GMEUnity_StartSystemAudioLoopback;
+    FARPROC GMEUnity_StopMicDeviceTest;
+    FARPROC GMEUnity_StopPlayFile;
+    FARPROC GMEUnity_StopPlayMusic;
+    FARPROC GMEUnity_StopRecord;
+    FARPROC GMEUnity_StopRecording;
+    FARPROC GMEUnity_StopRoomSharing;
+    FARPROC GMEUnity_StopSendCustomData;
+    FARPROC GMEUnity_StopSpeakerDeviceTest;
+    FARPROC GMEUnity_StopSystemAudioLoopback;
+    FARPROC GMEUnity_StopTrackingVolume;
+    FARPROC GMEUnity_SwitchRoom;
+    FARPROC GMEUnity_TextToSpeech;
+    FARPROC GMEUnity_TrackingVolume;
+    FARPROC GMEUnity_TranslateText;
+    FARPROC GMEUnity_Uninit;
+    FARPROC GMEUnity_UpdateAudioRecvRange;
+    FARPROC GMEUnity_UpdateOtherPosition;
+    FARPROC GMEUnity_UpdateSelfPosition;
+    FARPROC GMEUnity_UpdateSpatializerRecvRange;
+    FARPROC GMEUnity_UploadRecordedFile;
+    FARPROC GMEUnity_WriteLog;
+    FARPROC ITMGContextGetInstance;
+    FARPROC QAVSDK_AuthBuffer_GenAuthBuffer;
+    FARPROC gme_wwise_audio_receiver_create;
+    FARPROC gme_wwise_audio_receiver_destroy;
+    FARPROC gme_wwise_audio_receiver_get_audio_data;
+    FARPROC gme_wwise_audio_recorder_create;
+    FARPROC gme_wwise_audio_recorder_destroy;
+    FARPROC gme_wwise_audio_recorder_get_audio_data;
+    FARPROC gme_wwise_audio_sender_create;
+    FARPROC gme_wwise_audio_sender_destroy;
+    FARPROC gme_wwise_audio_sender_send_audio_data;
+    FARPROC gme_wwise_audio_session_create;
+    FARPROC gme_wwise_audio_session_destroy;
+    FARPROC gme_wwise_create_message_pool;
+    FARPROC gme_wwise_destroy_message_pool;
+    FARPROC gme_wwise_get_game_object_string_property;
+    FARPROC gme_wwise_get_message;
+    FARPROC gme_wwise_get_quality_tips;
+    FARPROC gme_wwise_get_sdk_version;
+    FARPROC gme_wwise_invoke_advanced_features;
+    FARPROC gme_wwise_pause;
+    FARPROC gme_wwise_resume;
+    FARPROC gme_wwise_send_session_audio_data;
+    FARPROC gme_wwise_set_game_object_string_property;
+    FARPROC gme_wwise_set_game_object_url;
+    FARPROC gme_wwise_write_log;
+    FARPROC tx_ai_transcriber_manager_add_transcriber_listener;
+    FARPROC tx_ai_transcriber_manager_create_transcriber_listener;
+    FARPROC tx_ai_transcriber_manager_destroy_transcriber_listener;
+    FARPROC tx_ai_transcriber_manager_pause_receiving_message;
+    FARPROC tx_ai_transcriber_manager_remove_transcriber_listener;
+    FARPROC tx_ai_transcriber_manager_resume_receiving_message;
+    FARPROC tx_ai_transcriber_manager_start_realtime_transcriber;
+    FARPROC tx_ai_transcriber_manager_stop_realtime_transcriber;
+    FARPROC tx_audio_effect_manager_create_music_play_observer;
+    FARPROC tx_audio_effect_manager_create_music_preload_observer;
+    FARPROC tx_audio_effect_manager_destroy_music_play_observer;
+    FARPROC tx_audio_effect_manager_destroy_music_preload_observer;
+    FARPROC tx_audio_effect_manager_enable_voice_ear_monitor;
+    FARPROC tx_audio_effect_manager_get_current_pos_in_ms;
+    FARPROC tx_audio_effect_manager_get_music_duration_in_ms;
+    FARPROC tx_audio_effect_manager_get_music_track_count;
+    FARPROC tx_audio_effect_manager_pause_play_music;
+    FARPROC tx_audio_effect_manager_preload_music;
+    FARPROC tx_audio_effect_manager_resume_play_music;
+    FARPROC tx_audio_effect_manager_seek_music_to_pos_in_time;
+    FARPROC tx_audio_effect_manager_set_all_music_volume;
+    FARPROC tx_audio_effect_manager_set_music_observer;
+    FARPROC tx_audio_effect_manager_set_music_pitch;
+    FARPROC tx_audio_effect_manager_set_music_playout_volume;
+    FARPROC tx_audio_effect_manager_set_music_publish_volume;
+    FARPROC tx_audio_effect_manager_set_music_scratch_speed_rate;
+    FARPROC tx_audio_effect_manager_set_music_speed_rate;
+    FARPROC tx_audio_effect_manager_set_music_track;
+    FARPROC tx_audio_effect_manager_set_preload_observer;
+    FARPROC tx_audio_effect_manager_set_voice_capture_volume;
+    FARPROC tx_audio_effect_manager_set_voice_changer_type;
+    FARPROC tx_audio_effect_manager_set_voice_ear_monitor_volume;
+    FARPROC tx_audio_effect_manager_set_voice_pitch;
+    FARPROC tx_audio_effect_manager_set_voice_reverb_type;
+    FARPROC tx_audio_effect_manager_start_play_music;
+    FARPROC tx_audio_effect_manager_stop_play_music;
+    FARPROC tx_device_manager_create_device_observer;
+    FARPROC tx_device_manager_destroy_device_observer;
+    FARPROC tx_device_manager_enable_camera_auto_focus;
+    FARPROC tx_device_manager_enable_camera_torch;
+    FARPROC tx_device_manager_enable_following_default_audio_device;
+    FARPROC tx_device_manager_get_application_mute_state;
+    FARPROC tx_device_manager_get_application_play_volume;
+    FARPROC tx_device_manager_get_camera_zoom_max_ratio;
+    FARPROC tx_device_manager_get_current_device;
+    FARPROC tx_device_manager_get_current_device_mute;
+    FARPROC tx_device_manager_get_current_device_volume;
+    FARPROC tx_device_manager_get_device_count;
+    FARPROC tx_device_manager_get_device_info;
+    FARPROC tx_device_manager_is_audio_focus_enabled;
+    FARPROC tx_device_manager_is_front_camera;
+    FARPROC tx_device_manager_set_application_mute_state;
+    FARPROC tx_device_manager_set_application_play_volume;
+    FARPROC tx_device_manager_set_audio_route;
+    FARPROC tx_device_manager_set_camera_capture_param;
+    FARPROC tx_device_manager_set_camera_focus_position;
+    FARPROC tx_device_manager_set_camera_zoom_ratio;
+    FARPROC tx_device_manager_set_current_device;
+    FARPROC tx_device_manager_set_current_device_mute;
+    FARPROC tx_device_manager_set_current_device_volume;
+    FARPROC tx_device_manager_set_device_observer;
+    FARPROC tx_device_manager_set_system_volume_type;
+    FARPROC tx_device_manager_start_camera_device_test;
+    FARPROC tx_device_manager_start_camera_device_test_and_callback;
+    FARPROC tx_device_manager_start_mic_device_test;
+    FARPROC tx_device_manager_start_mic_device_test_and_playback;
+    FARPROC tx_device_manager_start_speaker_device_test;
+    FARPROC tx_device_manager_stop_camera_device_test;
+    FARPROC tx_device_manager_stop_mic_device_test;
+    FARPROC tx_device_manager_stop_speaker_device_test;
+    FARPROC tx_device_manager_switch_camera;
+
+    void LoadOriginalLibrary(HMODULE module)
+    {
+        dll = module;
+        shared.LoadOriginalLibrary(dll);
+        GMEUnity_AddAudioBlackList = GetProcAddress(dll, "GMEUnity_AddAudioBlackList");
+        GMEUnity_ApplyPTTAuthbuffer = GetProcAddress(dll, "GMEUnity_ApplyPTTAuthbuffer");
+        GMEUnity_CancelRecording = GetProcAddress(dll, "GMEUnity_CancelRecording");
+        GMEUnity_ChangeRoomType = GetProcAddress(dll, "GMEUnity_ChangeRoomType");
+        GMEUnity_CheckMicPermission = GetProcAddress(dll, "GMEUnity_CheckMicPermission");
+        GMEUnity_CreateExternalAudioTrack = GetProcAddress(dll, "GMEUnity_CreateExternalAudioTrack");
+        GMEUnity_CreateInstance = GetProcAddress(dll, "GMEUnity_CreateInstance");
+        GMEUnity_DestroyExternalAudioTrack = GetProcAddress(dll, "GMEUnity_DestroyExternalAudioTrack");
+        GMEUnity_DestroyInstance = GetProcAddress(dll, "GMEUnity_DestroyInstance");
+        GMEUnity_DownloadRecordedFile = GetProcAddress(dll, "GMEUnity_DownloadRecordedFile");
+        GMEUnity_EnableAudioCaptureDevice = GetProcAddress(dll, "GMEUnity_EnableAudioCaptureDevice");
+        GMEUnity_EnableAudioPlayDevice = GetProcAddress(dll, "GMEUnity_EnableAudioPlayDevice");
+        GMEUnity_EnableAudioRecv = GetProcAddress(dll, "GMEUnity_EnableAudioRecv");
+        GMEUnity_EnableAudioSend = GetProcAddress(dll, "GMEUnity_EnableAudioSend");
+        GMEUnity_EnableCustomAudioCapture = GetProcAddress(dll, "GMEUnity_EnableCustomAudioCapture");
+        GMEUnity_EnableCustomAudioRendering = GetProcAddress(dll, "GMEUnity_EnableCustomAudioRendering");
+        GMEUnity_EnableLoopBack = GetProcAddress(dll, "GMEUnity_EnableLoopBack");
+        GMEUnity_EnableMusicPlayout = GetProcAddress(dll, "GMEUnity_EnableMusicPlayout");
+        GMEUnity_EnableMusicPublish = GetProcAddress(dll, "GMEUnity_EnableMusicPublish");
+        GMEUnity_EnableSpatializer = GetProcAddress(dll, "GMEUnity_EnableSpatializer");
+        GMEUnity_EnterRoom = GetProcAddress(dll, "GMEUnity_EnterRoom");
+        GMEUnity_ExitRoom = GetProcAddress(dll, "GMEUnity_ExitRoom");
+        GMEUnity_GetAITranscriberManager = GetProcAddress(dll, "GMEUnity_GetAITranscriberManager");
+        GMEUnity_GetAdvanceParams = GetProcAddress(dll, "GMEUnity_GetAdvanceParams");
+        GMEUnity_GetCurrentMic = GetProcAddress(dll, "GMEUnity_GetCurrentMic");
+        GMEUnity_GetCurrentSpeaker = GetProcAddress(dll, "GMEUnity_GetCurrentSpeaker");
+        GMEUnity_GetCustomAudioRenderingFrame = GetProcAddress(dll, "GMEUnity_GetCustomAudioRenderingFrame");
+        GMEUnity_GetFileSize = GetProcAddress(dll, "GMEUnity_GetFileSize");
+        GMEUnity_GetLogPath = GetProcAddress(dll, "GMEUnity_GetLogPath");
+        GMEUnity_GetMicLevel = GetProcAddress(dll, "GMEUnity_GetMicLevel");
+        GMEUnity_GetMicList = GetProcAddress(dll, "GMEUnity_GetMicList");
+        GMEUnity_GetMicListCount = GetProcAddress(dll, "GMEUnity_GetMicListCount");
+        GMEUnity_GetMicVolume = GetProcAddress(dll, "GMEUnity_GetMicVolume");
+        GMEUnity_GetMusicCurrentPosInMS = GetProcAddress(dll, "GMEUnity_GetMusicCurrentPosInMS");
+        GMEUnity_GetMusicDurationInMS = GetProcAddress(dll, "GMEUnity_GetMusicDurationInMS");
+        GMEUnity_GetMusicPlayoutVolume = GetProcAddress(dll, "GMEUnity_GetMusicPlayoutVolume");
+        GMEUnity_GetMusicPublishVolume = GetProcAddress(dll, "GMEUnity_GetMusicPublishVolume");
+        GMEUnity_GetRecvStreamLevel = GetProcAddress(dll, "GMEUnity_GetRecvStreamLevel");
+        GMEUnity_GetRoomID = GetProcAddress(dll, "GMEUnity_GetRoomID");
+        GMEUnity_GetRoomType = GetProcAddress(dll, "GMEUnity_GetRoomType");
+        GMEUnity_GetSDKVersion = GetProcAddress(dll, "GMEUnity_GetSDKVersion");
+        GMEUnity_GetSendStreamLevel = GetProcAddress(dll, "GMEUnity_GetSendStreamLevel");
+        GMEUnity_GetSpeakerLevel = GetProcAddress(dll, "GMEUnity_GetSpeakerLevel");
+        GMEUnity_GetSpeakerList = GetProcAddress(dll, "GMEUnity_GetSpeakerList");
+        GMEUnity_GetSpeakerListCount = GetProcAddress(dll, "GMEUnity_GetSpeakerListCount");
+        GMEUnity_GetSpeakerVolume = GetProcAddress(dll, "GMEUnity_GetSpeakerVolume");
+        GMEUnity_GetSpeakerVolumeByUserID = GetProcAddress(dll, "GMEUnity_GetSpeakerVolumeByUserID");
+        GMEUnity_GetVoiceFileDuration = GetProcAddress(dll, "GMEUnity_GetVoiceFileDuration");
+        GMEUnity_Init = GetProcAddress(dll, "GMEUnity_Init");
+        GMEUnity_IsAudioCaptureDeviceEnabled = GetProcAddress(dll, "GMEUnity_IsAudioCaptureDeviceEnabled");
+        GMEUnity_IsAudioPlayDeviceEnabled = GetProcAddress(dll, "GMEUnity_IsAudioPlayDeviceEnabled");
+        GMEUnity_IsAudioRecvEnabled = GetProcAddress(dll, "GMEUnity_IsAudioRecvEnabled");
+        GMEUnity_IsAudioSendEnabled = GetProcAddress(dll, "GMEUnity_IsAudioSendEnabled");
+        GMEUnity_IsEnableSpatializer = GetProcAddress(dll, "GMEUnity_IsEnableSpatializer");
+        GMEUnity_IsMusicPlayEnd = GetProcAddress(dll, "GMEUnity_IsMusicPlayEnd");
+        GMEUnity_IsRoomEntered = GetProcAddress(dll, "GMEUnity_IsRoomEntered");
+        GMEUnity_IsUserIDInAudioBlackList = GetProcAddress(dll, "GMEUnity_IsUserIDInAudioBlackList");
+        GMEUnity_Pause = GetProcAddress(dll, "GMEUnity_Pause");
+        GMEUnity_PausePlayMusic = GetProcAddress(dll, "GMEUnity_PausePlayMusic");
+        GMEUnity_Poll = GetProcAddress(dll, "GMEUnity_Poll");
+        GMEUnity_RemoveAudioBlackList = GetProcAddress(dll, "GMEUnity_RemoveAudioBlackList");
+        GMEUnity_Resume = GetProcAddress(dll, "GMEUnity_Resume");
+        GMEUnity_ResumePlayMusic = GetProcAddress(dll, "GMEUnity_ResumePlayMusic");
+        GMEUnity_SeekMusicToPosInTime = GetProcAddress(dll, "GMEUnity_SeekMusicToPosInTime");
+        GMEUnity_SelectMic = GetProcAddress(dll, "GMEUnity_SelectMic");
+        GMEUnity_SelectSpeaker = GetProcAddress(dll, "GMEUnity_SelectSpeaker");
+        GMEUnity_SendAudioDataToExternalTrack = GetProcAddress(dll, "GMEUnity_SendAudioDataToExternalTrack");
+        GMEUnity_SendCustomAudioData = GetProcAddress(dll, "GMEUnity_SendCustomAudioData");
+        GMEUnity_SendCustomData = GetProcAddress(dll, "GMEUnity_SendCustomData");
+        GMEUnity_SendSEIMsg = GetProcAddress(dll, "GMEUnity_SendSEIMsg");
+        GMEUnity_SetAdvanceParams = GetProcAddress(dll, "GMEUnity_SetAdvanceParams");
+        GMEUnity_SetAllMusicVolume = GetProcAddress(dll, "GMEUnity_SetAllMusicVolume");
+        GMEUnity_SetAppVersion = GetProcAddress(dll, "GMEUnity_SetAppVersion");
+        GMEUnity_SetAudioFrameCallback = GetProcAddress(dll, "GMEUnity_SetAudioFrameCallback");
+        GMEUnity_SetAudioRole = GetProcAddress(dll, "GMEUnity_SetAudioRole");
+        GMEUnity_SetAudioRoute = GetProcAddress(dll, "GMEUnity_SetAudioRoute");
+        GMEUnity_SetDelegate = GetProcAddress(dll, "GMEUnity_SetDelegate");
+        GMEUnity_SetKaraokeType = GetProcAddress(dll, "GMEUnity_SetKaraokeType");
+        GMEUnity_SetLogLevel = GetProcAddress(dll, "GMEUnity_SetLogLevel");
+        GMEUnity_SetLogPath = GetProcAddress(dll, "GMEUnity_SetLogPath");
+        GMEUnity_SetLoopBackVolume = GetProcAddress(dll, "GMEUnity_SetLoopBackVolume");
+        GMEUnity_SetMaxMessageLength = GetProcAddress(dll, "GMEUnity_SetMaxMessageLength");
+        GMEUnity_SetMicVolume = GetProcAddress(dll, "GMEUnity_SetMicVolume");
+        GMEUnity_SetMusicPitch = GetProcAddress(dll, "GMEUnity_SetMusicPitch");
+        GMEUnity_SetMusicPlayoutVolume = GetProcAddress(dll, "GMEUnity_SetMusicPlayoutVolume");
+        GMEUnity_SetMusicPublishVolume = GetProcAddress(dll, "GMEUnity_SetMusicPublishVolume");
+        GMEUnity_SetPTTSourceLanguage = GetProcAddress(dll, "GMEUnity_SetPTTSourceLanguage");
+        GMEUnity_SetRangeAudioMode = GetProcAddress(dll, "GMEUnity_SetRangeAudioMode");
+        GMEUnity_SetRangeAudioTeamID = GetProcAddress(dll, "GMEUnity_SetRangeAudioTeamID");
+        GMEUnity_SetRegion = GetProcAddress(dll, "GMEUnity_SetRegion");
+        GMEUnity_SetScene = GetProcAddress(dll, "GMEUnity_SetScene");
+        GMEUnity_SetSpeakerVolume = GetProcAddress(dll, "GMEUnity_SetSpeakerVolume");
+        GMEUnity_SetSpeakerVolumeByUserID = GetProcAddress(dll, "GMEUnity_SetSpeakerVolumeByUserID");
+        GMEUnity_SetSystemAudioLoopbackVolume = GetProcAddress(dll, "GMEUnity_SetSystemAudioLoopbackVolume");
+        GMEUnity_SetVoiceType = GetProcAddress(dll, "GMEUnity_SetVoiceType");
+        GMEUnity_ShowDebugView = GetProcAddress(dll, "GMEUnity_ShowDebugView");
+        GMEUnity_SpeechToText = GetProcAddress(dll, "GMEUnity_SpeechToText");
+        GMEUnity_StartMicDeviceTest = GetProcAddress(dll, "GMEUnity_StartMicDeviceTest");
+        GMEUnity_StartPlayFile = GetProcAddress(dll, "GMEUnity_StartPlayFile");
+        GMEUnity_StartPlayMusic = GetProcAddress(dll, "GMEUnity_StartPlayMusic");
+        GMEUnity_StartRecord = GetProcAddress(dll, "GMEUnity_StartRecord");
+        GMEUnity_StartRecording = GetProcAddress(dll, "GMEUnity_StartRecording");
+        GMEUnity_StartRecordingWithStreamingRecognition = GetProcAddress(dll, "GMEUnity_StartRecordingWithStreamingRecognition");
+        GMEUnity_StartRoomSharing = GetProcAddress(dll, "GMEUnity_StartRoomSharing");
+        GMEUnity_StartSpeakerDeviceTest = GetProcAddress(dll, "GMEUnity_StartSpeakerDeviceTest");
+        GMEUnity_StartSystemAudioLoopback = GetProcAddress(dll, "GMEUnity_StartSystemAudioLoopback");
+        GMEUnity_StopMicDeviceTest = GetProcAddress(dll, "GMEUnity_StopMicDeviceTest");
+        GMEUnity_StopPlayFile = GetProcAddress(dll, "GMEUnity_StopPlayFile");
+        GMEUnity_StopPlayMusic = GetProcAddress(dll, "GMEUnity_StopPlayMusic");
+        GMEUnity_StopRecord = GetProcAddress(dll, "GMEUnity_StopRecord");
+        GMEUnity_StopRecording = GetProcAddress(dll, "GMEUnity_StopRecording");
+        GMEUnity_StopRoomSharing = GetProcAddress(dll, "GMEUnity_StopRoomSharing");
+        GMEUnity_StopSendCustomData = GetProcAddress(dll, "GMEUnity_StopSendCustomData");
+        GMEUnity_StopSpeakerDeviceTest = GetProcAddress(dll, "GMEUnity_StopSpeakerDeviceTest");
+        GMEUnity_StopSystemAudioLoopback = GetProcAddress(dll, "GMEUnity_StopSystemAudioLoopback");
+        GMEUnity_StopTrackingVolume = GetProcAddress(dll, "GMEUnity_StopTrackingVolume");
+        GMEUnity_SwitchRoom = GetProcAddress(dll, "GMEUnity_SwitchRoom");
+        GMEUnity_TextToSpeech = GetProcAddress(dll, "GMEUnity_TextToSpeech");
+        GMEUnity_TrackingVolume = GetProcAddress(dll, "GMEUnity_TrackingVolume");
+        GMEUnity_TranslateText = GetProcAddress(dll, "GMEUnity_TranslateText");
+        GMEUnity_Uninit = GetProcAddress(dll, "GMEUnity_Uninit");
+        GMEUnity_UpdateAudioRecvRange = GetProcAddress(dll, "GMEUnity_UpdateAudioRecvRange");
+        GMEUnity_UpdateOtherPosition = GetProcAddress(dll, "GMEUnity_UpdateOtherPosition");
+        GMEUnity_UpdateSelfPosition = GetProcAddress(dll, "GMEUnity_UpdateSelfPosition");
+        GMEUnity_UpdateSpatializerRecvRange = GetProcAddress(dll, "GMEUnity_UpdateSpatializerRecvRange");
+        GMEUnity_UploadRecordedFile = GetProcAddress(dll, "GMEUnity_UploadRecordedFile");
+        GMEUnity_WriteLog = GetProcAddress(dll, "GMEUnity_WriteLog");
+        ITMGContextGetInstance = GetProcAddress(dll, "ITMGContextGetInstance");
+        QAVSDK_AuthBuffer_GenAuthBuffer = GetProcAddress(dll, "QAVSDK_AuthBuffer_GenAuthBuffer");
+        gme_wwise_audio_receiver_create = GetProcAddress(dll, "gme_wwise_audio_receiver_create");
+        gme_wwise_audio_receiver_destroy = GetProcAddress(dll, "gme_wwise_audio_receiver_destroy");
+        gme_wwise_audio_receiver_get_audio_data = GetProcAddress(dll, "gme_wwise_audio_receiver_get_audio_data");
+        gme_wwise_audio_recorder_create = GetProcAddress(dll, "gme_wwise_audio_recorder_create");
+        gme_wwise_audio_recorder_destroy = GetProcAddress(dll, "gme_wwise_audio_recorder_destroy");
+        gme_wwise_audio_recorder_get_audio_data = GetProcAddress(dll, "gme_wwise_audio_recorder_get_audio_data");
+        gme_wwise_audio_sender_create = GetProcAddress(dll, "gme_wwise_audio_sender_create");
+        gme_wwise_audio_sender_destroy = GetProcAddress(dll, "gme_wwise_audio_sender_destroy");
+        gme_wwise_audio_sender_send_audio_data = GetProcAddress(dll, "gme_wwise_audio_sender_send_audio_data");
+        gme_wwise_audio_session_create = GetProcAddress(dll, "gme_wwise_audio_session_create");
+        gme_wwise_audio_session_destroy = GetProcAddress(dll, "gme_wwise_audio_session_destroy");
+        gme_wwise_create_message_pool = GetProcAddress(dll, "gme_wwise_create_message_pool");
+        gme_wwise_destroy_message_pool = GetProcAddress(dll, "gme_wwise_destroy_message_pool");
+        gme_wwise_get_game_object_string_property = GetProcAddress(dll, "gme_wwise_get_game_object_string_property");
+        gme_wwise_get_message = GetProcAddress(dll, "gme_wwise_get_message");
+        gme_wwise_get_quality_tips = GetProcAddress(dll, "gme_wwise_get_quality_tips");
+        gme_wwise_get_sdk_version = GetProcAddress(dll, "gme_wwise_get_sdk_version");
+        gme_wwise_invoke_advanced_features = GetProcAddress(dll, "gme_wwise_invoke_advanced_features");
+        gme_wwise_pause = GetProcAddress(dll, "gme_wwise_pause");
+        gme_wwise_resume = GetProcAddress(dll, "gme_wwise_resume");
+        gme_wwise_send_session_audio_data = GetProcAddress(dll, "gme_wwise_send_session_audio_data");
+        gme_wwise_set_game_object_string_property = GetProcAddress(dll, "gme_wwise_set_game_object_string_property");
+        gme_wwise_set_game_object_url = GetProcAddress(dll, "gme_wwise_set_game_object_url");
+        gme_wwise_write_log = GetProcAddress(dll, "gme_wwise_write_log");
+        tx_ai_transcriber_manager_add_transcriber_listener = GetProcAddress(dll, "tx_ai_transcriber_manager_add_transcriber_listener");
+        tx_ai_transcriber_manager_create_transcriber_listener = GetProcAddress(dll, "tx_ai_transcriber_manager_create_transcriber_listener");
+        tx_ai_transcriber_manager_destroy_transcriber_listener = GetProcAddress(dll, "tx_ai_transcriber_manager_destroy_transcriber_listener");
+        tx_ai_transcriber_manager_pause_receiving_message = GetProcAddress(dll, "tx_ai_transcriber_manager_pause_receiving_message");
+        tx_ai_transcriber_manager_remove_transcriber_listener = GetProcAddress(dll, "tx_ai_transcriber_manager_remove_transcriber_listener");
+        tx_ai_transcriber_manager_resume_receiving_message = GetProcAddress(dll, "tx_ai_transcriber_manager_resume_receiving_message");
+        tx_ai_transcriber_manager_start_realtime_transcriber = GetProcAddress(dll, "tx_ai_transcriber_manager_start_realtime_transcriber");
+        tx_ai_transcriber_manager_stop_realtime_transcriber = GetProcAddress(dll, "tx_ai_transcriber_manager_stop_realtime_transcriber");
+        tx_audio_effect_manager_create_music_play_observer = GetProcAddress(dll, "tx_audio_effect_manager_create_music_play_observer");
+        tx_audio_effect_manager_create_music_preload_observer = GetProcAddress(dll, "tx_audio_effect_manager_create_music_preload_observer");
+        tx_audio_effect_manager_destroy_music_play_observer = GetProcAddress(dll, "tx_audio_effect_manager_destroy_music_play_observer");
+        tx_audio_effect_manager_destroy_music_preload_observer = GetProcAddress(dll, "tx_audio_effect_manager_destroy_music_preload_observer");
+        tx_audio_effect_manager_enable_voice_ear_monitor = GetProcAddress(dll, "tx_audio_effect_manager_enable_voice_ear_monitor");
+        tx_audio_effect_manager_get_current_pos_in_ms = GetProcAddress(dll, "tx_audio_effect_manager_get_current_pos_in_ms");
+        tx_audio_effect_manager_get_music_duration_in_ms = GetProcAddress(dll, "tx_audio_effect_manager_get_music_duration_in_ms");
+        tx_audio_effect_manager_get_music_track_count = GetProcAddress(dll, "tx_audio_effect_manager_get_music_track_count");
+        tx_audio_effect_manager_pause_play_music = GetProcAddress(dll, "tx_audio_effect_manager_pause_play_music");
+        tx_audio_effect_manager_preload_music = GetProcAddress(dll, "tx_audio_effect_manager_preload_music");
+        tx_audio_effect_manager_resume_play_music = GetProcAddress(dll, "tx_audio_effect_manager_resume_play_music");
+        tx_audio_effect_manager_seek_music_to_pos_in_time = GetProcAddress(dll, "tx_audio_effect_manager_seek_music_to_pos_in_time");
+        tx_audio_effect_manager_set_all_music_volume = GetProcAddress(dll, "tx_audio_effect_manager_set_all_music_volume");
+        tx_audio_effect_manager_set_music_observer = GetProcAddress(dll, "tx_audio_effect_manager_set_music_observer");
+        tx_audio_effect_manager_set_music_pitch = GetProcAddress(dll, "tx_audio_effect_manager_set_music_pitch");
+        tx_audio_effect_manager_set_music_playout_volume = GetProcAddress(dll, "tx_audio_effect_manager_set_music_playout_volume");
+        tx_audio_effect_manager_set_music_publish_volume = GetProcAddress(dll, "tx_audio_effect_manager_set_music_publish_volume");
+        tx_audio_effect_manager_set_music_scratch_speed_rate = GetProcAddress(dll, "tx_audio_effect_manager_set_music_scratch_speed_rate");
+        tx_audio_effect_manager_set_music_speed_rate = GetProcAddress(dll, "tx_audio_effect_manager_set_music_speed_rate");
+        tx_audio_effect_manager_set_music_track = GetProcAddress(dll, "tx_audio_effect_manager_set_music_track");
+        tx_audio_effect_manager_set_preload_observer = GetProcAddress(dll, "tx_audio_effect_manager_set_preload_observer");
+        tx_audio_effect_manager_set_voice_capture_volume = GetProcAddress(dll, "tx_audio_effect_manager_set_voice_capture_volume");
+        tx_audio_effect_manager_set_voice_changer_type = GetProcAddress(dll, "tx_audio_effect_manager_set_voice_changer_type");
+        tx_audio_effect_manager_set_voice_ear_monitor_volume = GetProcAddress(dll, "tx_audio_effect_manager_set_voice_ear_monitor_volume");
+        tx_audio_effect_manager_set_voice_pitch = GetProcAddress(dll, "tx_audio_effect_manager_set_voice_pitch");
+        tx_audio_effect_manager_set_voice_reverb_type = GetProcAddress(dll, "tx_audio_effect_manager_set_voice_reverb_type");
+        tx_audio_effect_manager_start_play_music = GetProcAddress(dll, "tx_audio_effect_manager_start_play_music");
+        tx_audio_effect_manager_stop_play_music = GetProcAddress(dll, "tx_audio_effect_manager_stop_play_music");
+        tx_device_manager_create_device_observer = GetProcAddress(dll, "tx_device_manager_create_device_observer");
+        tx_device_manager_destroy_device_observer = GetProcAddress(dll, "tx_device_manager_destroy_device_observer");
+        tx_device_manager_enable_camera_auto_focus = GetProcAddress(dll, "tx_device_manager_enable_camera_auto_focus");
+        tx_device_manager_enable_camera_torch = GetProcAddress(dll, "tx_device_manager_enable_camera_torch");
+        tx_device_manager_enable_following_default_audio_device = GetProcAddress(dll, "tx_device_manager_enable_following_default_audio_device");
+        tx_device_manager_get_application_mute_state = GetProcAddress(dll, "tx_device_manager_get_application_mute_state");
+        tx_device_manager_get_application_play_volume = GetProcAddress(dll, "tx_device_manager_get_application_play_volume");
+        tx_device_manager_get_camera_zoom_max_ratio = GetProcAddress(dll, "tx_device_manager_get_camera_zoom_max_ratio");
+        tx_device_manager_get_current_device = GetProcAddress(dll, "tx_device_manager_get_current_device");
+        tx_device_manager_get_current_device_mute = GetProcAddress(dll, "tx_device_manager_get_current_device_mute");
+        tx_device_manager_get_current_device_volume = GetProcAddress(dll, "tx_device_manager_get_current_device_volume");
+        tx_device_manager_get_device_count = GetProcAddress(dll, "tx_device_manager_get_device_count");
+        tx_device_manager_get_device_info = GetProcAddress(dll, "tx_device_manager_get_device_info");
+        tx_device_manager_is_audio_focus_enabled = GetProcAddress(dll, "tx_device_manager_is_audio_focus_enabled");
+        tx_device_manager_is_front_camera = GetProcAddress(dll, "tx_device_manager_is_front_camera");
+        tx_device_manager_set_application_mute_state = GetProcAddress(dll, "tx_device_manager_set_application_mute_state");
+        tx_device_manager_set_application_play_volume = GetProcAddress(dll, "tx_device_manager_set_application_play_volume");
+        tx_device_manager_set_audio_route = GetProcAddress(dll, "tx_device_manager_set_audio_route");
+        tx_device_manager_set_camera_capture_param = GetProcAddress(dll, "tx_device_manager_set_camera_capture_param");
+        tx_device_manager_set_camera_focus_position = GetProcAddress(dll, "tx_device_manager_set_camera_focus_position");
+        tx_device_manager_set_camera_zoom_ratio = GetProcAddress(dll, "tx_device_manager_set_camera_zoom_ratio");
+        tx_device_manager_set_current_device = GetProcAddress(dll, "tx_device_manager_set_current_device");
+        tx_device_manager_set_current_device_mute = GetProcAddress(dll, "tx_device_manager_set_current_device_mute");
+        tx_device_manager_set_current_device_volume = GetProcAddress(dll, "tx_device_manager_set_current_device_volume");
+        tx_device_manager_set_device_observer = GetProcAddress(dll, "tx_device_manager_set_device_observer");
+        tx_device_manager_set_system_volume_type = GetProcAddress(dll, "tx_device_manager_set_system_volume_type");
+        tx_device_manager_start_camera_device_test = GetProcAddress(dll, "tx_device_manager_start_camera_device_test");
+        tx_device_manager_start_camera_device_test_and_callback = GetProcAddress(dll, "tx_device_manager_start_camera_device_test_and_callback");
+        tx_device_manager_start_mic_device_test = GetProcAddress(dll, "tx_device_manager_start_mic_device_test");
+        tx_device_manager_start_mic_device_test_and_playback = GetProcAddress(dll, "tx_device_manager_start_mic_device_test_and_playback");
+        tx_device_manager_start_speaker_device_test = GetProcAddress(dll, "tx_device_manager_start_speaker_device_test");
+        tx_device_manager_stop_camera_device_test = GetProcAddress(dll, "tx_device_manager_stop_camera_device_test");
+        tx_device_manager_stop_mic_device_test = GetProcAddress(dll, "tx_device_manager_stop_mic_device_test");
+        tx_device_manager_stop_speaker_device_test = GetProcAddress(dll, "tx_device_manager_stop_speaker_device_test");
+        tx_device_manager_switch_camera = GetProcAddress(dll, "tx_device_manager_switch_camera");
+    }
+} gmesdk;
+
 #undef PlaySound
 struct winmm_dll
 {
@@ -2833,6 +3292,231 @@ __declspec(naked) void _PIXBeginCapture() { _asm { jmp[dxgi.PIXBeginCapture] } }
 __declspec(naked) void _PIXEndCapture() { _asm { jmp[dxgi.PIXEndCapture] } }
 __declspec(naked) void _PIXGetCaptureState() { _asm { jmp[dxgi.PIXGetCaptureState] } }
 
+__declspec(naked) void _GMEUnity_AddAudioBlackList() { _asm { jmp[gmesdk.GMEUnity_AddAudioBlackList] } }
+__declspec(naked) void _GMEUnity_ApplyPTTAuthbuffer() { _asm { jmp[gmesdk.GMEUnity_ApplyPTTAuthbuffer] } }
+__declspec(naked) void _GMEUnity_CancelRecording() { _asm { jmp[gmesdk.GMEUnity_CancelRecording] } }
+__declspec(naked) void _GMEUnity_ChangeRoomType() { _asm { jmp[gmesdk.GMEUnity_ChangeRoomType] } }
+__declspec(naked) void _GMEUnity_CheckMicPermission() { _asm { jmp[gmesdk.GMEUnity_CheckMicPermission] } }
+__declspec(naked) void _GMEUnity_CreateExternalAudioTrack() { _asm { jmp[gmesdk.GMEUnity_CreateExternalAudioTrack] } }
+__declspec(naked) void _GMEUnity_CreateInstance() { _asm { jmp[gmesdk.GMEUnity_CreateInstance] } }
+__declspec(naked) void _GMEUnity_DestroyExternalAudioTrack() { _asm { jmp[gmesdk.GMEUnity_DestroyExternalAudioTrack] } }
+__declspec(naked) void _GMEUnity_DestroyInstance() { _asm { jmp[gmesdk.GMEUnity_DestroyInstance] } }
+__declspec(naked) void _GMEUnity_DownloadRecordedFile() { _asm { jmp[gmesdk.GMEUnity_DownloadRecordedFile] } }
+__declspec(naked) void _GMEUnity_EnableAudioCaptureDevice() { _asm { jmp[gmesdk.GMEUnity_EnableAudioCaptureDevice] } }
+__declspec(naked) void _GMEUnity_EnableAudioPlayDevice() { _asm { jmp[gmesdk.GMEUnity_EnableAudioPlayDevice] } }
+__declspec(naked) void _GMEUnity_EnableAudioRecv() { _asm { jmp[gmesdk.GMEUnity_EnableAudioRecv] } }
+__declspec(naked) void _GMEUnity_EnableAudioSend() { _asm { jmp[gmesdk.GMEUnity_EnableAudioSend] } }
+__declspec(naked) void _GMEUnity_EnableCustomAudioCapture() { _asm { jmp[gmesdk.GMEUnity_EnableCustomAudioCapture] } }
+__declspec(naked) void _GMEUnity_EnableCustomAudioRendering() { _asm { jmp[gmesdk.GMEUnity_EnableCustomAudioRendering] } }
+__declspec(naked) void _GMEUnity_EnableLoopBack() { _asm { jmp[gmesdk.GMEUnity_EnableLoopBack] } }
+__declspec(naked) void _GMEUnity_EnableMusicPlayout() { _asm { jmp[gmesdk.GMEUnity_EnableMusicPlayout] } }
+__declspec(naked) void _GMEUnity_EnableMusicPublish() { _asm { jmp[gmesdk.GMEUnity_EnableMusicPublish] } }
+__declspec(naked) void _GMEUnity_EnableSpatializer() { _asm { jmp[gmesdk.GMEUnity_EnableSpatializer] } }
+__declspec(naked) void _GMEUnity_EnterRoom() { _asm { jmp[gmesdk.GMEUnity_EnterRoom] } }
+__declspec(naked) void _GMEUnity_ExitRoom() { _asm { jmp[gmesdk.GMEUnity_ExitRoom] } }
+__declspec(naked) void _GMEUnity_GetAITranscriberManager() { _asm { jmp[gmesdk.GMEUnity_GetAITranscriberManager] } }
+__declspec(naked) void _GMEUnity_GetAdvanceParams() { _asm { jmp[gmesdk.GMEUnity_GetAdvanceParams] } }
+__declspec(naked) void _GMEUnity_GetCurrentMic() { _asm { jmp[gmesdk.GMEUnity_GetCurrentMic] } }
+__declspec(naked) void _GMEUnity_GetCurrentSpeaker() { _asm { jmp[gmesdk.GMEUnity_GetCurrentSpeaker] } }
+__declspec(naked) void _GMEUnity_GetCustomAudioRenderingFrame() { _asm { jmp[gmesdk.GMEUnity_GetCustomAudioRenderingFrame] } }
+__declspec(naked) void _GMEUnity_GetFileSize() { _asm { jmp[gmesdk.GMEUnity_GetFileSize] } }
+__declspec(naked) void _GMEUnity_GetLogPath() { _asm { jmp[gmesdk.GMEUnity_GetLogPath] } }
+__declspec(naked) void _GMEUnity_GetMicLevel() { _asm { jmp[gmesdk.GMEUnity_GetMicLevel] } }
+__declspec(naked) void _GMEUnity_GetMicList() { _asm { jmp[gmesdk.GMEUnity_GetMicList] } }
+__declspec(naked) void _GMEUnity_GetMicListCount() { _asm { jmp[gmesdk.GMEUnity_GetMicListCount] } }
+__declspec(naked) void _GMEUnity_GetMicVolume() { _asm { jmp[gmesdk.GMEUnity_GetMicVolume] } }
+__declspec(naked) void _GMEUnity_GetMusicCurrentPosInMS() { _asm { jmp[gmesdk.GMEUnity_GetMusicCurrentPosInMS] } }
+__declspec(naked) void _GMEUnity_GetMusicDurationInMS() { _asm { jmp[gmesdk.GMEUnity_GetMusicDurationInMS] } }
+__declspec(naked) void _GMEUnity_GetMusicPlayoutVolume() { _asm { jmp[gmesdk.GMEUnity_GetMusicPlayoutVolume] } }
+__declspec(naked) void _GMEUnity_GetMusicPublishVolume() { _asm { jmp[gmesdk.GMEUnity_GetMusicPublishVolume] } }
+__declspec(naked) void _GMEUnity_GetRecvStreamLevel() { _asm { jmp[gmesdk.GMEUnity_GetRecvStreamLevel] } }
+__declspec(naked) void _GMEUnity_GetRoomID() { _asm { jmp[gmesdk.GMEUnity_GetRoomID] } }
+__declspec(naked) void _GMEUnity_GetRoomType() { _asm { jmp[gmesdk.GMEUnity_GetRoomType] } }
+__declspec(naked) void _GMEUnity_GetSDKVersion() { _asm { jmp[gmesdk.GMEUnity_GetSDKVersion] } }
+__declspec(naked) void _GMEUnity_GetSendStreamLevel() { _asm { jmp[gmesdk.GMEUnity_GetSendStreamLevel] } }
+__declspec(naked) void _GMEUnity_GetSpeakerLevel() { _asm { jmp[gmesdk.GMEUnity_GetSpeakerLevel] } }
+__declspec(naked) void _GMEUnity_GetSpeakerList() { _asm { jmp[gmesdk.GMEUnity_GetSpeakerList] } }
+__declspec(naked) void _GMEUnity_GetSpeakerListCount() { _asm { jmp[gmesdk.GMEUnity_GetSpeakerListCount] } }
+__declspec(naked) void _GMEUnity_GetSpeakerVolume() { _asm { jmp[gmesdk.GMEUnity_GetSpeakerVolume] } }
+__declspec(naked) void _GMEUnity_GetSpeakerVolumeByUserID() { _asm { jmp[gmesdk.GMEUnity_GetSpeakerVolumeByUserID] } }
+__declspec(naked) void _GMEUnity_GetVoiceFileDuration() { _asm { jmp[gmesdk.GMEUnity_GetVoiceFileDuration] } }
+__declspec(naked) void _GMEUnity_Init() { _asm { jmp[gmesdk.GMEUnity_Init] } }
+__declspec(naked) void _GMEUnity_IsAudioCaptureDeviceEnabled() { _asm { jmp[gmesdk.GMEUnity_IsAudioCaptureDeviceEnabled] } }
+__declspec(naked) void _GMEUnity_IsAudioPlayDeviceEnabled() { _asm { jmp[gmesdk.GMEUnity_IsAudioPlayDeviceEnabled] } }
+__declspec(naked) void _GMEUnity_IsAudioRecvEnabled() { _asm { jmp[gmesdk.GMEUnity_IsAudioRecvEnabled] } }
+__declspec(naked) void _GMEUnity_IsAudioSendEnabled() { _asm { jmp[gmesdk.GMEUnity_IsAudioSendEnabled] } }
+__declspec(naked) void _GMEUnity_IsEnableSpatializer() { _asm { jmp[gmesdk.GMEUnity_IsEnableSpatializer] } }
+__declspec(naked) void _GMEUnity_IsMusicPlayEnd() { _asm { jmp[gmesdk.GMEUnity_IsMusicPlayEnd] } }
+__declspec(naked) void _GMEUnity_IsRoomEntered() { _asm { jmp[gmesdk.GMEUnity_IsRoomEntered] } }
+__declspec(naked) void _GMEUnity_IsUserIDInAudioBlackList() { _asm { jmp[gmesdk.GMEUnity_IsUserIDInAudioBlackList] } }
+__declspec(naked) void _GMEUnity_Pause() { _asm { jmp[gmesdk.GMEUnity_Pause] } }
+__declspec(naked) void _GMEUnity_PausePlayMusic() { _asm { jmp[gmesdk.GMEUnity_PausePlayMusic] } }
+__declspec(naked) void _GMEUnity_Poll() { _asm { jmp[gmesdk.GMEUnity_Poll] } }
+__declspec(naked) void _GMEUnity_RemoveAudioBlackList() { _asm { jmp[gmesdk.GMEUnity_RemoveAudioBlackList] } }
+__declspec(naked) void _GMEUnity_Resume() { _asm { jmp[gmesdk.GMEUnity_Resume] } }
+__declspec(naked) void _GMEUnity_ResumePlayMusic() { _asm { jmp[gmesdk.GMEUnity_ResumePlayMusic] } }
+__declspec(naked) void _GMEUnity_SeekMusicToPosInTime() { _asm { jmp[gmesdk.GMEUnity_SeekMusicToPosInTime] } }
+__declspec(naked) void _GMEUnity_SelectMic() { _asm { jmp[gmesdk.GMEUnity_SelectMic] } }
+__declspec(naked) void _GMEUnity_SelectSpeaker() { _asm { jmp[gmesdk.GMEUnity_SelectSpeaker] } }
+__declspec(naked) void _GMEUnity_SendAudioDataToExternalTrack() { _asm { jmp[gmesdk.GMEUnity_SendAudioDataToExternalTrack] } }
+__declspec(naked) void _GMEUnity_SendCustomAudioData() { _asm { jmp[gmesdk.GMEUnity_SendCustomAudioData] } }
+__declspec(naked) void _GMEUnity_SendCustomData() { _asm { jmp[gmesdk.GMEUnity_SendCustomData] } }
+__declspec(naked) void _GMEUnity_SendSEIMsg() { _asm { jmp[gmesdk.GMEUnity_SendSEIMsg] } }
+__declspec(naked) void _GMEUnity_SetAdvanceParams() { _asm { jmp[gmesdk.GMEUnity_SetAdvanceParams] } }
+__declspec(naked) void _GMEUnity_SetAllMusicVolume() { _asm { jmp[gmesdk.GMEUnity_SetAllMusicVolume] } }
+__declspec(naked) void _GMEUnity_SetAppVersion() { _asm { jmp[gmesdk.GMEUnity_SetAppVersion] } }
+__declspec(naked) void _GMEUnity_SetAudioFrameCallback() { _asm { jmp[gmesdk.GMEUnity_SetAudioFrameCallback] } }
+__declspec(naked) void _GMEUnity_SetAudioRole() { _asm { jmp[gmesdk.GMEUnity_SetAudioRole] } }
+__declspec(naked) void _GMEUnity_SetAudioRoute() { _asm { jmp[gmesdk.GMEUnity_SetAudioRoute] } }
+__declspec(naked) void _GMEUnity_SetDelegate() { _asm { jmp[gmesdk.GMEUnity_SetDelegate] } }
+__declspec(naked) void _GMEUnity_SetKaraokeType() { _asm { jmp[gmesdk.GMEUnity_SetKaraokeType] } }
+__declspec(naked) void _GMEUnity_SetLogLevel() { _asm { jmp[gmesdk.GMEUnity_SetLogLevel] } }
+__declspec(naked) void _GMEUnity_SetLogPath() { _asm { jmp[gmesdk.GMEUnity_SetLogPath] } }
+__declspec(naked) void _GMEUnity_SetLoopBackVolume() { _asm { jmp[gmesdk.GMEUnity_SetLoopBackVolume] } }
+__declspec(naked) void _GMEUnity_SetMaxMessageLength() { _asm { jmp[gmesdk.GMEUnity_SetMaxMessageLength] } }
+__declspec(naked) void _GMEUnity_SetMicVolume() { _asm { jmp[gmesdk.GMEUnity_SetMicVolume] } }
+__declspec(naked) void _GMEUnity_SetMusicPitch() { _asm { jmp[gmesdk.GMEUnity_SetMusicPitch] } }
+__declspec(naked) void _GMEUnity_SetMusicPlayoutVolume() { _asm { jmp[gmesdk.GMEUnity_SetMusicPlayoutVolume] } }
+__declspec(naked) void _GMEUnity_SetMusicPublishVolume() { _asm { jmp[gmesdk.GMEUnity_SetMusicPublishVolume] } }
+__declspec(naked) void _GMEUnity_SetPTTSourceLanguage() { _asm { jmp[gmesdk.GMEUnity_SetPTTSourceLanguage] } }
+__declspec(naked) void _GMEUnity_SetRangeAudioMode() { _asm { jmp[gmesdk.GMEUnity_SetRangeAudioMode] } }
+__declspec(naked) void _GMEUnity_SetRangeAudioTeamID() { _asm { jmp[gmesdk.GMEUnity_SetRangeAudioTeamID] } }
+__declspec(naked) void _GMEUnity_SetRegion() { _asm { jmp[gmesdk.GMEUnity_SetRegion] } }
+__declspec(naked) void _GMEUnity_SetScene() { _asm { jmp[gmesdk.GMEUnity_SetScene] } }
+__declspec(naked) void _GMEUnity_SetSpeakerVolume() { _asm { jmp[gmesdk.GMEUnity_SetSpeakerVolume] } }
+__declspec(naked) void _GMEUnity_SetSpeakerVolumeByUserID() { _asm { jmp[gmesdk.GMEUnity_SetSpeakerVolumeByUserID] } }
+__declspec(naked) void _GMEUnity_SetSystemAudioLoopbackVolume() { _asm { jmp[gmesdk.GMEUnity_SetSystemAudioLoopbackVolume] } }
+__declspec(naked) void _GMEUnity_SetVoiceType() { _asm { jmp[gmesdk.GMEUnity_SetVoiceType] } }
+__declspec(naked) void _GMEUnity_ShowDebugView() { _asm { jmp[gmesdk.GMEUnity_ShowDebugView] } }
+__declspec(naked) void _GMEUnity_SpeechToText() { _asm { jmp[gmesdk.GMEUnity_SpeechToText] } }
+__declspec(naked) void _GMEUnity_StartMicDeviceTest() { _asm { jmp[gmesdk.GMEUnity_StartMicDeviceTest] } }
+__declspec(naked) void _GMEUnity_StartPlayFile() { _asm { jmp[gmesdk.GMEUnity_StartPlayFile] } }
+__declspec(naked) void _GMEUnity_StartPlayMusic() { _asm { jmp[gmesdk.GMEUnity_StartPlayMusic] } }
+__declspec(naked) void _GMEUnity_StartRecord() { _asm { jmp[gmesdk.GMEUnity_StartRecord] } }
+__declspec(naked) void _GMEUnity_StartRecording() { _asm { jmp[gmesdk.GMEUnity_StartRecording] } }
+__declspec(naked) void _GMEUnity_StartRecordingWithStreamingRecognition() { _asm { jmp[gmesdk.GMEUnity_StartRecordingWithStreamingRecognition] } }
+__declspec(naked) void _GMEUnity_StartRoomSharing() { _asm { jmp[gmesdk.GMEUnity_StartRoomSharing] } }
+__declspec(naked) void _GMEUnity_StartSpeakerDeviceTest() { _asm { jmp[gmesdk.GMEUnity_StartSpeakerDeviceTest] } }
+__declspec(naked) void _GMEUnity_StartSystemAudioLoopback() { _asm { jmp[gmesdk.GMEUnity_StartSystemAudioLoopback] } }
+__declspec(naked) void _GMEUnity_StopMicDeviceTest() { _asm { jmp[gmesdk.GMEUnity_StopMicDeviceTest] } }
+__declspec(naked) void _GMEUnity_StopPlayFile() { _asm { jmp[gmesdk.GMEUnity_StopPlayFile] } }
+__declspec(naked) void _GMEUnity_StopPlayMusic() { _asm { jmp[gmesdk.GMEUnity_StopPlayMusic] } }
+__declspec(naked) void _GMEUnity_StopRecord() { _asm { jmp[gmesdk.GMEUnity_StopRecord] } }
+__declspec(naked) void _GMEUnity_StopRecording() { _asm { jmp[gmesdk.GMEUnity_StopRecording] } }
+__declspec(naked) void _GMEUnity_StopRoomSharing() { _asm { jmp[gmesdk.GMEUnity_StopRoomSharing] } }
+__declspec(naked) void _GMEUnity_StopSendCustomData() { _asm { jmp[gmesdk.GMEUnity_StopSendCustomData] } }
+__declspec(naked) void _GMEUnity_StopSpeakerDeviceTest() { _asm { jmp[gmesdk.GMEUnity_StopSpeakerDeviceTest] } }
+__declspec(naked) void _GMEUnity_StopSystemAudioLoopback() { _asm { jmp[gmesdk.GMEUnity_StopSystemAudioLoopback] } }
+__declspec(naked) void _GMEUnity_StopTrackingVolume() { _asm { jmp[gmesdk.GMEUnity_StopTrackingVolume] } }
+__declspec(naked) void _GMEUnity_SwitchRoom() { _asm { jmp[gmesdk.GMEUnity_SwitchRoom] } }
+__declspec(naked) void _GMEUnity_TextToSpeech() { _asm { jmp[gmesdk.GMEUnity_TextToSpeech] } }
+__declspec(naked) void _GMEUnity_TrackingVolume() { _asm { jmp[gmesdk.GMEUnity_TrackingVolume] } }
+__declspec(naked) void _GMEUnity_TranslateText() { _asm { jmp[gmesdk.GMEUnity_TranslateText] } }
+__declspec(naked) void _GMEUnity_Uninit() { _asm { jmp[gmesdk.GMEUnity_Uninit] } }
+__declspec(naked) void _GMEUnity_UpdateAudioRecvRange() { _asm { jmp[gmesdk.GMEUnity_UpdateAudioRecvRange] } }
+__declspec(naked) void _GMEUnity_UpdateOtherPosition() { _asm { jmp[gmesdk.GMEUnity_UpdateOtherPosition] } }
+__declspec(naked) void _GMEUnity_UpdateSelfPosition() { _asm { jmp[gmesdk.GMEUnity_UpdateSelfPosition] } }
+__declspec(naked) void _GMEUnity_UpdateSpatializerRecvRange() { _asm { jmp[gmesdk.GMEUnity_UpdateSpatializerRecvRange] } }
+__declspec(naked) void _GMEUnity_UploadRecordedFile() { _asm { jmp[gmesdk.GMEUnity_UploadRecordedFile] } }
+__declspec(naked) void _GMEUnity_WriteLog() { _asm { jmp[gmesdk.GMEUnity_WriteLog] } }
+__declspec(naked) void _ITMGContextGetInstance() { _asm { jmp[gmesdk.ITMGContextGetInstance] } }
+__declspec(naked) void _QAVSDK_AuthBuffer_GenAuthBuffer() { _asm { jmp[gmesdk.QAVSDK_AuthBuffer_GenAuthBuffer] } }
+__declspec(naked) void _gme_wwise_audio_receiver_create() { _asm { jmp[gmesdk.gme_wwise_audio_receiver_create] } }
+__declspec(naked) void _gme_wwise_audio_receiver_destroy() { _asm { jmp[gmesdk.gme_wwise_audio_receiver_destroy] } }
+__declspec(naked) void _gme_wwise_audio_receiver_get_audio_data() { _asm { jmp[gmesdk.gme_wwise_audio_receiver_get_audio_data] } }
+__declspec(naked) void _gme_wwise_audio_recorder_create() { _asm { jmp[gmesdk.gme_wwise_audio_recorder_create] } }
+__declspec(naked) void _gme_wwise_audio_recorder_destroy() { _asm { jmp[gmesdk.gme_wwise_audio_recorder_destroy] } }
+__declspec(naked) void _gme_wwise_audio_recorder_get_audio_data() { _asm { jmp[gmesdk.gme_wwise_audio_recorder_get_audio_data] } }
+__declspec(naked) void _gme_wwise_audio_sender_create() { _asm { jmp[gmesdk.gme_wwise_audio_sender_create] } }
+__declspec(naked) void _gme_wwise_audio_sender_destroy() { _asm { jmp[gmesdk.gme_wwise_audio_sender_destroy] } }
+__declspec(naked) void _gme_wwise_audio_sender_send_audio_data() { _asm { jmp[gmesdk.gme_wwise_audio_sender_send_audio_data] } }
+__declspec(naked) void _gme_wwise_audio_session_create() { _asm { jmp[gmesdk.gme_wwise_audio_session_create] } }
+__declspec(naked) void _gme_wwise_audio_session_destroy() { _asm { jmp[gmesdk.gme_wwise_audio_session_destroy] } }
+__declspec(naked) void _gme_wwise_create_message_pool() { _asm { jmp[gmesdk.gme_wwise_create_message_pool] } }
+__declspec(naked) void _gme_wwise_destroy_message_pool() { _asm { jmp[gmesdk.gme_wwise_destroy_message_pool] } }
+__declspec(naked) void _gme_wwise_get_game_object_string_property() { _asm { jmp[gmesdk.gme_wwise_get_game_object_string_property] } }
+__declspec(naked) void _gme_wwise_get_message() { _asm { jmp[gmesdk.gme_wwise_get_message] } }
+__declspec(naked) void _gme_wwise_get_quality_tips() { _asm { jmp[gmesdk.gme_wwise_get_quality_tips] } }
+__declspec(naked) void _gme_wwise_get_sdk_version() { _asm { jmp[gmesdk.gme_wwise_get_sdk_version] } }
+__declspec(naked) void _gme_wwise_invoke_advanced_features() { _asm { jmp[gmesdk.gme_wwise_invoke_advanced_features] } }
+__declspec(naked) void _gme_wwise_pause() { _asm { jmp[gmesdk.gme_wwise_pause] } }
+__declspec(naked) void _gme_wwise_resume() { _asm { jmp[gmesdk.gme_wwise_resume] } }
+__declspec(naked) void _gme_wwise_send_session_audio_data() { _asm { jmp[gmesdk.gme_wwise_send_session_audio_data] } }
+__declspec(naked) void _gme_wwise_set_game_object_string_property() { _asm { jmp[gmesdk.gme_wwise_set_game_object_string_property] } }
+__declspec(naked) void _gme_wwise_set_game_object_url() { _asm { jmp[gmesdk.gme_wwise_set_game_object_url] } }
+__declspec(naked) void _gme_wwise_write_log() { _asm { jmp[gmesdk.gme_wwise_write_log] } }
+__declspec(naked) void _tx_ai_transcriber_manager_add_transcriber_listener() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_add_transcriber_listener] } }
+__declspec(naked) void _tx_ai_transcriber_manager_create_transcriber_listener() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_create_transcriber_listener] } }
+__declspec(naked) void _tx_ai_transcriber_manager_destroy_transcriber_listener() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_destroy_transcriber_listener] } }
+__declspec(naked) void _tx_ai_transcriber_manager_pause_receiving_message() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_pause_receiving_message] } }
+__declspec(naked) void _tx_ai_transcriber_manager_remove_transcriber_listener() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_remove_transcriber_listener] } }
+__declspec(naked) void _tx_ai_transcriber_manager_resume_receiving_message() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_resume_receiving_message] } }
+__declspec(naked) void _tx_ai_transcriber_manager_start_realtime_transcriber() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_start_realtime_transcriber] } }
+__declspec(naked) void _tx_ai_transcriber_manager_stop_realtime_transcriber() { _asm { jmp[gmesdk.tx_ai_transcriber_manager_stop_realtime_transcriber] } }
+__declspec(naked) void _tx_audio_effect_manager_create_music_play_observer() { _asm { jmp[gmesdk.tx_audio_effect_manager_create_music_play_observer] } }
+__declspec(naked) void _tx_audio_effect_manager_create_music_preload_observer() { _asm { jmp[gmesdk.tx_audio_effect_manager_create_music_preload_observer] } }
+__declspec(naked) void _tx_audio_effect_manager_destroy_music_play_observer() { _asm { jmp[gmesdk.tx_audio_effect_manager_destroy_music_play_observer] } }
+__declspec(naked) void _tx_audio_effect_manager_destroy_music_preload_observer() { _asm { jmp[gmesdk.tx_audio_effect_manager_destroy_music_preload_observer] } }
+__declspec(naked) void _tx_audio_effect_manager_enable_voice_ear_monitor() { _asm { jmp[gmesdk.tx_audio_effect_manager_enable_voice_ear_monitor] } }
+__declspec(naked) void _tx_audio_effect_manager_get_current_pos_in_ms() { _asm { jmp[gmesdk.tx_audio_effect_manager_get_current_pos_in_ms] } }
+__declspec(naked) void _tx_audio_effect_manager_get_music_duration_in_ms() { _asm { jmp[gmesdk.tx_audio_effect_manager_get_music_duration_in_ms] } }
+__declspec(naked) void _tx_audio_effect_manager_get_music_track_count() { _asm { jmp[gmesdk.tx_audio_effect_manager_get_music_track_count] } }
+__declspec(naked) void _tx_audio_effect_manager_pause_play_music() { _asm { jmp[gmesdk.tx_audio_effect_manager_pause_play_music] } }
+__declspec(naked) void _tx_audio_effect_manager_preload_music() { _asm { jmp[gmesdk.tx_audio_effect_manager_preload_music] } }
+__declspec(naked) void _tx_audio_effect_manager_resume_play_music() { _asm { jmp[gmesdk.tx_audio_effect_manager_resume_play_music] } }
+__declspec(naked) void _tx_audio_effect_manager_seek_music_to_pos_in_time() { _asm { jmp[gmesdk.tx_audio_effect_manager_seek_music_to_pos_in_time] } }
+__declspec(naked) void _tx_audio_effect_manager_set_all_music_volume() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_all_music_volume] } }
+__declspec(naked) void _tx_audio_effect_manager_set_music_observer() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_music_observer] } }
+__declspec(naked) void _tx_audio_effect_manager_set_music_pitch() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_music_pitch] } }
+__declspec(naked) void _tx_audio_effect_manager_set_music_playout_volume() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_music_playout_volume] } }
+__declspec(naked) void _tx_audio_effect_manager_set_music_publish_volume() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_music_publish_volume] } }
+__declspec(naked) void _tx_audio_effect_manager_set_music_scratch_speed_rate() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_music_scratch_speed_rate] } }
+__declspec(naked) void _tx_audio_effect_manager_set_music_speed_rate() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_music_speed_rate] } }
+__declspec(naked) void _tx_audio_effect_manager_set_music_track() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_music_track] } }
+__declspec(naked) void _tx_audio_effect_manager_set_preload_observer() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_preload_observer] } }
+__declspec(naked) void _tx_audio_effect_manager_set_voice_capture_volume() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_voice_capture_volume] } }
+__declspec(naked) void _tx_audio_effect_manager_set_voice_changer_type() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_voice_changer_type] } }
+__declspec(naked) void _tx_audio_effect_manager_set_voice_ear_monitor_volume() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_voice_ear_monitor_volume] } }
+__declspec(naked) void _tx_audio_effect_manager_set_voice_pitch() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_voice_pitch] } }
+__declspec(naked) void _tx_audio_effect_manager_set_voice_reverb_type() { _asm { jmp[gmesdk.tx_audio_effect_manager_set_voice_reverb_type] } }
+__declspec(naked) void _tx_audio_effect_manager_start_play_music() { _asm { jmp[gmesdk.tx_audio_effect_manager_start_play_music] } }
+__declspec(naked) void _tx_audio_effect_manager_stop_play_music() { _asm { jmp[gmesdk.tx_audio_effect_manager_stop_play_music] } }
+__declspec(naked) void _tx_device_manager_create_device_observer() { _asm { jmp[gmesdk.tx_device_manager_create_device_observer] } }
+__declspec(naked) void _tx_device_manager_destroy_device_observer() { _asm { jmp[gmesdk.tx_device_manager_destroy_device_observer] } }
+__declspec(naked) void _tx_device_manager_enable_camera_auto_focus() { _asm { jmp[gmesdk.tx_device_manager_enable_camera_auto_focus] } }
+__declspec(naked) void _tx_device_manager_enable_camera_torch() { _asm { jmp[gmesdk.tx_device_manager_enable_camera_torch] } }
+__declspec(naked) void _tx_device_manager_enable_following_default_audio_device() { _asm { jmp[gmesdk.tx_device_manager_enable_following_default_audio_device] } }
+__declspec(naked) void _tx_device_manager_get_application_mute_state() { _asm { jmp[gmesdk.tx_device_manager_get_application_mute_state] } }
+__declspec(naked) void _tx_device_manager_get_application_play_volume() { _asm { jmp[gmesdk.tx_device_manager_get_application_play_volume] } }
+__declspec(naked) void _tx_device_manager_get_camera_zoom_max_ratio() { _asm { jmp[gmesdk.tx_device_manager_get_camera_zoom_max_ratio] } }
+__declspec(naked) void _tx_device_manager_get_current_device() { _asm { jmp[gmesdk.tx_device_manager_get_current_device] } }
+__declspec(naked) void _tx_device_manager_get_current_device_mute() { _asm { jmp[gmesdk.tx_device_manager_get_current_device_mute] } }
+__declspec(naked) void _tx_device_manager_get_current_device_volume() { _asm { jmp[gmesdk.tx_device_manager_get_current_device_volume] } }
+__declspec(naked) void _tx_device_manager_get_device_count() { _asm { jmp[gmesdk.tx_device_manager_get_device_count] } }
+__declspec(naked) void _tx_device_manager_get_device_info() { _asm { jmp[gmesdk.tx_device_manager_get_device_info] } }
+__declspec(naked) void _tx_device_manager_is_audio_focus_enabled() { _asm { jmp[gmesdk.tx_device_manager_is_audio_focus_enabled] } }
+__declspec(naked) void _tx_device_manager_is_front_camera() { _asm { jmp[gmesdk.tx_device_manager_is_front_camera] } }
+__declspec(naked) void _tx_device_manager_set_application_mute_state() { _asm { jmp[gmesdk.tx_device_manager_set_application_mute_state] } }
+__declspec(naked) void _tx_device_manager_set_application_play_volume() { _asm { jmp[gmesdk.tx_device_manager_set_application_play_volume] } }
+__declspec(naked) void _tx_device_manager_set_audio_route() { _asm { jmp[gmesdk.tx_device_manager_set_audio_route] } }
+__declspec(naked) void _tx_device_manager_set_camera_capture_param() { _asm { jmp[gmesdk.tx_device_manager_set_camera_capture_param] } }
+__declspec(naked) void _tx_device_manager_set_camera_focus_position() { _asm { jmp[gmesdk.tx_device_manager_set_camera_focus_position] } }
+__declspec(naked) void _tx_device_manager_set_camera_zoom_ratio() { _asm { jmp[gmesdk.tx_device_manager_set_camera_zoom_ratio] } }
+__declspec(naked) void _tx_device_manager_set_current_device() { _asm { jmp[gmesdk.tx_device_manager_set_current_device] } }
+__declspec(naked) void _tx_device_manager_set_current_device_mute() { _asm { jmp[gmesdk.tx_device_manager_set_current_device_mute] } }
+__declspec(naked) void _tx_device_manager_set_current_device_volume() { _asm { jmp[gmesdk.tx_device_manager_set_current_device_volume] } }
+__declspec(naked) void _tx_device_manager_set_device_observer() { _asm { jmp[gmesdk.tx_device_manager_set_device_observer] } }
+__declspec(naked) void _tx_device_manager_set_system_volume_type() { _asm { jmp[gmesdk.tx_device_manager_set_system_volume_type] } }
+__declspec(naked) void _tx_device_manager_start_camera_device_test() { _asm { jmp[gmesdk.tx_device_manager_start_camera_device_test] } }
+__declspec(naked) void _tx_device_manager_start_camera_device_test_and_callback() { _asm { jmp[gmesdk.tx_device_manager_start_camera_device_test_and_callback] } }
+__declspec(naked) void _tx_device_manager_start_mic_device_test() { _asm { jmp[gmesdk.tx_device_manager_start_mic_device_test] } }
+__declspec(naked) void _tx_device_manager_start_mic_device_test_and_playback() { _asm { jmp[gmesdk.tx_device_manager_start_mic_device_test_and_playback] } }
+__declspec(naked) void _tx_device_manager_start_speaker_device_test() { _asm { jmp[gmesdk.tx_device_manager_start_speaker_device_test] } }
+__declspec(naked) void _tx_device_manager_stop_camera_device_test() { _asm { jmp[gmesdk.tx_device_manager_stop_camera_device_test] } }
+__declspec(naked) void _tx_device_manager_stop_mic_device_test() { _asm { jmp[gmesdk.tx_device_manager_stop_mic_device_test] } }
+__declspec(naked) void _tx_device_manager_stop_speaker_device_test() { _asm { jmp[gmesdk.tx_device_manager_stop_speaker_device_test] } }
+__declspec(naked) void _tx_device_manager_switch_camera() { _asm { jmp[gmesdk.tx_device_manager_switch_camera] } }
+
 __declspec(naked) void _AcquireDDThreadLock() { _asm { jmp[ddraw.AcquireDDThreadLock] } }
 __declspec(naked) void _CompleteCreateSysmemSurface() { _asm { jmp[ddraw.CompleteCreateSysmemSurface] } }
 __declspec(naked) void _D3DParseUnknownCommand() { _asm { jmp[ddraw.D3DParseUnknownCommand] } }
@@ -4229,6 +4913,231 @@ void _DXGIReportAdapterConfiguration() { dxgi.DXGIReportAdapterConfiguration(); 
 void _PIXBeginCapture() { dxgi.PIXBeginCapture(); }
 void _PIXEndCapture() { dxgi.PIXEndCapture(); }
 void _PIXGetCaptureState() { dxgi.PIXGetCaptureState(); }
+
+void _GMEUnity_AddAudioBlackList() { gmesdk.GMEUnity_AddAudioBlackList(); }
+void _GMEUnity_ApplyPTTAuthbuffer() { gmesdk.GMEUnity_ApplyPTTAuthbuffer(); }
+void _GMEUnity_CancelRecording() { gmesdk.GMEUnity_CancelRecording(); }
+void _GMEUnity_ChangeRoomType() { gmesdk.GMEUnity_ChangeRoomType(); }
+void _GMEUnity_CheckMicPermission() { gmesdk.GMEUnity_CheckMicPermission(); }
+void _GMEUnity_CreateExternalAudioTrack() { gmesdk.GMEUnity_CreateExternalAudioTrack(); }
+void _GMEUnity_CreateInstance() { gmesdk.GMEUnity_CreateInstance(); }
+void _GMEUnity_DestroyExternalAudioTrack() { gmesdk.GMEUnity_DestroyExternalAudioTrack(); }
+void _GMEUnity_DestroyInstance() { gmesdk.GMEUnity_DestroyInstance(); }
+void _GMEUnity_DownloadRecordedFile() { gmesdk.GMEUnity_DownloadRecordedFile(); }
+void _GMEUnity_EnableAudioCaptureDevice() { gmesdk.GMEUnity_EnableAudioCaptureDevice(); }
+void _GMEUnity_EnableAudioPlayDevice() { gmesdk.GMEUnity_EnableAudioPlayDevice(); }
+void _GMEUnity_EnableAudioRecv() { gmesdk.GMEUnity_EnableAudioRecv(); }
+void _GMEUnity_EnableAudioSend() { gmesdk.GMEUnity_EnableAudioSend(); }
+void _GMEUnity_EnableCustomAudioCapture() { gmesdk.GMEUnity_EnableCustomAudioCapture(); }
+void _GMEUnity_EnableCustomAudioRendering() { gmesdk.GMEUnity_EnableCustomAudioRendering(); }
+void _GMEUnity_EnableLoopBack() { gmesdk.GMEUnity_EnableLoopBack(); }
+void _GMEUnity_EnableMusicPlayout() { gmesdk.GMEUnity_EnableMusicPlayout(); }
+void _GMEUnity_EnableMusicPublish() { gmesdk.GMEUnity_EnableMusicPublish(); }
+void _GMEUnity_EnableSpatializer() { gmesdk.GMEUnity_EnableSpatializer(); }
+void _GMEUnity_EnterRoom() { gmesdk.GMEUnity_EnterRoom(); }
+void _GMEUnity_ExitRoom() { gmesdk.GMEUnity_ExitRoom(); }
+void _GMEUnity_GetAITranscriberManager() { gmesdk.GMEUnity_GetAITranscriberManager(); }
+void _GMEUnity_GetAdvanceParams() { gmesdk.GMEUnity_GetAdvanceParams(); }
+void _GMEUnity_GetCurrentMic() { gmesdk.GMEUnity_GetCurrentMic(); }
+void _GMEUnity_GetCurrentSpeaker() { gmesdk.GMEUnity_GetCurrentSpeaker(); }
+void _GMEUnity_GetCustomAudioRenderingFrame() { gmesdk.GMEUnity_GetCustomAudioRenderingFrame(); }
+void _GMEUnity_GetFileSize() { gmesdk.GMEUnity_GetFileSize(); }
+void _GMEUnity_GetLogPath() { gmesdk.GMEUnity_GetLogPath(); }
+void _GMEUnity_GetMicLevel() { gmesdk.GMEUnity_GetMicLevel(); }
+void _GMEUnity_GetMicList() { gmesdk.GMEUnity_GetMicList(); }
+void _GMEUnity_GetMicListCount() { gmesdk.GMEUnity_GetMicListCount(); }
+void _GMEUnity_GetMicVolume() { gmesdk.GMEUnity_GetMicVolume(); }
+void _GMEUnity_GetMusicCurrentPosInMS() { gmesdk.GMEUnity_GetMusicCurrentPosInMS(); }
+void _GMEUnity_GetMusicDurationInMS() { gmesdk.GMEUnity_GetMusicDurationInMS(); }
+void _GMEUnity_GetMusicPlayoutVolume() { gmesdk.GMEUnity_GetMusicPlayoutVolume(); }
+void _GMEUnity_GetMusicPublishVolume() { gmesdk.GMEUnity_GetMusicPublishVolume(); }
+void _GMEUnity_GetRecvStreamLevel() { gmesdk.GMEUnity_GetRecvStreamLevel(); }
+void _GMEUnity_GetRoomID() { gmesdk.GMEUnity_GetRoomID(); }
+void _GMEUnity_GetRoomType() { gmesdk.GMEUnity_GetRoomType(); }
+void _GMEUnity_GetSDKVersion() { gmesdk.GMEUnity_GetSDKVersion(); }
+void _GMEUnity_GetSendStreamLevel() { gmesdk.GMEUnity_GetSendStreamLevel(); }
+void _GMEUnity_GetSpeakerLevel() { gmesdk.GMEUnity_GetSpeakerLevel(); }
+void _GMEUnity_GetSpeakerList() { gmesdk.GMEUnity_GetSpeakerList(); }
+void _GMEUnity_GetSpeakerListCount() { gmesdk.GMEUnity_GetSpeakerListCount(); }
+void _GMEUnity_GetSpeakerVolume() { gmesdk.GMEUnity_GetSpeakerVolume(); }
+void _GMEUnity_GetSpeakerVolumeByUserID() { gmesdk.GMEUnity_GetSpeakerVolumeByUserID(); }
+void _GMEUnity_GetVoiceFileDuration() { gmesdk.GMEUnity_GetVoiceFileDuration(); }
+void _GMEUnity_Init() { gmesdk.GMEUnity_Init(); }
+void _GMEUnity_IsAudioCaptureDeviceEnabled() { gmesdk.GMEUnity_IsAudioCaptureDeviceEnabled(); }
+void _GMEUnity_IsAudioPlayDeviceEnabled() { gmesdk.GMEUnity_IsAudioPlayDeviceEnabled(); }
+void _GMEUnity_IsAudioRecvEnabled() { gmesdk.GMEUnity_IsAudioRecvEnabled(); }
+void _GMEUnity_IsAudioSendEnabled() { gmesdk.GMEUnity_IsAudioSendEnabled(); }
+void _GMEUnity_IsEnableSpatializer() { gmesdk.GMEUnity_IsEnableSpatializer(); }
+void _GMEUnity_IsMusicPlayEnd() { gmesdk.GMEUnity_IsMusicPlayEnd(); }
+void _GMEUnity_IsRoomEntered() { gmesdk.GMEUnity_IsRoomEntered(); }
+void _GMEUnity_IsUserIDInAudioBlackList() { gmesdk.GMEUnity_IsUserIDInAudioBlackList(); }
+void _GMEUnity_Pause() { gmesdk.GMEUnity_Pause(); }
+void _GMEUnity_PausePlayMusic() { gmesdk.GMEUnity_PausePlayMusic(); }
+void _GMEUnity_Poll() { gmesdk.GMEUnity_Poll(); }
+void _GMEUnity_RemoveAudioBlackList() { gmesdk.GMEUnity_RemoveAudioBlackList(); }
+void _GMEUnity_Resume() { gmesdk.GMEUnity_Resume(); }
+void _GMEUnity_ResumePlayMusic() { gmesdk.GMEUnity_ResumePlayMusic(); }
+void _GMEUnity_SeekMusicToPosInTime() { gmesdk.GMEUnity_SeekMusicToPosInTime(); }
+void _GMEUnity_SelectMic() { gmesdk.GMEUnity_SelectMic(); }
+void _GMEUnity_SelectSpeaker() { gmesdk.GMEUnity_SelectSpeaker(); }
+void _GMEUnity_SendAudioDataToExternalTrack() { gmesdk.GMEUnity_SendAudioDataToExternalTrack(); }
+void _GMEUnity_SendCustomAudioData() { gmesdk.GMEUnity_SendCustomAudioData(); }
+void _GMEUnity_SendCustomData() { gmesdk.GMEUnity_SendCustomData(); }
+void _GMEUnity_SendSEIMsg() { gmesdk.GMEUnity_SendSEIMsg(); }
+void _GMEUnity_SetAdvanceParams() { gmesdk.GMEUnity_SetAdvanceParams(); }
+void _GMEUnity_SetAllMusicVolume() { gmesdk.GMEUnity_SetAllMusicVolume(); }
+void _GMEUnity_SetAppVersion() { gmesdk.GMEUnity_SetAppVersion(); }
+void _GMEUnity_SetAudioFrameCallback() { gmesdk.GMEUnity_SetAudioFrameCallback(); }
+void _GMEUnity_SetAudioRole() { gmesdk.GMEUnity_SetAudioRole(); }
+void _GMEUnity_SetAudioRoute() { gmesdk.GMEUnity_SetAudioRoute(); }
+void _GMEUnity_SetDelegate() { gmesdk.GMEUnity_SetDelegate(); }
+void _GMEUnity_SetKaraokeType() { gmesdk.GMEUnity_SetKaraokeType(); }
+void _GMEUnity_SetLogLevel() { gmesdk.GMEUnity_SetLogLevel(); }
+void _GMEUnity_SetLogPath() { gmesdk.GMEUnity_SetLogPath(); }
+void _GMEUnity_SetLoopBackVolume() { gmesdk.GMEUnity_SetLoopBackVolume(); }
+void _GMEUnity_SetMaxMessageLength() { gmesdk.GMEUnity_SetMaxMessageLength(); }
+void _GMEUnity_SetMicVolume() { gmesdk.GMEUnity_SetMicVolume(); }
+void _GMEUnity_SetMusicPitch() { gmesdk.GMEUnity_SetMusicPitch(); }
+void _GMEUnity_SetMusicPlayoutVolume() { gmesdk.GMEUnity_SetMusicPlayoutVolume(); }
+void _GMEUnity_SetMusicPublishVolume() { gmesdk.GMEUnity_SetMusicPublishVolume(); }
+void _GMEUnity_SetPTTSourceLanguage() { gmesdk.GMEUnity_SetPTTSourceLanguage(); }
+void _GMEUnity_SetRangeAudioMode() { gmesdk.GMEUnity_SetRangeAudioMode(); }
+void _GMEUnity_SetRangeAudioTeamID() { gmesdk.GMEUnity_SetRangeAudioTeamID(); }
+void _GMEUnity_SetRegion() { gmesdk.GMEUnity_SetRegion(); }
+void _GMEUnity_SetScene() { gmesdk.GMEUnity_SetScene(); }
+void _GMEUnity_SetSpeakerVolume() { gmesdk.GMEUnity_SetSpeakerVolume(); }
+void _GMEUnity_SetSpeakerVolumeByUserID() { gmesdk.GMEUnity_SetSpeakerVolumeByUserID(); }
+void _GMEUnity_SetSystemAudioLoopbackVolume() { gmesdk.GMEUnity_SetSystemAudioLoopbackVolume(); }
+void _GMEUnity_SetVoiceType() { gmesdk.GMEUnity_SetVoiceType(); }
+void _GMEUnity_ShowDebugView() { gmesdk.GMEUnity_ShowDebugView(); }
+void _GMEUnity_SpeechToText() { gmesdk.GMEUnity_SpeechToText(); }
+void _GMEUnity_StartMicDeviceTest() { gmesdk.GMEUnity_StartMicDeviceTest(); }
+void _GMEUnity_StartPlayFile() { gmesdk.GMEUnity_StartPlayFile(); }
+void _GMEUnity_StartPlayMusic() { gmesdk.GMEUnity_StartPlayMusic(); }
+void _GMEUnity_StartRecord() { gmesdk.GMEUnity_StartRecord(); }
+void _GMEUnity_StartRecording() { gmesdk.GMEUnity_StartRecording(); }
+void _GMEUnity_StartRecordingWithStreamingRecognition() { gmesdk.GMEUnity_StartRecordingWithStreamingRecognition(); }
+void _GMEUnity_StartRoomSharing() { gmesdk.GMEUnity_StartRoomSharing(); }
+void _GMEUnity_StartSpeakerDeviceTest() { gmesdk.GMEUnity_StartSpeakerDeviceTest(); }
+void _GMEUnity_StartSystemAudioLoopback() { gmesdk.GMEUnity_StartSystemAudioLoopback(); }
+void _GMEUnity_StopMicDeviceTest() { gmesdk.GMEUnity_StopMicDeviceTest(); }
+void _GMEUnity_StopPlayFile() { gmesdk.GMEUnity_StopPlayFile(); }
+void _GMEUnity_StopPlayMusic() { gmesdk.GMEUnity_StopPlayMusic(); }
+void _GMEUnity_StopRecord() { gmesdk.GMEUnity_StopRecord(); }
+void _GMEUnity_StopRecording() { gmesdk.GMEUnity_StopRecording(); }
+void _GMEUnity_StopRoomSharing() { gmesdk.GMEUnity_StopRoomSharing(); }
+void _GMEUnity_StopSendCustomData() { gmesdk.GMEUnity_StopSendCustomData(); }
+void _GMEUnity_StopSpeakerDeviceTest() { gmesdk.GMEUnity_StopSpeakerDeviceTest(); }
+void _GMEUnity_StopSystemAudioLoopback() { gmesdk.GMEUnity_StopSystemAudioLoopback(); }
+void _GMEUnity_StopTrackingVolume() { gmesdk.GMEUnity_StopTrackingVolume(); }
+void _GMEUnity_SwitchRoom() { gmesdk.GMEUnity_SwitchRoom(); }
+void _GMEUnity_TextToSpeech() { gmesdk.GMEUnity_TextToSpeech(); }
+void _GMEUnity_TrackingVolume() { gmesdk.GMEUnity_TrackingVolume(); }
+void _GMEUnity_TranslateText() { gmesdk.GMEUnity_TranslateText(); }
+void _GMEUnity_Uninit() { gmesdk.GMEUnity_Uninit(); }
+void _GMEUnity_UpdateAudioRecvRange() { gmesdk.GMEUnity_UpdateAudioRecvRange(); }
+void _GMEUnity_UpdateOtherPosition() { gmesdk.GMEUnity_UpdateOtherPosition(); }
+void _GMEUnity_UpdateSelfPosition() { gmesdk.GMEUnity_UpdateSelfPosition(); }
+void _GMEUnity_UpdateSpatializerRecvRange() { gmesdk.GMEUnity_UpdateSpatializerRecvRange(); }
+void _GMEUnity_UploadRecordedFile() { gmesdk.GMEUnity_UploadRecordedFile(); }
+void _GMEUnity_WriteLog() { gmesdk.GMEUnity_WriteLog(); }
+void _ITMGContextGetInstance() { gmesdk.ITMGContextGetInstance(); }
+void _QAVSDK_AuthBuffer_GenAuthBuffer() { gmesdk.QAVSDK_AuthBuffer_GenAuthBuffer(); }
+void _gme_wwise_audio_receiver_create() { gmesdk.gme_wwise_audio_receiver_create(); }
+void _gme_wwise_audio_receiver_destroy() { gmesdk.gme_wwise_audio_receiver_destroy(); }
+void _gme_wwise_audio_receiver_get_audio_data() { gmesdk.gme_wwise_audio_receiver_get_audio_data(); }
+void _gme_wwise_audio_recorder_create() { gmesdk.gme_wwise_audio_recorder_create(); }
+void _gme_wwise_audio_recorder_destroy() { gmesdk.gme_wwise_audio_recorder_destroy(); }
+void _gme_wwise_audio_recorder_get_audio_data() { gmesdk.gme_wwise_audio_recorder_get_audio_data(); }
+void _gme_wwise_audio_sender_create() { gmesdk.gme_wwise_audio_sender_create(); }
+void _gme_wwise_audio_sender_destroy() { gmesdk.gme_wwise_audio_sender_destroy(); }
+void _gme_wwise_audio_sender_send_audio_data() { gmesdk.gme_wwise_audio_sender_send_audio_data(); }
+void _gme_wwise_audio_session_create() { gmesdk.gme_wwise_audio_session_create(); }
+void _gme_wwise_audio_session_destroy() { gmesdk.gme_wwise_audio_session_destroy(); }
+void _gme_wwise_create_message_pool() { gmesdk.gme_wwise_create_message_pool(); }
+void _gme_wwise_destroy_message_pool() { gmesdk.gme_wwise_destroy_message_pool(); }
+void _gme_wwise_get_game_object_string_property() { gmesdk.gme_wwise_get_game_object_string_property(); }
+void _gme_wwise_get_message() { gmesdk.gme_wwise_get_message(); }
+void _gme_wwise_get_quality_tips() { gmesdk.gme_wwise_get_quality_tips(); }
+void _gme_wwise_get_sdk_version() { gmesdk.gme_wwise_get_sdk_version(); }
+void _gme_wwise_invoke_advanced_features() { gmesdk.gme_wwise_invoke_advanced_features(); }
+void _gme_wwise_pause() { gmesdk.gme_wwise_pause(); }
+void _gme_wwise_resume() { gmesdk.gme_wwise_resume(); }
+void _gme_wwise_send_session_audio_data() { gmesdk.gme_wwise_send_session_audio_data(); }
+void _gme_wwise_set_game_object_string_property() { gmesdk.gme_wwise_set_game_object_string_property(); }
+void _gme_wwise_set_game_object_url() { gmesdk.gme_wwise_set_game_object_url(); }
+void _gme_wwise_write_log() { gmesdk.gme_wwise_write_log(); }
+void _tx_ai_transcriber_manager_add_transcriber_listener() { gmesdk.tx_ai_transcriber_manager_add_transcriber_listener(); }
+void _tx_ai_transcriber_manager_create_transcriber_listener() { gmesdk.tx_ai_transcriber_manager_create_transcriber_listener(); }
+void _tx_ai_transcriber_manager_destroy_transcriber_listener() { gmesdk.tx_ai_transcriber_manager_destroy_transcriber_listener(); }
+void _tx_ai_transcriber_manager_pause_receiving_message() { gmesdk.tx_ai_transcriber_manager_pause_receiving_message(); }
+void _tx_ai_transcriber_manager_remove_transcriber_listener() { gmesdk.tx_ai_transcriber_manager_remove_transcriber_listener(); }
+void _tx_ai_transcriber_manager_resume_receiving_message() { gmesdk.tx_ai_transcriber_manager_resume_receiving_message(); }
+void _tx_ai_transcriber_manager_start_realtime_transcriber() { gmesdk.tx_ai_transcriber_manager_start_realtime_transcriber(); }
+void _tx_ai_transcriber_manager_stop_realtime_transcriber() { gmesdk.tx_ai_transcriber_manager_stop_realtime_transcriber(); }
+void _tx_audio_effect_manager_create_music_play_observer() { gmesdk.tx_audio_effect_manager_create_music_play_observer(); }
+void _tx_audio_effect_manager_create_music_preload_observer() { gmesdk.tx_audio_effect_manager_create_music_preload_observer(); }
+void _tx_audio_effect_manager_destroy_music_play_observer() { gmesdk.tx_audio_effect_manager_destroy_music_play_observer(); }
+void _tx_audio_effect_manager_destroy_music_preload_observer() { gmesdk.tx_audio_effect_manager_destroy_music_preload_observer(); }
+void _tx_audio_effect_manager_enable_voice_ear_monitor() { gmesdk.tx_audio_effect_manager_enable_voice_ear_monitor(); }
+void _tx_audio_effect_manager_get_current_pos_in_ms() { gmesdk.tx_audio_effect_manager_get_current_pos_in_ms(); }
+void _tx_audio_effect_manager_get_music_duration_in_ms() { gmesdk.tx_audio_effect_manager_get_music_duration_in_ms(); }
+void _tx_audio_effect_manager_get_music_track_count() { gmesdk.tx_audio_effect_manager_get_music_track_count(); }
+void _tx_audio_effect_manager_pause_play_music() { gmesdk.tx_audio_effect_manager_pause_play_music(); }
+void _tx_audio_effect_manager_preload_music() { gmesdk.tx_audio_effect_manager_preload_music(); }
+void _tx_audio_effect_manager_resume_play_music() { gmesdk.tx_audio_effect_manager_resume_play_music(); }
+void _tx_audio_effect_manager_seek_music_to_pos_in_time() { gmesdk.tx_audio_effect_manager_seek_music_to_pos_in_time(); }
+void _tx_audio_effect_manager_set_all_music_volume() { gmesdk.tx_audio_effect_manager_set_all_music_volume(); }
+void _tx_audio_effect_manager_set_music_observer() { gmesdk.tx_audio_effect_manager_set_music_observer(); }
+void _tx_audio_effect_manager_set_music_pitch() { gmesdk.tx_audio_effect_manager_set_music_pitch(); }
+void _tx_audio_effect_manager_set_music_playout_volume() { gmesdk.tx_audio_effect_manager_set_music_playout_volume(); }
+void _tx_audio_effect_manager_set_music_publish_volume() { gmesdk.tx_audio_effect_manager_set_music_publish_volume(); }
+void _tx_audio_effect_manager_set_music_scratch_speed_rate() { gmesdk.tx_audio_effect_manager_set_music_scratch_speed_rate(); }
+void _tx_audio_effect_manager_set_music_speed_rate() { gmesdk.tx_audio_effect_manager_set_music_speed_rate(); }
+void _tx_audio_effect_manager_set_music_track() { gmesdk.tx_audio_effect_manager_set_music_track(); }
+void _tx_audio_effect_manager_set_preload_observer() { gmesdk.tx_audio_effect_manager_set_preload_observer(); }
+void _tx_audio_effect_manager_set_voice_capture_volume() { gmesdk.tx_audio_effect_manager_set_voice_capture_volume(); }
+void _tx_audio_effect_manager_set_voice_changer_type() { gmesdk.tx_audio_effect_manager_set_voice_changer_type(); }
+void _tx_audio_effect_manager_set_voice_ear_monitor_volume() { gmesdk.tx_audio_effect_manager_set_voice_ear_monitor_volume(); }
+void _tx_audio_effect_manager_set_voice_pitch() { gmesdk.tx_audio_effect_manager_set_voice_pitch(); }
+void _tx_audio_effect_manager_set_voice_reverb_type() { gmesdk.tx_audio_effect_manager_set_voice_reverb_type(); }
+void _tx_audio_effect_manager_start_play_music() { gmesdk.tx_audio_effect_manager_start_play_music(); }
+void _tx_audio_effect_manager_stop_play_music() { gmesdk.tx_audio_effect_manager_stop_play_music(); }
+void _tx_device_manager_create_device_observer() { gmesdk.tx_device_manager_create_device_observer(); }
+void _tx_device_manager_destroy_device_observer() { gmesdk.tx_device_manager_destroy_device_observer(); }
+void _tx_device_manager_enable_camera_auto_focus() { gmesdk.tx_device_manager_enable_camera_auto_focus(); }
+void _tx_device_manager_enable_camera_torch() { gmesdk.tx_device_manager_enable_camera_torch(); }
+void _tx_device_manager_enable_following_default_audio_device() { gmesdk.tx_device_manager_enable_following_default_audio_device(); }
+void _tx_device_manager_get_application_mute_state() { gmesdk.tx_device_manager_get_application_mute_state(); }
+void _tx_device_manager_get_application_play_volume() { gmesdk.tx_device_manager_get_application_play_volume(); }
+void _tx_device_manager_get_camera_zoom_max_ratio() { gmesdk.tx_device_manager_get_camera_zoom_max_ratio(); }
+void _tx_device_manager_get_current_device() { gmesdk.tx_device_manager_get_current_device(); }
+void _tx_device_manager_get_current_device_mute() { gmesdk.tx_device_manager_get_current_device_mute(); }
+void _tx_device_manager_get_current_device_volume() { gmesdk.tx_device_manager_get_current_device_volume(); }
+void _tx_device_manager_get_device_count() { gmesdk.tx_device_manager_get_device_count(); }
+void _tx_device_manager_get_device_info() { gmesdk.tx_device_manager_get_device_info(); }
+void _tx_device_manager_is_audio_focus_enabled() { gmesdk.tx_device_manager_is_audio_focus_enabled(); }
+void _tx_device_manager_is_front_camera() { gmesdk.tx_device_manager_is_front_camera(); }
+void _tx_device_manager_set_application_mute_state() { gmesdk.tx_device_manager_set_application_mute_state(); }
+void _tx_device_manager_set_application_play_volume() { gmesdk.tx_device_manager_set_application_play_volume(); }
+void _tx_device_manager_set_audio_route() { gmesdk.tx_device_manager_set_audio_route(); }
+void _tx_device_manager_set_camera_capture_param() { gmesdk.tx_device_manager_set_camera_capture_param(); }
+void _tx_device_manager_set_camera_focus_position() { gmesdk.tx_device_manager_set_camera_focus_position(); }
+void _tx_device_manager_set_camera_zoom_ratio() { gmesdk.tx_device_manager_set_camera_zoom_ratio(); }
+void _tx_device_manager_set_current_device() { gmesdk.tx_device_manager_set_current_device(); }
+void _tx_device_manager_set_current_device_mute() { gmesdk.tx_device_manager_set_current_device_mute(); }
+void _tx_device_manager_set_current_device_volume() { gmesdk.tx_device_manager_set_current_device_volume(); }
+void _tx_device_manager_set_device_observer() { gmesdk.tx_device_manager_set_device_observer(); }
+void _tx_device_manager_set_system_volume_type() { gmesdk.tx_device_manager_set_system_volume_type(); }
+void _tx_device_manager_start_camera_device_test() { gmesdk.tx_device_manager_start_camera_device_test(); }
+void _tx_device_manager_start_camera_device_test_and_callback() { gmesdk.tx_device_manager_start_camera_device_test_and_callback(); }
+void _tx_device_manager_start_mic_device_test() { gmesdk.tx_device_manager_start_mic_device_test(); }
+void _tx_device_manager_start_mic_device_test_and_playback() { gmesdk.tx_device_manager_start_mic_device_test_and_playback(); }
+void _tx_device_manager_start_speaker_device_test() { gmesdk.tx_device_manager_start_speaker_device_test(); }
+void _tx_device_manager_stop_camera_device_test() { gmesdk.tx_device_manager_stop_camera_device_test(); }
+void _tx_device_manager_stop_mic_device_test() { gmesdk.tx_device_manager_stop_mic_device_test(); }
+void _tx_device_manager_stop_speaker_device_test() { gmesdk.tx_device_manager_stop_speaker_device_test(); }
+void _tx_device_manager_switch_camera() { gmesdk.tx_device_manager_switch_camera(); }
 
 void _BinkAllocateFrameBuffers() { bink2w64.BinkAllocateFrameBuffers(); }
 void _BinkBufferBlit() { bink2w64.BinkBufferBlit(); }
