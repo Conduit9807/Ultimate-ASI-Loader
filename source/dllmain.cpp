@@ -284,7 +284,8 @@ std::filesystem::path lexicallyRelativeCaseIns(const std::filesystem::path& path
         input_iterator_range(const std::filesystem::path::const_iterator& first, const std::filesystem::path::const_iterator& last)
             : _first(first)
             , _last(last)
-        {}
+        {
+        }
         std::filesystem::path::const_iterator begin() const { return _first; }
         std::filesystem::path::const_iterator end() const { return _last; }
     private:
@@ -482,7 +483,7 @@ struct FunctionData
             return;
         auto ptr = (size_t*)IATPtr;
         MEMORY_BASIC_INFORMATION mbi;
-        if (VirtualQuery(ptr, &mbi, sizeof(mbi)) == 0 || mbi.State != MEM_COMMIT || !(mbi.Protect & (PAGE_READWRITE | PAGE_EXECUTE_READWRITE | PAGE_WRITECOPY | PAGE_EXECUTE_WRITECOPY)))
+        if (VirtualQuery(ptr, &mbi, sizeof(mbi)) == 0 || mbi.State != MEM_COMMIT)
             return;
         DWORD dwProtect[2];
         if (!VirtualProtect(ptr, sizeof(size_t), PAGE_EXECUTE_READWRITE, &dwProtect[0]))
@@ -582,6 +583,14 @@ void LoadOriginalLibrary()
             d3d12.LoadOriginalLibrary(LoadLib(szLocalPath));
         else
             d3d12.LoadOriginalLibrary(LoadLib(szSystemPath));
+    }
+    else if (iequals(szSelfName, L"dxgi.dll"))
+    {
+        szLocalPath += L"dxgiHooked.dll";
+        if (std::filesystem::exists(szLocalPath))
+            dxgi.LoadOriginalLibrary(LoadLib(szLocalPath));
+        else
+            dxgi.LoadOriginalLibrary(LoadLib(szSystemPath));
     }
     else if (iequals(szSelfName, L"winmm.dll"))
     {
@@ -2461,6 +2470,26 @@ namespace OverloadFromFolder
                 }
             }
 
+            // Compute excluded entries once, before any entry gets marked as coming
+            // from a zip. Otherwise, after the first archive marks an entry with
+            // isFromZip, that path would no longer be considered excluded and every
+            // subsequent archive providing the same root directory would be ignored.
+            auto loaderEntriesCopy = sFileLoaderEntries;
+            FilterExistingPathEntries(loaderEntriesCopy);
+
+            std::set<std::filesystem::path> remainingPaths;
+            for (const auto& entry : loaderEntriesCopy)
+                remainingPaths.insert(entry.path);
+
+            std::vector<FileLoaderPathEntry> excludedEntries;
+            for (const auto& entry : sFileLoaderEntries)
+            {
+                if (remainingPaths.find(entry.path) == remainingPaths.end())
+                {
+                    excludedEntries.push_back(entry);
+                }
+            }
+
             for (auto const& [baseName, parts] : groupedArchives)
             {
                 auto sorted_parts = parts;
@@ -2554,22 +2583,6 @@ namespace OverloadFromFolder
                             {
                                 rootDirsInZip.insert(*internalPath.begin());
                             }
-                        }
-                    }
-
-                    auto loaderEntriesCopy = sFileLoaderEntries;
-                    FilterExistingPathEntries(loaderEntriesCopy);
-
-                    std::set<std::filesystem::path> remainingPaths;
-                    for (const auto& entry : loaderEntriesCopy)
-                        remainingPaths.insert(entry.path);
-
-                    std::vector<FileLoaderPathEntry> excludedEntries;
-                    for (const auto& entry : sFileLoaderEntries)
-                    {
-                        if (remainingPaths.find(entry.path) == remainingPaths.end())
-                        {
-                            excludedEntries.push_back(entry);
                         }
                     }
 
@@ -3942,7 +3955,11 @@ namespace OverloadFromFolder
                                         std::unique_lock lock(virtualFilesMutex);
                                         auto it = virtualFilesByPath.find(normalizedPath);
                                         int newPri = entry.priority - 1000;
-                                        if (it == virtualFilesByPath.end() || it->second->priority < newPri)
+                                        // Archives are iterated in alphabetical order. Allow an
+                                        // equal-priority (later) archive to overwrite the file
+                                        // registered by an earlier one, so that when several
+                                        // packages provide the same file, the last one wins.
+                                        if (it == virtualFilesByPath.end() || it->second->priority <= newPri)
                                         {
                                             auto virtualFile = std::make_shared<VirtualFile>(archive, i, file_stat.m_uncomp_size, newPri);
                                             virtualFilesByPath[normalizedPath] = virtualFile;
@@ -4289,6 +4306,22 @@ bool PatchKernel32IAT(HMODULE mod, ModuleIATData& data)
         return end;
     };
     auto hExecutableInstance_end = getSectionEnd(ntHeader, hExecutableInstance);
+
+    auto hKernel32 = GetModuleHandleA("kernel32.dll");
+    if (!hKernel32)
+        return false;
+
+    // kernel32 APIs can be imported under many names: "kernel32.dll" itself, or
+    // any of the api-ms-win-* / ext-ms-win-* API sets.
+    // Build a reverse lookup (resolved address -> function name) so imports can be
+    // recognized regardless of the DLL name listed in the import descriptor.
+    std::unordered_map<uintptr_t, std::string> customAddressToName;
+    for (const auto& entry : kernel32Customs)
+    {
+        if (auto addr = (uintptr_t)GetProcAddress(hKernel32, entry.first.c_str()))
+            customAddressToName[addr] = entry.first;
+    }
+
     for (size_t i = 0; i < nNumImports; i++)
     {
         if ((size_t)(hExecutableInstance + (pImports + i)->Name) < hExecutableInstance_end)
@@ -4296,7 +4329,8 @@ bool PatchKernel32IAT(HMODULE mod, ModuleIATData& data)
             auto szName = (const char*)(hExecutableInstance + (pImports + i)->Name);
             auto dllname = std::string(szName);
             std::transform(dllname.begin(), dllname.end(), dllname.begin(), [](char c) { return ::tolower(c); });
-            if (dllname == "kernel32.dll")
+            auto bIsKernel32Like = dllname == "kernel32.dll" || dllname.starts_with("api-ms-win-") || dllname.starts_with("ext-ms-win-");
+            if (bIsKernel32Like || (pImports + i)->OriginalFirstThunk != 0 || (pImports + i)->FirstThunk != 0)
             {
                 // Try to use OriginalFirstThunk if available (unbound executables)
                 if ((pImports + i)->OriginalFirstThunk != 0)
@@ -4315,13 +4349,19 @@ bool PatchKernel32IAT(HMODULE mod, ModuleIATData& data)
                                 auto it = kernel32Customs.find(funcName);
                                 if (it != kernel32Customs.end())
                                 {
-                                    DWORD dwProtect[2];
-                                    VirtualProtect(&iat[j], sizeof(size_t), PAGE_EXECUTE_READWRITE, &dwProtect[0]);
-                                    size_t original = iat[j];
-                                    iat[j] = (size_t)it->second;
-                                    data.kernel32Functions[funcName] = { (size_t)&iat[j], original };
-                                    VirtualProtect(&iat[j], sizeof(size_t), dwProtect[0], &dwProtect[1]);
-                                    matchedImports++;
+                                    // For descriptors other than "kernel32.dll" and the
+                                    // api-ms-win-* / ext-ms-win-* API sets, only patch when
+                                    // the resolved slot really points at the kernel32 API.
+                                    if (bIsKernel32Like || customAddressToName.count(iat[j]))
+                                    {
+                                        DWORD dwProtect[2];
+                                        VirtualProtect(&iat[j], sizeof(size_t), PAGE_EXECUTE_READWRITE, &dwProtect[0]);
+                                        size_t original = iat[j];
+                                        iat[j] = (size_t)it->second;
+                                        data.kernel32Functions[funcName] = { (size_t)&iat[j], original };
+                                        VirtualProtect(&iat[j], sizeof(size_t), dwProtect[0], &dwProtect[1]);
+                                        matchedImports++;
+                                    }
                                 }
                             }
                         }
@@ -4335,23 +4375,23 @@ bool PatchKernel32IAT(HMODULE mod, ModuleIATData& data)
                     for (ptrdiff_t j = 0; pFunctions[j] != nullptr && (size_t)&pFunctions[j] < hExecutableInstance_end; j++)
                     {
                         auto pAddress = &pFunctions[j];
-                        for (const auto& [funcName, replacement] : kernel32Customs)
+                        // Address-based reverse lookup: works no matter which DLL name
+                        // the import is listed under (kernel32.dll or any API set).
+                        auto addrIt = customAddressToName.find((uintptr_t)*pAddress);
+                        if (addrIt != customAddressToName.end())
                         {
-                            if (*pAddress && *pAddress == (void*)GetProcAddress(GetModuleHandleA("kernel32.dll"), funcName.c_str()))
-                            {
-                                DWORD dwProtect[2];
-                                VirtualProtect(pAddress, sizeof(void*), PAGE_EXECUTE_READWRITE, &dwProtect[0]);
-                                void* original = *pAddress;
-                                *pAddress = replacement;
-                                data.kernel32Functions[funcName] = { (uintptr_t)pAddress, (uintptr_t)original };
-                                VirtualProtect(pAddress, sizeof(void*), dwProtect[0], &dwProtect[1]);
-                                matchedImports++;
-                                break;
-                            }
+                            const auto& funcName = addrIt->second;
+                            DWORD dwProtect[2];
+                            VirtualProtect(pAddress, sizeof(void*), PAGE_EXECUTE_READWRITE, &dwProtect[0]);
+                            void* original = *pAddress;
+                            *pAddress = kernel32Customs.at(funcName);
+                            data.kernel32Functions[funcName] = { (uintptr_t)pAddress, (uintptr_t)original };
+                            VirtualProtect(pAddress, sizeof(void*), dwProtect[0], &dwProtect[1]);
+                            matchedImports++;
                         }
                     }
                 }
-                else // Third fallback: brute-force section scan (only if previous fallbacks fail)
+                else if (bIsKernel32Like) // Third fallback: brute-force section scan (only if previous fallbacks fail)
                 {
                     static auto getSection = [](const PIMAGE_NT_HEADERS nt_headers, unsigned section) -> PIMAGE_SECTION_HEADER
                     {
@@ -4360,9 +4400,6 @@ bool PatchKernel32IAT(HMODULE mod, ModuleIATData& data)
                             nt_headers->OptionalHeader.NumberOfRvaAndSizes * sizeof(IMAGE_DATA_DIRECTORY) +
                             section * sizeof(IMAGE_SECTION_HEADER));
                     };
-
-                    auto hDll = GetModuleHandleA("kernel32.dll");
-                    if (!hDll) continue;
 
                     for (auto secIdx = 0; secIdx < ntHeader->FileHeader.NumberOfSections; secIdx++)
                     {
@@ -4376,20 +4413,17 @@ bool PatchKernel32IAT(HMODULE mod, ModuleIATData& data)
                         {
                             auto pAddress = &pFunctions[j];
                             if ((size_t)pAddress >= hExecutableInstance + sectionSize) break; // Bounds check
-                            // Reverse lookup for names (similar to second fallback)
-                            for (const auto& [funcName, replacement] : kernel32Customs)
+                            auto addrIt = customAddressToName.find((uintptr_t)*pAddress);
+                            if (addrIt != customAddressToName.end())
                             {
-                                if (*pAddress && *pAddress == GetProcAddress(hDll, funcName.c_str()))
-                                {
-                                    DWORD dwProtect[2];
-                                    VirtualProtect(pAddress, sizeof(void*), PAGE_EXECUTE_READWRITE, &dwProtect[0]);
-                                    void* original = *pAddress;
-                                    *pAddress = replacement;
-                                    data.kernel32Functions[funcName] = { (uintptr_t)pAddress, (uintptr_t)original };
-                                    VirtualProtect(pAddress, sizeof(void*), dwProtect[0], &dwProtect[1]);
-                                    matchedImports++;
-                                    break; // Patched, move to next function
-                                }
+                                const auto& funcName = addrIt->second;
+                                DWORD dwProtect[2];
+                                VirtualProtect(pAddress, sizeof(void*), PAGE_EXECUTE_READWRITE, &dwProtect[0]);
+                                void* original = *pAddress;
+                                *pAddress = kernel32Customs.at(funcName);
+                                data.kernel32Functions[funcName] = { (uintptr_t)pAddress, (uintptr_t)original };
+                                VirtualProtect(pAddress, sizeof(void*), dwProtect[0], &dwProtect[1]);
+                                matchedImports++;
                             }
                         }
                     }
@@ -5228,7 +5262,7 @@ void Init()
 
             if (sLoadFromAPI.empty()) // compatibility with GTAV/RDR2 plugins
             {
-                if (iequals(exeName, L"GTA5") || iequals(exeName, L"RDR2") || iequals(exeName, L"game_win64_master"))
+                if (iequals(exeName, L"GTA5") || iequals(exeName, L"GTA5_Enhanced") || iequals(exeName, L"RDR2") || iequals(exeName, L"game_win64_master"))
                     sLoadFromAPI = L"GetSystemTimeAsFileTime";
             }
         } catch (...) {}
@@ -5269,7 +5303,11 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID /*lpReserved*/)
     {
         for (auto& modData : moduleIATs)
         {
+            for (auto& [name, data] : modData.kernel32Functions)
+                data.Restore();
             for (auto& [name, data] : modData.ole32Functions)
+                data.Restore();
+            for (auto& [name, data] : modData.vccorlibFunctions)
                 data.Restore();
         }
 
